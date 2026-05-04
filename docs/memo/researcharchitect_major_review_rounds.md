@@ -109,7 +109,135 @@ None.
   `純粋検知`, old `Q_\infty`, `万円・日`, old `c_n=50`, or old
   dynamic-retention positivity notation.
 
-## Final Stop Decision
+## Round 6 Interim Stop Decision
 
 Stopped after Round 6 because MAJOR-or-higher findings are zero. This is below
-the 10-round cap.
+the 10-round cap. A subsequent user review reopened the narrative audit for
+applied-research clarity.
+
+## Round 7
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R7-MAJ-01 | MAJOR | The abstract and conclusion foregrounded derivation details while leaving the applied conclusion implicit. For an applied ransomware-defense paper, a reader should immediately understand what the formulas recommend for defense and backup recovery operations. | Rewrite the abstract and conclusion around the practical takeaway: detection alone is insufficient, clean-backup recovery horizon is a first-class defense variable, and the design formula gives an operational rule for backup interval and retained generations. Move the detailed interpretation of the formula into Section 5 as part of the derivation discussion. |
+
+### Status
+
+DONE. The abstract now opens with the applied conclusion and three practical
+recommendations. The conclusion now states the defense and recovery implications
+in plain language before summarizing the mathematical contributions. Section 5
+now includes a dedicated practical interpretation of the closed-form design
+rule.
+
+## Round 8
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`,
+  `Undefined`, `Error`, and `Missing`: only existing xeCJK font redefinition
+  warnings remain.
+- Active-manuscript scan found no matches for stale reviewer-facing wording such
+  as `査読上`, `小難しい`, or `未条件化`. Historical memo entries remain only as
+  audit history.
+
+## Round 8 Interim Stop Decision
+
+Stopped after Round 8 because MAJOR-or-higher findings are zero. This remains
+below the 10-round cap. A subsequent user review reopened the narrative audit
+for consistency between research motivation and the applied conclusion.
+
+## Round 9
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R9-MAJ-01 | MAJOR | After R7, the abstract and conclusion clearly stated that detection alone is insufficient and that clean-backup recovery horizon is the applied design variable, but the title, introduction, numerical examples, and dynamic-retention setup still foregrounded mathematical generality more than the operational motivation. This left the manuscript's narrative arc inconsistent. | Retitle the paper around clean-backup retention and ransomware defense, rewrite the introduction from the practical problem of contaminated recent backups, recast the contribution list around recovery-horizon design, and add applied framing to the numerical and dynamic-retention sections. |
+
+### Status
+
+DONE. The manuscript now opens from the practical defense problem, introduces
+heavy-tailed dwell time as the reason recent backups may be contaminated, frames
+the model around the effective clean-recovery horizon `n\Delta`, and connects
+the numerical and dynamic-retention sections back to operational backup
+decisions.
+
+## Round 10
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`,
+  `Undefined`, `Error`, and `Missing`: only existing xeCJK font redefinition
+  warnings remain.
+- Narrative scan confirmed that the title, abstract, introduction, numerical
+  examples, dynamic retention, and conclusion all use the same core terms:
+  detection limitation, clean backup, recovery horizon, backup interval, and
+  operational design.
+
+## Round 10 Interim Stop Decision
+
+Stopped after Round 10 because MAJOR-or-higher findings are zero. This reaches
+but does not exceed the 10-round cap. A subsequent user review reopened the
+strict-review loop, so the next pass is tracked as a new post-Round-10 cycle
+rather than extending the closed 10-round sequence.
+
+## Post-Round-10 Cycle, Round 1
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| P10-R1-MAJ-01 | MAJOR | The dynamic-retention section defined the effective retention horizon as `(n+n_ext)\Delta-\tau_R`, while the manuscript's backup schedule and residual-loss model define the clean-backup horizon as generation count times interval. This made the additional-retention theorem and numerical table use a different recovery rule from the main model. | Rebase dynamic retention on the same effective horizon `T(n_ext)=(n+n_ext)\Delta`, update the continuous optimum, feasibility set, proof, reproducible script, and numerical table values. |
+| P10-R1-MAJ-02 | MAJOR | The numerical-example opening described `\Dstar` as the amount of old clean backup to keep, but `\Dstar` is an interval; the actual clean-recovery horizon is `n\Dstar`. This blurred the central practical recommendation. | Rewrite the numerical-example framing to distinguish backup interval `\Dstar` from clean-recovery horizon `n\Dstar`, and state the baseline horizon `n\Dstar=93.33` days. |
+
+### Minor Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| P10-R1-MIN-01 | MINOR | The finite-frequency curvature symbol `Q''_\infty` suggested an old limit object rather than curvature at `\Dstar`. | Rename it to `Q''_\star`. |
+| P10-R1-MIN-02 | MINOR | The practical input lists in the abstract and introduction omitted scan load even though the design formula depends on `\kappa_s`. | Add scan load to the operational-quantity lists. |
+
+### Status
+
+DONE. The dynamic-retention model now uses the same clean-backup horizon
+definition as the main loss model; the Python check and numerical table were
+regenerated; and the practical wording now keeps interval, retained horizon,
+and scan load distinct.
+
+## Post-Round-10 Cycle, Round 2
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`,
+  `Undefined`, `Error`, and `Missing`: only existing xeCJK font redefinition
+  warnings remain.
+- Stale-scan found no active matches for the old dynamic-retention
+  `-\tau_R` horizon, old numerical table values, or `Q''_\infty`.
+
+## Final Stop Decision
+
+Stopped after Post-Round-10 Cycle Round 2 because MAJOR-or-higher findings are
+zero, well below the reopened 10-round cap.

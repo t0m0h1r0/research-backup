@@ -122,30 +122,30 @@
     {
       "alpha": 0.5,
       "T_star": 292.4017738212865,
-      "n_ext_continuous": 24.44017738212865,
+      "n_ext_continuous": 24.24017738212865,
       "n_ext_star": 24,
-      "B_star": 4146.278254943948
+      "B_star": 4136.101097573517
     },
     {
       "alpha": 0.7,
       "T_star": 182.735268833173,
-      "n_ext_continuous": 13.473526883317298,
+      "n_ext_continuous": 13.273526883317299,
       "n_ext_star": 13,
-      "B_star": 1979.462227477584
+      "B_star": 1969.1046484272372
     },
     {
       "alpha": 1.0,
       "T_star": 100.0,
-      "n_ext_continuous": 5.199999999999999,
+      "n_ext_continuous": 5.0,
       "n_ext_star": 5,
-      "B_star": 760.204081632653
+      "B_star": 750.0
     },
     {
       "alpha": 1.5,
       "T_star": 46.82054920046207,
-      "n_ext_continuous": -0.11794507995379355,
+      "n_ext_continuous": -0.31794507995379284,
       "n_ext_star": 0,
-      "B_star": 150.351632601465
+      "B_star": 141.4213562373095
     }
   ]
 }

@@ -1,11 +1,18 @@
 \section{動的保持延長}
 
+前節の $\Dstar$ は，固定した保持世代数 $n$ のもとで
+バックアップ間隔を決める基準である．一方，実運用では，
+攻撃状況や復旧演習の結果を受けて，既存のバックアップ間隔を保ったまま
+一時的に保持世代数を増やす判断も必要になる．本節ではこの判断を，
+追加保持費用と，清浄バックアップ保持期間の不足から生じる
+復旧不能ペナルティの単期間最適化として定式化する．
+
 \begin{definition}[追加保持コスト関数]
 $n_{\mathrm{ext}}\in\mathbb{Z}_{\ge0}$，バックアップ間隔 $\Delta>0$，
 パラメータ $c_{\mathrm{ext}}>0,\ L_{\mathrm{fail}}>0,\ \alpha>0,\ t_m>0$，および
 実効保持期間
 \[
-  T(n_{\mathrm{ext}})=(n+n_{\mathrm{ext}})\Delta-\tau_R
+  T(n_{\mathrm{ext}})=(n+n_{\mathrm{ext}})\Delta
 \]
 とする．実行可能集合を
 \[
@@ -24,12 +31,12 @@ $L_{\mathrm{fail}}(t_m/T(n_{\mathrm{ext}}))^\alpha$ とすれば，
 
 \begin{proposition}[最適追加保持世代数]
 $B$ は連続緩和の実行可能領域
-$\{x\ge0:(n+x)\Delta-\tau_R>t_m\}$ 上で狭義凸である．
+$\{x\ge0:(n+x)\Delta>t_m\}$ 上で狭義凸である．
 制約を無視した停留点は
 \[
   T^\ast=\left(\frac{\alpha L_{\mathrm{fail}}t_m^\alpha\Delta}{c_{\mathrm{ext}}}
   \right)^{1/(\alpha+1)},\qquad
-  n_{\mathrm{ext}}^c=\frac{T^\ast+\tau_R}{\Delta}-n .
+  n_{\mathrm{ext}}^c=\frac{T^\ast}{\Delta}-n .
 \]
 $\Delta>0$ なので $\mathcal{N}$ は空でなく，$m_0=\min\mathcal{N}$ とし，
 $x^\ast=\max(m_0,n_{\mathrm{ext}}^c)$ とおく．整数最適解は
@@ -42,7 +49,7 @@ $x^\ast=\max(m_0,n_{\mathrm{ext}}^c)$ とおく．整数最適解は
 \end{proposition}
 
 \begin{proof}
-$T=(n+n_{\mathrm{ext}})\Delta-\tau_R$ として微分すると
+$T=(n+n_{\mathrm{ext}})\Delta$ として微分すると
 \[
   \frac{\dd B}{\dd n_{\mathrm{ext}}}
   =c_{\mathrm{ext}}-L_{\mathrm{fail}}\alpha t_m^\alpha T^{-(\alpha+1)}\Delta .

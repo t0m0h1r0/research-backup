@@ -183,15 +183,14 @@ def optimal_delta(alpha: float, lam: float, params: dict[str, float]) -> dict[st
 def retention_row(alpha: float, params: dict[str, float]) -> dict[str, float | int]:
     tm = params["tm"]
     n = int(params["n"])
-    tau = params["tau_R"]
     delta = params["retention_delta"]
     c_ext = params["c_ext"]
     lfail = params["L_fail"]
     t_star = (alpha * lfail * (tm**alpha) * delta / c_ext) ** (1.0 / (alpha + 1.0))
-    n_cont = (t_star + tau) / delta - n
+    n_cont = t_star / delta - n
 
     def feasible(m: int) -> bool:
-        return m >= 0 and (n + m) * delta - tau > tm
+        return m >= 0 and (n + m) * delta > tm
 
     m0 = 0
     while not feasible(m0):
@@ -201,7 +200,7 @@ def retention_row(alpha: float, params: dict[str, float]) -> dict[str, float | i
     candidates = {m for m in candidates if feasible(m)}
 
     def cost(m: int) -> float:
-        t = (n + m) * delta - tau
+        t = (n + m) * delta
         return c_ext * m + lfail * (tm / t) ** alpha
 
     best_m = min(candidates, key=cost)

@@ -93,6 +93,23 @@ $\eta e^{-\beta n\Delta}f_{T_d}(n\Delta)$ が含まれるため，
 影響する．
 \end{remark}
 
+\begin{remark}[設計式の実務的解釈]
+式 \eqref{eq:dstar} は，単にバックアップ間隔を短くすべきだと
+主張しているのではない．実務上は，まず
+\[
+  a^\star=n\Dstar=\frac{L-(d_1\tau_R+d_0)}{d_1\kappa_s}
+\]
+を，清浄な復旧点を残しておくべき目安期間として読むのが自然である．
+全損時損失 $L$ が大きいほど，より古い清浄バックアップを保持する
+価値が高まる．一方，復旧しても停止損失 $d_1\tau_R$ や固定費 $d_0$ が
+大きい場合は，保持期間の延長だけでなく復旧時間の短縮や復旧手順の
+改善も同時に必要になる．保持世代数 $n$ を増やせるなら，同じ
+復旧可能期間 $a^\star$ を，より短い間隔 $\Dstar=a^\star/n$ で
+実現できる．許容設計区間の外に $a^\star/n$ が出る場合は，
+第 5 節の最適化問題を端点も含めて評価し，サービス水準を満たす側へ
+設計を寄せる．
+\end{remark}
+
 \begin{theorem}[頻度漸近独立性]
 $c_b>0$ とし，許容設計区間 $\mathcal{D}$ 上で
 $G(\Delta;\lambda)=c_b/\Delta+\lambda\Qfull(\Delta;\alpha,\beta)$
@@ -118,17 +135,17 @@ $\Delta^\ast(\lambda)$ の極限点は $\Dstar$ に限られる．
 \end{proof}
 
 \begin{corollary}[有限頻度での近似]
-$Q''_\infty=\left.\partial^2\Qfull/\partial\Delta^2\right|_{\Dstar}$ とおく．
+$Q''_\star=\left.\partial^2\Qfull/\partial\Delta^2\right|_{\Dstar}$ とおく．
 $\Delta^\ast(\lambda)$ が十分大きな $\lambda$ で内点にあるとき，
 一階条件の Taylor 展開から
 \[
   \Delta^\ast(\lambda)
-  =\Dstar+\frac{c_b}{\lambda{\Dstar}^2 Q''_\infty}
+  =\Dstar+\frac{c_b}{\lambda{\Dstar}^2 Q''_\star}
   +O(\lambda^{-2})
 \]
 を得る．ここで
 \[
-  Q''_\infty
+  Q''_\star
   =\eta d_1\kappa_s n^2 e^{-\beta n\Dstar}f_{T_d}(n\Dstar).
 \]
 \end{corollary}
