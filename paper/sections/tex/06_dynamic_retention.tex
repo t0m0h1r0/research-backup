@@ -1,7 +1,8 @@
 \section{動的保持延長}
 
 \begin{definition}[追加保持コスト関数]
-$n_{\mathrm{ext}}\in\mathbb{Z}_{\ge0}$，バックアップ間隔 $\Delta$，
+$n_{\mathrm{ext}}\in\mathbb{Z}_{\ge0}$，バックアップ間隔 $\Delta>0$，
+パラメータ $c_{\mathrm{ext}}>0,\ L_{\mathrm{fail}}>0,\ \alpha>0,\ t_m>0$，および
 実効保持期間
 \[
   T(n_{\mathrm{ext}})=(n+n_{\mathrm{ext}})\Delta-\tau_R
@@ -10,26 +11,27 @@ $n_{\mathrm{ext}}\in\mathbb{Z}_{\ge0}$，バックアップ間隔 $\Delta$，
 \[
   \mathcal{N}=\{m\in\mathbb{Z}_{\ge0}:T(m)>t_m\}
 \]
-で定める．追加保持コストを $c_n n_{\mathrm{ext}}$，
+で定める．追加保持コストを $c_{\mathrm{ext}} n_{\mathrm{ext}}$，
 復旧不能ペナルティを
 $L_{\mathrm{fail}}(t_m/T(n_{\mathrm{ext}}))^\alpha$ とすれば，
 \[
   B(n_{\mathrm{ext}})
-  =c_n n_{\mathrm{ext}}
+  =c_{\mathrm{ext}} n_{\mathrm{ext}}
   +L_{\mathrm{fail}}\left(\frac{t_m}{T(n_{\mathrm{ext}})}\right)^\alpha ,
   \qquad n_{\mathrm{ext}}\in\mathcal{N}.
 \]
 \end{definition}
 
 \begin{proposition}[最適追加保持世代数]
-$B$ は連続緩和の実行可能領域上で狭義凸であり，制約を無視した
-停留点は
+$B$ は連続緩和の実行可能領域
+$\{x\ge0:(n+x)\Delta-\tau_R>t_m\}$ 上で狭義凸である．
+制約を無視した停留点は
 \[
-  T^\ast=\left(\frac{\alpha L_{\mathrm{fail}}t_m^\alpha\Delta}{c_n}
+  T^\ast=\left(\frac{\alpha L_{\mathrm{fail}}t_m^\alpha\Delta}{c_{\mathrm{ext}}}
   \right)^{1/(\alpha+1)},\qquad
   n_{\mathrm{ext}}^c=\frac{T^\ast+\tau_R}{\Delta}-n .
 \]
-$m_0=\min\mathcal{N}$ とし，
+$\Delta>0$ なので $\mathcal{N}$ は空でなく，$m_0=\min\mathcal{N}$ とし，
 $x^\ast=\max(m_0,n_{\mathrm{ext}}^c)$ とおく．整数最適解は
 \[
   n_{\mathrm{ext}}^\ast
@@ -43,7 +45,7 @@ $x^\ast=\max(m_0,n_{\mathrm{ext}}^c)$ とおく．整数最適解は
 $T=(n+n_{\mathrm{ext}})\Delta-\tau_R$ として微分すると
 \[
   \frac{\dd B}{\dd n_{\mathrm{ext}}}
-  =c_n-L_{\mathrm{fail}}\alpha t_m^\alpha T^{-(\alpha+1)}\Delta .
+  =c_{\mathrm{ext}}-L_{\mathrm{fail}}\alpha t_m^\alpha T^{-(\alpha+1)}\Delta .
 \]
 一階条件から $T=T^\ast$ を得る．また
 \[

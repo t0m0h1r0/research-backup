@@ -56,5 +56,60 @@ None.
 
 ## Stop Decision
 
-Stopped after Round 3 because MAJOR-or-higher findings are zero. This is below
+Round 3 had no MAJOR-or-higher findings under the prior audit scope. The
+subsequent user request required a stricter reviewer pass focused on narrative,
+notation, and logical consistency, so review continued at Round 4.
+
+## Round 4
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R4-MAJ-01 | MAJOR | The phase-transition theorem used a simplified `Q_\infty` that did not equal the backup-free limit of the manuscript's repaired residual loss: it omitted `\eta`, `\kappa_s`, `d_0`, and the late full-loss term. This weakens both logical consistency and narrative credibility. | Redefine the theorem using the actual `\Qfull` limit as the holding boundary is removed, state the `\alpha=1` transition under `\kappa_s>0`, and update abstract/introduction/conclusion language. |
+| R4-MAJ-02 | MAJOR | The attack-phase definition retained an exponential destruction time `T_e`, but no cost, transition diagram, theorem, or numerical check used it. This creates a dead stochastic object and makes the model look more general than the loss kernel. | Remove `T_e` from the active model and describe the post-onset outcome as the symptom-detection branch already used by `\Qfull`. |
+| R4-MAJ-03 | MAJOR | The paper still invoked "renewal reward" as part of its core narrative after the rate formula had been repaired to marked-Poisson/Campbell accounting. The narrative therefore pointed readers toward the wrong denominator-free justification. | Replace core narrative and proof wording with Poisson reward process / Campbell formula language. |
+| R4-MAJ-04 | MAJOR | The numerical section assigns `c_b` units of `万円・日`, but the model defines `c_b/\Delta`; therefore `c_b` must be a per-backup fixed cost, not cost times time. | Correct the unit wording to per-backup cost and keep the table values unchanged. |
+
+### Status
+
+DONE. The manuscript now uses the actual backup-free limit of `\Qfull` for the
+phase-transition theorem, removes dead `T_e` notation, uses Poisson/Campbell
+language for the rate argument, and corrects the `c_b` unit.
+
+## Round 5
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R5-MAJ-01 | MAJOR | The manuscript uses `c_n n_{\mathrm{ext}}` both in the calendar-time cost rate and in the dynamic-retention single-period objective. In the rate equation it must be a cost rate, while in the retention objective it is a one-period storage cost. Reusing the same symbol makes the units inconsistent and undermines the notation discipline. | Define `c_I` and `c_n` in the rate equation as operating cost rates, introduce a separate `c_{\mathrm{ext}}` for the single-period retention objective, and update the reproducible check and numerical caption. |
+
+### Status
+
+DONE. The calendar-time rate keeps `c_n` as an operating cost rate, while the
+single-period retention problem now uses the separate symbol `c_{\mathrm{ext}}`.
+The Python check and generated result parameters were updated accordingly.
+
+## Round 6
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Error`, `undefined`, `Undefined`, `Overfull`,
+  `Underfull`, and `Missing`: no matches. Remaining matches are xeCJK font
+  redefinition warnings only.
+- Stale-claim scan found no active-manuscript matches for dead `T_e`,
+  `純粋検知`, old `Q_\infty`, `万円・日`, old `c_n=50`, or old
+  dynamic-retention positivity notation.
+
+## Final Stop Decision
+
+Stopped after Round 6 because MAJOR-or-higher findings are zero. This is below
 the 10-round cap.

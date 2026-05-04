@@ -56,24 +56,61 @@ $T_d\sim\Pareto(t_m,\alpha)$，$\beta\to0+$ において，
 \]
 \end{lemma}
 
-\begin{theorem}[純粋検知費用の相転移]
-バックアップ世代境界なしの極限で
+\begin{proof}
+密度表示から
 \[
-  Q_\infty(\beta)=d_1\{\tau_R\mathcal{L}_{T_d}(\beta)+\E[T_de^{-\beta T_d}]\}
+  \E[T_de^{-\beta T_d}]
+  =\alpha t_m^\alpha\int_{t_m}^{\infty}t^{-\alpha}e^{-\beta t}\dd t .
 \]
-とおく．このとき $\beta\to0+$ で
+$u=\beta t$ とおくと，$\alpha\in(0,1)$ では
 \[
-Q_\infty(\beta)\sim
+  \E[T_de^{-\beta T_d}]
+  =\alpha t_m^\alpha\beta^{\alpha-1}
+  \Gamma(1-\alpha,\beta t_m)
+  \sim \alpha t_m^\alpha\Gamma(1-\alpha)\beta^{\alpha-1}
+\]
+である．$\alpha=1$ では
+\[
+  \E[T_de^{-\beta T_d}]
+  =t_m\int_{\beta t_m}^{\infty}\frac{e^{-u}}{u}\dd u
+  =t_m E_1(\beta t_m)
+  \sim -t_m\log(\beta t_m),
+\]
+ただし $E_1(x)=-\gamma-\log x+O(x)$ を用いた．$\alpha>1$ では
+$t^{-\alpha}$ が $[t_m,\infty)$ 上可積分であるため，優収束定理より
+\[
+  \E[T_de^{-\beta T_d}]
+  \to\alpha t_m^\alpha\int_{t_m}^{\infty}t^{-\alpha}\dd t
+  =\frac{\alpha t_m}{\alpha-1}.
+\]
+\end{proof}
+
+\begin{theorem}[保持境界なし残余損失の相転移]
+保持境界を外す極限 $n\Delta\to\infty$ で
+\[
+  Q_{\mathrm{nb}}(\beta)
+  =\eta(d_1\tau_R+d_0)\mathcal{L}_{T_d}(\beta)
+  +\eta d_1\kappa_s\E[T_de^{-\beta T_d}]
+  +L(1-\eta)\mathcal{L}_{T_d}(\beta)
+\]
+とおく．これは \eqref{eq:qfull} で $\Hbeta\to0$，
+$\Mbeta\to\E[T_de^{-\beta T_d}]$ とした残余損失である．
+$\kappa_s>0$ のとき，$\beta\to0+$ で
+\[
+Q_{\mathrm{nb}}(\beta)\sim
 \begin{cases}
-d_1\alpha t_m^\alpha\Gamma(1-\alpha)\beta^{\alpha-1}\to\infty,
+\eta d_1\kappa_s\alpha t_m^\alpha\Gamma(1-\alpha)\beta^{\alpha-1}\to\infty,
 & \alpha\in(0,1),\\
--d_1t_m\log(\beta t_m)\to\infty,& \alpha=1,\\
-d_1(\tau_R+\alpha t_m/(\alpha-1))<\infty,& \alpha>1.
+-\eta d_1\kappa_s t_m\log(\beta t_m)\to\infty,& \alpha=1,\\
+\eta(d_1\tau_R+d_0)+L(1-\eta)
++\eta d_1\kappa_s\alpha t_m/(\alpha-1)<\infty,& \alpha>1.
 \end{cases}
 \]
 \end{theorem}
 
 \begin{remark}
-$\alpha\le1$ では低投資域で純粋検知設計の期待費用が発散する．
-従って，重尾潜伏下ではバックアップ設計が検知投資の補完として不可欠である．
+$\alpha\le1$ かつ $\kappa_s>0$ では，保持境界を外すと検知失敗後の
+スキャン停止時間項が低投資域で発散する．有限の保持期間は
+$\Mbeta$ を切断モーメントに置き換えるため，重尾潜伏下では
+バックアップ設計が検知投資の補完として不可欠である．
 \end{remark}

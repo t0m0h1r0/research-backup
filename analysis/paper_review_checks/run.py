@@ -185,9 +185,9 @@ def retention_row(alpha: float, params: dict[str, float]) -> dict[str, float | i
     n = int(params["n"])
     tau = params["tau_R"]
     delta = params["retention_delta"]
-    cn = params["c_n"]
+    c_ext = params["c_ext"]
     lfail = params["L_fail"]
-    t_star = (alpha * lfail * (tm**alpha) * delta / cn) ** (1.0 / (alpha + 1.0))
+    t_star = (alpha * lfail * (tm**alpha) * delta / c_ext) ** (1.0 / (alpha + 1.0))
     n_cont = (t_star + tau) / delta - n
 
     def feasible(m: int) -> bool:
@@ -202,7 +202,7 @@ def retention_row(alpha: float, params: dict[str, float]) -> dict[str, float | i
 
     def cost(m: int) -> float:
         t = (n + m) * delta - tau
-        return cn * m + lfail * (tm / t) ** alpha
+        return c_ext * m + lfail * (tm / t) ** alpha
 
     best_m = min(candidates, key=cost)
     return {
@@ -231,11 +231,21 @@ def main() -> None:
         "delta_min": 1.0,
         "delta_max": 40.0,
         "retention_delta": 10.0,
-        "c_n": 50.0,
+        "c_ext": 50.0,
         "L_fail": 50000.0,
     }
     params["lambda_loss"] = params["L"] - (params["d1"] * params["tau_R"] + params["d0"])
+    if params["kappa_s"] <= 0.0:
+        raise ValueError("The interior backup optimum requires kappa_s > 0.")
+    if params["lambda_loss"] <= 0.0:
+        raise ValueError("The interior backup optimum requires L > d1*tau_R + d0.")
+    if params["c_ext"] <= 0.0 or params["L_fail"] <= 0.0:
+        raise ValueError("Dynamic retention requires positive c_ext and L_fail.")
+    if params["retention_delta"] <= 0.0:
+        raise ValueError("Dynamic retention requires retention_delta > 0.")
     params["dstar"] = params["lambda_loss"] / (params["d1"] * params["kappa_s"] * params["n"])
+    if not params["delta_min"] < params["dstar"] < params["delta_max"]:
+        raise ValueError("dstar must lie inside the admissible design interval.")
 
     emin_alphas = [0.3, 0.5, 0.8, 1.0, 1.5]
     emin_betas = [0.1, 0.5, 1.0]
