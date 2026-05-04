@@ -10,3 +10,4 @@ venv/
 analysis/**/results/
 !analysis/**/results/.gitkeep
 paper/sections/build/
+worktrees/

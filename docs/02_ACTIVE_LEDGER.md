@@ -8,43 +8,47 @@
 |-------|-------|
 | phase | DEPLOYED |
 | branch | main |
-| current_objective | Deploy generic research-agent kernel for paper improvement |
-| source_artifact | `paper/source/heavy_tail_backup_v13.pdf` |
-| next_action | Dispatch first proof-audit task for ASM-001 or ASM-002 |
-| updated_at_utc | 2026-05-04T02:14:45Z |
+| current_objective | Start AI-assisted anomaly detection research with deployed research agents |
+| active_brief | `docs/interface/ResearchBrief.md` |
+| source_artifact | none registered yet |
+| next_action | Dispatch ASM-AD-001 to TaskPlanner for domain/taxonomy/research-question framing |
+| updated_at_utc | 2026-05-04T03:01:56Z |
 
 ## §CHECKLIST
 
 | ID | Status | Domain | Artifact | Note | Date |
 |----|--------|--------|----------|------|------|
-| CHK-001 | DONE | P | `prompts/meta/kernel-project.md` | replaced CFD profile with generic paper-agent profile | 2026-05-04 |
-| CHK-002 | DONE | P | `prompts/meta/kernel-domains.md` | installed generic T/R/E/A research domain registry | 2026-05-04 |
-| CHK-003 | DONE | M | `paper/source/heavy_tail_backup_v13.txt` | extracted PDF text for agent-readable source | 2026-05-04 |
-| CHK-004 | READY | T | `docs/memo/asm_001_renewal_reward.md` | first recommended proof audit | 2026-05-04 |
+| CHK-AD-001 | DONE | P | `prompts/meta/kernel-project.md` | retargeted project profile to AI anomaly detection research | 2026-05-04 |
+| CHK-AD-002 | DONE | P | `docs/03_PROJECT_RULES.md` | regenerated PR-1..PR-6 for anomaly detection | 2026-05-04 |
+| CHK-AD-003 | DONE | M | `docs/01_PROJECT_MAP.md` | registered active brief, directories, and initial task queue | 2026-05-04 |
+| CHK-AD-004 | DONE | M | `docs/interface/ResearchBrief.md` | captured initial user scope as active contract | 2026-05-04 |
+| CHK-AD-005 | DONE | P | `prompts/agents-codex/`, `prompts/agents-claude/` | 23 agent files per environment verified | 2026-05-04 |
+| CHK-AD-006 | READY | M | `docs/memo/anomaly_detection_problem_frame.md` | first recommended planning artifact | 2026-05-04 |
 
 ## §ASSUMPTIONS
 
 | ID | Status | Statement | Owner |
 |----|--------|-----------|-------|
-| ASM-001 | OPEN | The renewal-reward theorem is applicable for all alpha > 0 when beta(I) > 0. | T |
-| ASM-002 | OPEN | Tauber remainder bound is sufficient for the claimed phase-transition result. | T |
-| ASM-003 | OPEN | The closed-form optimal interval is the unique global minimizer under stated parameter constraints. | T |
-| ASM-004 | OPEN | The compactness argument uses a lambda-independent bound strong enough for convergence. | T |
+| ASM-AD-001 | OPEN | The user wants broad AI-based anomaly detection research support before narrowing domain or dataset. | M |
+| ASM-AD-002 | OPEN | No active source paper, benchmark dataset, or application domain has been selected yet. | M/E |
+| ASM-AD-003 | OPEN | Literature and benchmark protocol should precede any SOTA or performance claim. | E |
+| ASM-AD-004 | OPEN | Existing T/R/E/A domains can route model design, implementation, evaluation, and writing without kernel changes. | Q |
 
 ## §LESSONS
 
 | ID | Status | Lesson | Artifact |
 |----|--------|--------|----------|
-| LES-001 | ACTIVE | Paper-improvement agents must output both research artifact and workflow artifact when PR-1 applies. | `prompts/meta/kernel-project.md` |
+| LES-AD-001 | ACTIVE | Project retargeting should change `kernel-project.md` and generated runtime docs while keeping the generic kernel stable. | `prompts/meta/kernel-project.md` |
+| LES-AD-002 | ACTIVE | Anomaly detection research needs explicit leakage, thresholding, and benchmark-compatibility gates before writing claims. | `docs/03_PROJECT_RULES.md` |
 
 ## §REPLAN_LOG
 
 | ID | Date | Trigger | Decision |
 |----|------|---------|----------|
-| RPL-001 | 2026-05-04 | CFD-specific kernel used for non-CFD paper | Retarget kernel to generic research workflow and keep topic in project profile |
+| RPL-AD-001 | 2026-05-04 | Previous project profile did not match new anomaly detection research objective | Retarget project profile and redeploy runtime docs/reports for anomaly detection |
 
 ## §4 BRANCH_LOCK_REGISTRY
 
 | ID | Branch | Worktree | Objective | Status | Updated |
 |----|--------|----------|-----------|--------|---------|
-| A-XELATEX-001 | `codex/researcharchitect-xelatex` | `worktrees/researcharchitect-xelatex` | XeLaTeX recast of `heavy_tail_backup_v13.pdf` | VALIDATED | 2026-05-04 |
+| none | main | n/a | no active branch lock | INACTIVE | 2026-05-04 |

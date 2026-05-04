@@ -2,8 +2,9 @@
 
 # Prompt System
 
-This prompt system deploys generic research agents for proof audit, evidence audit,
-reproducible analysis, paper revision, and prompt/workflow evolution.
+This prompt system deploys generic research agents for theory/claim audit,
+evidence audit, reproducible implementation, experiment evaluation, paper
+revision, and prompt/workflow evolution.
 
 ## Architecture
 
@@ -16,19 +17,25 @@ reproducible analysis, paper revision, and prompt/workflow evolution.
 
 ## Active Project
 
-The active source artifact is `paper/source/heavy_tail_backup_v13.pdf`.
-The project is intentionally agent-first: every substantial paper-improvement task
-should also capture a workflow lesson when it teaches the agent system something.
+The active project is AI-assisted anomaly detection research. The initial scope
+is registered in `docs/interface/ResearchBrief.md`; no source paper, benchmark
+dataset, or application domain has been selected yet.
+
+Substantial tasks should advance research evidence first and capture workflow
+lessons when they improve the agent system.
 
 ## Agent Roster
 
-The inherited roster contains 23 roles per environment, including ResearchArchitect,
+The deployed roster contains 23 roles per environment, including ResearchArchitect,
 TaskPlanner, TheoryArchitect, TheoryAuditor, CodeArchitect, TestRunner,
-ExperimentRunner, EvidenceAnalyst, PaperWriter, PaperReviewer, ConsistencyAuditor, PromptArchitect,
-PromptAuditor, KnowledgeArchitect, WikiAuditor, Librarian, and TraceabilityManager.
+ExperimentRunner, EvidenceAnalyst, PaperWriter, PaperReviewer, ConsistencyAuditor,
+PromptArchitect, PromptAuditor, KnowledgeArchitect, WikiAuditor, Librarian, and
+TraceabilityManager.
 
 ## Regeneration
 
 For project retargeting, replace `prompts/meta/kernel-project.md` and regenerate
-`docs/03_PROJECT_RULES.md`. For workflow changes, update the relevant kernel file,
-then run prompt audit before using changed agents.
+`docs/03_PROJECT_RULES.md`, `docs/01_PROJECT_MAP.md`, `docs/02_ACTIVE_LEDGER.md`,
+`AGENTS.md`, and validation reports. For workflow changes, update the relevant
+kernel file, regenerate agent prompts, then run prompt audit before using changed
+agents.

@@ -11,147 +11,174 @@
 # FOUNDATION: kernel-constitution.md §AXIOMS
 
 <meta_section id="META-PROJECT" version="1.0.0" axiom_refs="phi6,A7,A10">
-<purpose>Project-specific profile for improving the attached research paper while also improving the AI-agent research workflow that performs the improvement.</purpose>
+<purpose>Project-specific profile for AI-assisted anomaly detection research and for the deployable AI-agent workflow that supports that research.</purpose>
 <authority>The Root Admin (ResearchArchitect) edits this file when onboarding a new research project or changing project-specific acceptance rules. All other agents consult `docs/03_PROJECT_RULES.md`.</authority>
 <rules>
 - MUST NOT place project-specific rules in kernel-constitution.md, kernel-domains.md, kernel-ops.md, kernel-workflow.md, or kernel-antipatterns.md.
 - MUST regenerate `docs/03_PROJECT_RULES.md` after any PR-{N} edit.
-- MUST treat this project as an agent-improvement project first and a paper-completion project second.
-- MUST preserve the source paper and all derived critique artifacts as external memory.
+- MUST treat this project as AI/ML anomaly detection research supported by an auditable agent workflow.
+- MUST preserve source papers, datasets, experiment configs, model code, run logs, and derived critique artifacts as external memory.
+- MUST NOT promote model-performance, novelty, or deployment-readiness claims without traceable evidence.
 </rules>
-<see_also>docs/03_PROJECT_RULES.md, paper/source/heavy_tail_backup_v13.pdf, paper/source/heavy_tail_backup_v13.txt</see_also>
+<see_also>docs/03_PROJECT_RULES.md, docs/01_PROJECT_MAP.md, docs/interface/ResearchBrief.md</see_also>
 
 --------------------------------------------------------
 # § PROJECT IDENTITY
 
 | Field | Value |
 |-------|-------|
-| Project type | General research workflow improvement + paper refinement |
-| Research artifact | `paper/source/heavy_tail_backup_v13.pdf` |
-| Research focus | Heavy-tailed ransomware dwell time, semi-Markov attack/defense model, optimal backup interval, detection-investment phase transition |
-| Primary method | Mathematical proof audit, model consistency review, literature positioning, numerical reproducibility check, writing refinement |
-| Target output | A deployable generic research-agent kernel plus review-ready paper improvement artifacts |
-| Primary objective | Improve and operationalize the AI-agent workflow |
-| Secondary objective | Improve the attached paper through traceable, evidence-backed critique and edits |
+| Project type | AI-assisted anomaly detection research + deployable research-agent workflow |
+| Research artifacts | Research brief, papers, datasets, model specs, code, experiment configs/results, figures, and manuscript drafts |
+| Research focus | AI/ML anomaly detection, including problem framing, normal/anomaly definitions, model design, anomaly scoring, thresholding, evaluation, robustness, interpretability, and deployment constraints |
+| Primary method | Literature grounding, hypothesis/model design, reproducible implementation, controlled experiments, ablation/statistical analysis, error analysis, and academic writing |
+| Target output | Review-ready anomaly detection research artifacts plus reusable AI-agent prompts/workflow artifacts |
+| Primary objective | Produce credible, reproducible anomaly detection research outcomes |
+| Secondary objective | Improve the reusable AI-agent research workflow through traceable lessons |
 
 --------------------------------------------------------
 # § PR - Project-Specific Rules
 
 These rules apply to agents working on this project. They are intentionally portable:
-only the paper topic and local artifact paths are project-specific.
+only the anomaly-detection topic, active artifacts, and local project paths are
+project-specific.
 
-## PR-1 - Agent-Workflow Primacy
+## PR-1 - Research Outcome and Agent-Workflow Co-Primacy
 
-The first success condition is not "finish the paper"; it is "create a reusable,
-auditable research-agent workflow that can improve papers." Paper edits are test
-cases for the workflow.
+The agent system exists to advance the anomaly detection research. At the same
+time, substantial tasks should preserve workflow learning so the research process
+itself becomes more reliable.
 
-Every substantial paper-improvement task MUST produce two outputs:
+Every substantial research task SHOULD produce two outputs:
 
 | Output | Purpose |
 |--------|---------|
-| Research artifact | critique, proof patch, literature note, numerical check, or prose patch |
-| Workflow artifact | what the agent learned about task routing, evidence needs, failure modes, or prompt rules |
+| Research artifact | question map, literature note, model spec, code patch, experiment package, error analysis, figure, or manuscript patch |
+| Workflow artifact | routing lesson, evidence need, prompt limitation, failure mode, or reusable task pattern |
 
-If these conflict, preserve workflow learning and defer paper polish.
+If these conflict, protect the research evidence first and record the workflow
+lesson without delaying a valid research deliverable.
 
-## PR-2 - Source Preservation and Traceability
+## PR-2 - Source, Dataset, and Experiment Traceability
 
-The original PDF and extracted text are immutable source artifacts. Agents MUST NOT
-overwrite them. Derived files MUST cite the source section, theorem, proposition,
-equation, page, or extracted-text line range whenever possible.
+Agents MUST preserve traceability across source material, datasets, code, configs,
+logs, metrics, figures, and prose claims. Active source papers and immutable data
+inputs MUST NOT be overwritten.
 
-Allowed derived locations:
+Allowed source and derived locations:
 
 | Artifact type | Directory |
 |---------------|-----------|
-| Mathematical audits | `docs/memo/` |
-| Literature and citation checks | `docs/evidence/` |
-| Numerical or symbolic checks | `analysis/` or `notebooks/` |
-| Paper edit proposals | `paper/sections/` or `artifacts/A/` |
+| Source papers and source text | `paper/source/` |
+| Immutable/raw datasets | `data/raw/` |
+| Processed datasets with provenance | `data/processed/` |
+| Research plans and model audits | `docs/memo/` |
+| Literature, benchmark, and citation checks | `docs/evidence/` |
+| Interface contracts | `docs/interface/` |
+| Reusable model/evaluation code | `src/` |
+| Reproducible experiments | `analysis/{study}/` |
+| Exploratory notebooks | `notebooks/` |
+| Manuscript sections and figures | `paper/sections/`, `paper/figures/`, `artifacts/A/` |
 | Workflow lessons | `artifacts/M/` and `docs/02_ACTIVE_LEDGER.md` |
 
-## PR-3 - Mathematical Rigor Gate
+Any performance value, table, or figure promoted to writing MUST cite dataset
+version, split protocol, config path, command, run log, commit or artifact hash
+when available, and creation date.
 
-Claims involving optimality, convergence, compactness, Tauberian expansions,
-renewal-reward applicability, or phase transitions MUST be independently checked.
+## PR-3 - Model and Claim Rigor Gate
+
+Claims involving model novelty, detection accuracy, anomaly score validity,
+threshold design, calibration, robustness, interpretability, causal/security
+implications, or deployment readiness MUST be independently checked.
 
 Minimum audit standard:
 
 | Check | Acceptance |
 |-------|------------|
-| Definitions | variables, domains, and parameter constraints are explicit |
-| Existence | integrability or compactness assumptions are stated and justified |
-| Uniqueness | derivative/sign/convexity argument is complete |
-| Asymptotics | limits and remainder terms state uniformity conditions |
-| Dependencies | theorem conclusions list which assumptions they use |
+| Definitions | normal class, anomaly class, unit of observation, time horizon, label semantics, and alert action are explicit |
+| Assumptions | stationarity, contamination, label quality, class imbalance, temporal ordering, and operating constraints are stated |
+| Baselines | comparison methods, preprocessing, hyperparameter budget, and selection protocol are documented |
+| Metrics | AUROC/AUPRC/F1 or domain metrics are justified; false alarm rate and detection delay are considered when relevant |
+| Leakage | train/validation/test boundaries, temporal leakage, entity leakage, and threshold tuning leakage are checked |
+| Uncertainty | confidence intervals, repeated seeds, or sensitivity analysis are used for material quantitative claims |
+| Failure modes | known blind spots, false positives/negatives, drift, and out-of-distribution behavior are recorded |
 
-Unproved or underspecified steps become audit findings, not silent rewrites.
+Unverified effectiveness claims remain hypotheses or audit findings, not paper
+conclusions.
 
-## PR-4 - Evidence and Citation Hygiene
+## PR-4 - Literature, Benchmark, and Citation Hygiene
 
-Agents MUST separate three evidence classes:
+Agents MUST separate four evidence classes:
 
 | Class | Examples | Rule |
 |-------|----------|------|
-| Internal proof evidence | equations, lemmas, derivations in the paper | Cite exact source location |
-| External literature evidence | cyber-risk, heavy-tail, semi-Markov, backup practice literature | Verify against bibliographic source before adding claims |
-| Numerical evidence | scripts, logs, tables, figures | Record command, parameters, output path, and date |
+| Internal design evidence | model spec, loss, score function, threshold rule, ablation rationale | Cite exact artifact path and section |
+| External literature evidence | anomaly detection methods, benchmark papers, surveys, deployment constraints | Verify against bibliographic source before adding claims |
+| Dataset/benchmark evidence | dataset card, split file, preprocessing, label definition, license, known caveats | Record provenance and compatibility with the experiment protocol |
+| Numerical evidence | scripts, configs, logs, metrics, figures | Record command, parameters, output path, and date |
 
-No agent may invent citations or empirical facts. If a source is unavailable, mark the claim as needing source verification.
+No agent may invent citations, benchmark facts, SOTA claims, dataset properties,
+or empirical numbers. If a source is unavailable, mark the claim as needing
+source verification. Benchmark comparisons require compatible data splits,
+metrics, preprocessing, and tuning budgets; otherwise they are reported as
+non-comparable context.
 
-## PR-5 - Reproducible Analysis Standard
+## PR-5 - Reproducible Coding and Experiment Standard
 
-Any numerical or symbolic check introduced by the agents MUST be reproducible from
-repository files alone.
+Any coding or experiment artifact introduced by agents MUST be reproducible from
+repository files plus explicitly registered external data sources.
 
-Required for each check:
+Required for each promoted experiment:
 
 | Item | Requirement |
 |------|-------------|
-| Script/notebook | Stored under `analysis/` or `notebooks/` |
-| Inputs | Local files or explicit parameter table |
-| Output | CSV/JSON/Markdown/PDF figure as appropriate |
-| Command | Captured in the artifact header or ledger |
-| Interpretation | PASS/FAIL/INCONCLUSIVE with reason |
+| Script/notebook | Final evidence uses a non-interactive script under `analysis/{study}/`; notebooks are exploratory unless promoted |
+| Inputs | Local files, registered external source, or explicit synthetic-data generator |
+| Config | Stored config or parameter table, including model, preprocessing, split, seed, and threshold policy |
+| Output | Metrics, logs, figures, and manifest under `analysis/{study}/results/` |
+| Command | Captured in the manifest and ledger |
+| Interpretation | PASS/FAIL/INCONCLUSIVE with reason and scope |
 
-Python numerical evaluation SHOULD use the standard study layout:
+Standard experiment layout:
 
 ```text
 analysis/{study}/
   run.py
   README.md
+  config.yaml or config.json
   results/
     manifest.json
     metrics.csv or metrics.json
-    figures/*.pdf
+    figures/*.pdf or *.png
     run.log
 ```
 
-`manifest.json` MUST include: purpose, source_refs, command, python_version,
-package_versions for numpy/scipy/pandas/matplotlib when used, parameters, random_seed
-or `null`, output_files, created_at_utc, and verdict.
+`manifest.json` MUST include: purpose, source_refs, dataset_refs, command,
+python_version, package_versions for core dependencies used, parameters,
+random_seed or `null`, split protocol, metrics, output_files, created_at_utc,
+and verdict.
 
-Python scripts MUST be non-interactive, deterministic when randomness is used, and
-safe to rerun. Scripts SHOULD accept command-line parameters and MUST NOT require
-notebook state. Notebooks may be used for exploration, but promoted evidence must
-be runnable as a script under `analysis/{study}/`.
+Python scripts MUST be non-interactive, deterministic when randomness is used,
+and safe to rerun. Exploratory scratch work may exist temporarily, but only
+curated outputs can support manuscript or research-summary claims.
 
-Exploratory scratch work may exist temporarily, but only curated outputs can support paper changes.
+## PR-6 - Paper and Deployment Readiness Standard
 
-## PR-6 - Review-Readiness Standard
+Research outputs should move the project toward peer-reviewable anomaly detection
+work and a redeployable agent workflow.
 
-Paper improvements should move the manuscript toward anonymous peer review.
 Agents MUST prioritize:
 
-1. correctness of proofs and assumptions,
-2. clarity of contribution claims,
-3. consistency of notation,
-4. credible relation to prior work,
-5. reproducibility of numerical examples,
-6. concise Japanese academic prose.
+1. clear problem setting and anomaly taxonomy,
+2. credible relation to prior anomaly detection work,
+3. fair baseline and benchmark protocol,
+4. reproducible implementation and experiments,
+5. error analysis, ablation, and robustness checks,
+6. honest limitation and failure-mode reporting,
+7. concise academic prose in the chosen manuscript language,
+8. deployable prompts, docs, and workflow artifacts.
 
-Stylistic rewrites that do not improve at least one of these six points are out of scope.
+Stylistic rewrites that do not improve at least one of these points are out of
+scope.
 
 --------------------------------------------------------
 # § PORTABILITY NOTES
@@ -161,7 +188,7 @@ To adapt this system for another research project:
 1. Replace only `kernel-project.md` with a new project profile.
 2. Keep the generic kernel files unchanged unless a workflow limitation is discovered.
 3. Regenerate `docs/03_PROJECT_RULES.md`.
-4. Update source-artifact paths in `docs/01_PROJECT_MAP.md`.
+4. Update source-artifact paths and active assumptions in `docs/01_PROJECT_MAP.md`.
 5. Run prompt audit for project-specific leakage.
 
 The PR-{N} numbering is local to this file. Universal rules use A-{N}, C-{N},

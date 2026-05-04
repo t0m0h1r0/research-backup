@@ -2,39 +2,40 @@
 
 # 03_PROJECT_RULES
 
-## PR-1 - Agent-Workflow Primacy
+## PR-1 - Research Outcome and Agent-Workflow Co-Primacy
 
-The primary objective is to create a reusable, auditable research-agent workflow.
-Paper edits are test cases for improving the workflow.
+The agent system exists to advance AI/ML anomaly detection research while also
+capturing workflow lessons. Substantial tasks should produce a research artifact
+and, when useful, a workflow artifact.
 
-## PR-2 - Source Preservation and Traceability
+## PR-2 - Source, Dataset, and Experiment Traceability
 
-The original PDF and extracted text under `paper/source/` are source artifacts and
-must not be overwritten. Derived outputs cite section, theorem, equation, page, or
-text location whenever possible.
+Source papers, datasets, configs, code, logs, metrics, figures, and prose claims
+must remain traceable. Active source papers and immutable/raw data must not be
+overwritten.
 
-## PR-3 - Mathematical Rigor Gate
+## PR-3 - Model and Claim Rigor Gate
 
-Optimality, convergence, compactness, Tauberian, renewal-reward, and phase-transition
-claims require independent verification of definitions, assumptions, existence,
-uniqueness, asymptotics, and dependencies.
+Claims about model novelty, detection accuracy, anomaly scores, thresholds,
+calibration, robustness, interpretability, or deployment readiness require
+independent checks of definitions, assumptions, baselines, metrics, leakage,
+uncertainty, and failure modes.
 
-## PR-4 - Evidence and Citation Hygiene
+## PR-4 - Literature, Benchmark, and Citation Hygiene
 
-Internal proof evidence, external literature evidence, and numerical evidence must
-be separated. No invented citations or empirical facts are allowed.
+Internal design evidence, external literature, dataset/benchmark evidence, and
+numerical evidence must be separated. No invented citations, SOTA claims,
+dataset facts, or empirical numbers are allowed.
 
-## PR-5 - Reproducible Analysis Standard
+## PR-5 - Reproducible Coding and Experiment Standard
 
-Numerical or symbolic checks must be reproducible from repository files and include
-script/notebook, inputs, outputs, command, and PASS/FAIL/INCONCLUSIVE interpretation.
+Promoted experiments must be runnable from repository files plus registered data
+sources. Use `analysis/{study}/run.py`, a stored config, and
+`analysis/{study}/results/manifest.json` with command, dependencies, parameters,
+seed, split protocol, metrics, outputs, timestamp, and verdict.
 
-Python numerical evaluation uses `analysis/{study}/run.py` plus
-`analysis/{study}/results/manifest.json`. The manifest records purpose, source
-references, command, Python/package versions, parameters, random seed or `null`,
-output files, timestamp, and verdict. Notebook-only evidence is not sufficient.
+## PR-6 - Paper and Deployment Readiness Standard
 
-## PR-6 - Review-Readiness Standard
-
-Paper improvements prioritize proof correctness, contribution clarity, notation
-consistency, prior-work credibility, reproducibility, and concise Japanese academic prose.
+Outputs prioritize clear problem framing, prior-work positioning, fair baselines,
+reproducibility, error analysis, robustness checks, honest limitations, concise
+academic prose, and redeployable agent workflow artifacts.

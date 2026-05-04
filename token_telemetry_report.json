@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-04T02:14:45Z",
+  "timestamp": "2026-05-04T03:01:56Z",
   "environments": {
     "codex": {
       "agent_files": 23,
@@ -13,8 +13,9 @@
   "skill_capsules": 5,
   "validation": {
     "project_rule_count": 6,
-    "legacy_domain_leakage": "PASS",
-    "source_artifact_registered": true
+    "active_project": "ai_anomaly_detection_research",
+    "legacy_domain_leakage": "PASS_WITH_PRESERVED_INACTIVE_LEGACY_ARTIFACTS",
+    "source_artifact_registered": "docs/interface/ResearchBrief.md"
   },
-  "notes": "Static token counts were not computed with tokenizer tooling in this bootstrap pass; file counts and leakage checks were validated by shell commands."
+  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, and active project retargeting were validated by shell commands."
 }
