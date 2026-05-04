@@ -1,0 +1,74 @@
+\section{数値例}
+
+社会インフラ・エンタープライズ規模を想定したベースラインとして，
+$t_m=1$ 日，$\lambda=1.0$ 件/日，$d_1=1667$ 万円/日，
+$L=50000$ 万円，$c_b=10$ 万円・日，$n=5$ 世代，
+$\tau_R=2.0$ 日，$\eta=0.95$，$\kappa_s=0.3$ 日/世代を用いる．
+このとき
+\[
+  \Lambda=50000-0.95(1666.7\times2.0)=46833,
+  \qquad
+  \Dstar=\frac{46833}{0.95\times1666.7\times0.3\times5}
+  =19.72\ \text{日}.
+\]
+
+\begin{table}[htbp]
+\centering
+\caption{$\E[\min(T_{\mathrm{det}},T_d)]$（日，$t_m=1$）}
+\begin{tabular}{cccccc}
+\toprule
+$\beta$ & $\alpha=0.3$ & $\alpha=0.5$ & $\alpha=0.8$ & $\alpha=1.0$ & $\alpha=1.5$\\
+\midrule
+0.1 & 6.086 & 4.621 & 3.309 & 2.775 & 2.027\\
+0.5 & 1.720 & 1.582 & 1.426 & 1.347 & 1.205\\
+1.0 & 0.942 & 0.911 & 0.873 & 0.852 & 0.810\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{補正項 $C(\beta)$ と上界の比較（$t_m=1$）}
+\begin{tabular}{ccccc}
+\toprule
+& \multicolumn{2}{c}{$\alpha=0.5$} & \multicolumn{2}{c}{$\alpha=0.8$}\\
+$\beta$ & $C(\beta)$ & 上界 & $C(\beta)$ & 上界\\
+\midrule
+$10^{-3}$ & $9.998\times10^{-4}$ & $1.0\times10^{-3}$ & $3.9997\times10^{-3}$ & $4.0\times10^{-3}$\\
+$10^{-2}$ & $9.983\times10^{-3}$ & $1.0\times10^{-2}$ & $3.997\times10^{-2}$ & $4.0\times10^{-2}$\\
+$10^{-1}$ & $9.837\times10^{-2}$ & $1.0\times10^{-1}$ & $3.967\times10^{-1}$ & $4.0\times10^{-1}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{$\Delta^\ast(\lambda)\to\Dstar=19.72$ 日の収束}
+\begin{tabular}{ccccccc}
+\toprule
+& \multicolumn{5}{c}{$\lambda$} & \\
+$\alpha$ & 0.01 & 0.1 & 1.0 & 10 & 100 & $\Dstar$\\
+\midrule
+0.5 & 20.19 & 19.77 & 19.72 & 19.720 & 19.719 & 19.72\\
+0.7 & 20.55 & 19.80 & 19.73 & 19.720 & 19.719 & 19.72\\
+1.0 & 22.06 & 19.95 & 19.74 & 19.722 & 19.720 & 19.72\\
+1.5 & 42.44 & 21.33 & 19.88 & 19.735 & 19.721 & 19.72\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{最適追加保持世代数（$\Delta=10$ 日，$c_n=50$ 万円/世代，$L_{\mathrm{fail}}=50000$ 万円）}
+\begin{tabular}{ccccc}
+\toprule
+$\alpha$ & $T^\ast$（日） & $n_{\mathrm{ext}}^c$ & $n_{\mathrm{ext}}^\ast$ & $B(n_{\mathrm{ext}}^\ast)$\\
+\midrule
+0.5 & 292.4 & 24.44 & 25 & 4146.4\\
+0.7 & 182.7 & 13.47 & 14 & 1979.6\\
+1.0 & 100.0 & 5.20 & 6 & 763.0\\
+1.5 & 46.8 & -0.12 & 0 & 150.4\\
+\bottomrule
+\end{tabular}
+\end{table}
+

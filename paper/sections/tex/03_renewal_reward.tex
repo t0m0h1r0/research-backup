@@ -1,0 +1,39 @@
+\section{更新報酬定理の適用条件}
+
+\begin{lemma}[潜伏状態の平均滞在時間の有限性]
+$t_m>0,\ \beta(I)>0,\ \alpha(I)>0$ の任意の組に対し，
+\[
+  \E[\min(T_{\mathrm{det}},T_d)]
+  =\frac{1-e^{-\beta(I)t_m}}{\beta(I)}
+  +t_m^{\alpha(I)}\beta(I)^{\alpha(I)-1}
+  \Gamma(1-\alpha(I),\beta(I)t_m)
+  <\infty .
+  \label{eq:min-finite}
+\]
+\end{lemma}
+
+\begin{proof}
+$\E[\min(X,Y)]=\int_0^\infty\Prob(X>t,Y>t)\dd t$ と独立性を用いると，
+\[
+  \E[\min(T_{\mathrm{det}},T_d)]
+  =\int_0^{t_m}e^{-\beta t}\dd t
+  +\int_{t_m}^{\infty}e^{-\beta t}\left(\frac{t_m}{t}\right)^\alpha\dd t .
+\]
+第一項は $(1-e^{-\beta t_m})/\beta$ である．第二項で $u=\beta t$ と置換すると
+$t_m^\alpha\beta^{\alpha-1}\Gamma(1-\alpha,\beta t_m)$ を得る．
+$x_0=\beta t_m>0$ に対し，$u\ge x_0$ では $u^{-\alpha}\le x_0^{-\alpha}$ なので，
+\[
+  \Gamma(1-\alpha,x_0)
+  =\int_{x_0}^{\infty}u^{-\alpha}e^{-u}\dd u
+  \le x_0^{-\alpha}e^{-x_0}<\infty .
+\]
+従って右辺は有限である．
+\end{proof}
+
+\begin{theorem}[更新報酬定理の適用可能性]
+仮定 2.2 と 2.4 のもとで，任意の $\lambda>0,\ \beta(I)>0,\ n\ge1,\ \Delta>0$
+に対して，合成半マルコフ過程の非吸収部分は正再帰的であり，
+サイクルあたり期待費用は有限である．従って，更新報酬定理を適用でき，
+\eqref{eq:cost-rate} は長期平均費用レートと一致する．
+\end{theorem}
+

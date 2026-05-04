@@ -50,3 +50,15 @@ cross-references or fatal LaTeX errors.
 
 VALIDATED for the requested XeLaTeX recast artifact. The source PDF was not
 modified.
+
+## Split-File Verification
+
+The monolithic TeX source was split into a parent entry file and chapter-sized
+inputs under `paper/sections/tex/`. Re-running:
+
+```sh
+latexmk -xelatex heavy_tail_backup_recast_xelatex.tex
+```
+
+from `paper/sections` completed successfully after the split and regenerated the
+same 12-page PDF target.

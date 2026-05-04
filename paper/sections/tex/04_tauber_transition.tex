@@ -1,0 +1,78 @@
+\section{Tauber 漸近展開と相転移}
+
+早期検知確率は
+\[
+  p_e(\beta)=\Prob(T_{\mathrm{det}}<T_d)=1-L_{T_d}(\beta)
+\]
+である．低投資域 $\beta\to0+$ での振る舞いは，潜伏時間分布の尾の重さを反映する．
+
+\begin{theorem}[Tauber 展開の剰余項]
+$T_d\sim\Pareto(t_m,\alpha)$，$\alpha\in(0,1)$，$\beta>0$ のとき，
+\begin{equation}
+  p_e(\beta)=t_m^\alpha\Gamma(1-\alpha)\beta^\alpha-C(\beta),
+  \label{eq:tauber}
+\end{equation}
+ただし
+\[
+  C(\beta)=\alpha t_m^\alpha\int_0^{t_m}(1-e^{-\beta t})t^{-(\alpha+1)}\dd t
+\]
+であり，
+\begin{equation}
+  0\le C(\beta)\le \frac{\alpha t_m}{1-\alpha}\beta .
+  \label{eq:tauber-bound}
+\end{equation}
+従って $R(\beta)=p_e(\beta)-t_m^\alpha\Gamma(1-\alpha)\beta^\alpha=O(\beta)$ で，
+相対誤差は $O(\beta^{1-\alpha})\to0$ である．
+\end{theorem}
+
+\begin{proof}
+独立性から
+\[
+  p_e(\beta)=\int_{t_m}^{\infty}(1-e^{-\beta t})
+  \alpha t_m^\alpha t^{-(\alpha+1)}\dd t .
+\]
+積分区間 $[t_m,\infty)$ を $[0,\infty)-[0,t_m]$ に分解し，
+$u=\beta t$ と置換すると主要項
+$t_m^\alpha\Gamma(1-\alpha)\beta^\alpha$ を得る．
+補正項については $1-e^{-x}\le x$ を用いて
+\[
+  C(\beta)\le \alpha t_m^\alpha\beta\int_0^{t_m}t^{-\alpha}\dd t
+  =\frac{\alpha t_m}{1-\alpha}\beta .
+\]
+\end{proof}
+
+\begin{lemma}[Pareto Laplace 変換の漸近]
+$T_d\sim\Pareto(t_m,\alpha)$，$\beta\to0+$ において，
+\[
+\E[T_de^{-\beta T_d}]
+\sim
+\begin{cases}
+\alpha t_m^\alpha\Gamma(1-\alpha)\beta^{\alpha-1}, & \alpha\in(0,1),\\
+-t_m\log(\beta t_m), & \alpha=1,\\
+\alpha t_m/(\alpha-1), & \alpha>1.
+\end{cases}
+\]
+\end{lemma}
+
+\begin{theorem}[純粋検知費用の相転移]
+バックアップ世代境界なしの極限で
+\[
+  Q_\infty(\beta)=d_1\{\tau_RL_{T_d}(\beta)+\E[T_de^{-\beta T_d}]\}
+\]
+とおく．このとき $\beta\to0+$ で
+\[
+Q_\infty(\beta)\sim
+\begin{cases}
+d_1\alpha t_m^\alpha\Gamma(1-\alpha)\beta^{\alpha-1}\to\infty,
+& \alpha\in(0,1),\\
+-d_1t_m\log(\beta t_m)\to\infty,& \alpha=1,\\
+d_1(\tau_R+\alpha t_m/(\alpha-1))<\infty,& \alpha>1.
+\end{cases}
+\]
+\end{theorem}
+
+\begin{remark}
+$\alpha\le1$ では低投資域で純粋検知設計の期待費用が発散する．
+従って，重尾潜伏下ではバックアップ設計が検知投資の補完として不可欠である．
+\end{remark}
+
