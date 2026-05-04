@@ -15,11 +15,15 @@ $(PAPER_PDF): $(PAPER_SOURCES)
 	cd $(PAPER_DIR) && latexmk -xelatex $(PAPER_TEX)
 
 paper-check: paper
-	@if rg -n "Warning|Overfull|Underfull|undefined|Undefined|Error|Missing" "$(PAPER_LOG)"; then \
+	@if rg -n "LaTeX Warning|Overfull|Underfull|undefined|Undefined|Error|Missing" "$(PAPER_LOG)"; then \
 		echo "LaTeX log contains warnings/errors: $(PAPER_LOG)"; \
+		exit 1; \
+	elif ! pdffonts "$(PAPER_PDF)" | rg -q "Hira|Hiragino|HaranoAji|Noto|IPA"; then \
+		echo "No embedded Japanese font found in $(PAPER_PDF)"; \
 		exit 1; \
 	else \
 		echo "LaTeX log clean: $(PAPER_LOG)"; \
+		echo "Japanese font embedded in $(PAPER_PDF)"; \
 	fi
 
 numerical-check:
@@ -32,6 +36,6 @@ help:
 	@echo "Targets:"
 	@echo "  make              Build $(PAPER_PDF)"
 	@echo "  make paper        Build $(PAPER_PDF)"
-	@echo "  make paper-check  Build paper and fail if LaTeX log has warnings/errors"
+	@echo "  make paper-check  Build paper and fail on serious LaTeX issues or missing Japanese fonts"
 	@echo "  make numerical-check  Regenerate numerical check outputs"
 	@echo "  make clean        Remove LaTeX build artifacts"
