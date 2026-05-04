@@ -26,13 +26,13 @@
     "delta_min": 1.0,
     "delta_max": 40.0,
     "retention_delta": 10.0,
-    "c_n": 50.0,
+    "c_ext": 50.0,
     "L_fail": 50000.0,
     "lambda_loss": 46666.6,
     "dstar": 18.666266674666506
   },
   "random_seed": null,
-  "timestamp_utc": "2026-05-04T09:12:05.667256+00:00",
+  "timestamp_utc": "2026-05-04T09:20:53.402071+00:00",
   "output_files": [
     "analysis/paper_review_checks/results/tables.json"
   ],
