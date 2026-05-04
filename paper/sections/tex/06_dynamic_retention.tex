@@ -4,29 +4,37 @@
 $n_{\mathrm{ext}}\in\mathbb{Z}_{\ge0}$，バックアップ間隔 $\Delta$，
 実効保持期間
 \[
-  T(n_{\mathrm{ext}})=(n+n_{\mathrm{ext}})\Delta-\tau_R>t_m
+  T(n_{\mathrm{ext}})=(n+n_{\mathrm{ext}})\Delta-\tau_R
 \]
-とする．追加保持コストを $c_n n_{\mathrm{ext}}$，
+とする．実行可能集合を
+\[
+  \mathcal{N}=\{m\in\mathbb{Z}_{\ge0}:T(m)>t_m\}
+\]
+で定める．追加保持コストを $c_n n_{\mathrm{ext}}$，
 復旧不能ペナルティを
 $L_{\mathrm{fail}}(t_m/T(n_{\mathrm{ext}}))^\alpha$ とすれば，
 \[
   B(n_{\mathrm{ext}})
   =c_n n_{\mathrm{ext}}
-  +L_{\mathrm{fail}}\left(\frac{t_m}{T(n_{\mathrm{ext}})}\right)^\alpha .
+  +L_{\mathrm{fail}}\left(\frac{t_m}{T(n_{\mathrm{ext}})}\right)^\alpha ,
+  \qquad n_{\mathrm{ext}}\in\mathcal{N}.
 \]
 \end{definition}
 
 \begin{proposition}[最適追加保持世代数]
-$B$ は $n_{\mathrm{ext}}\in\mathbb{R}_{\ge0}$ 上で狭義凸であり，
-連続緩和の最適点は
+$B$ は連続緩和の実行可能領域上で狭義凸であり，制約を無視した
+停留点は
 \[
   T^\ast=\left(\frac{\alpha L_{\mathrm{fail}}t_m^\alpha\Delta}{c_n}
   \right)^{1/(\alpha+1)},\qquad
   n_{\mathrm{ext}}^c=\frac{T^\ast+\tau_R}{\Delta}-n .
 \]
-整数最適解は
+$m_0=\min\mathcal{N}$ とし，
+$x^\ast=\max(m_0,n_{\mathrm{ext}}^c)$ とおく．整数最適解は
 \[
-  n_{\mathrm{ext}}^\ast=\max(0,\lceil n_{\mathrm{ext}}^c\rceil)
+  n_{\mathrm{ext}}^\ast
+  \in\arg\min_{m\in\mathcal{C}} B(m),\qquad
+  \mathcal{C}=\{\lfloor x^\ast\rfloor,\lceil x^\ast\rceil\}\cap\mathcal{N}
 \]
 で与えられる．
 \end{proposition}
@@ -42,7 +50,7 @@ $T=(n+n_{\mathrm{ext}})\Delta-\tau_R$ として微分すると
   \frac{\dd^2 B}{\dd n_{\mathrm{ext}}^2}
   =L_{\mathrm{fail}}\alpha(\alpha+1)t_m^\alpha T^{-(\alpha+2)}\Delta^2>0
 \]
-なので狭義凸である．非負整数制約では連続最適点の上側近傍を取り，
-負の場合は境界 $0$ が最適となる．
+なので狭義凸である．従って連続緩和の制約付き最小点は
+$x^\ast$ であり，整数格子上の最小点はその左右の近傍整数だけを
+評価すればよい．
 \end{proof}
-

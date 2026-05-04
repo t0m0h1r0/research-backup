@@ -4,6 +4,31 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning}
 
+\IfFontExistsTF{Hiragino Mincho ProN}{
+  \setCJKmainfont[
+    UprightFont={* W3},
+    BoldFont={* W6},
+    ItalicFont={* W3},
+    BoldItalicFont={* W6}
+  ]{Hiragino Mincho ProN}
+  \setCJKsansfont[
+    UprightFont={* W4},
+    BoldFont={* W6},
+    ItalicFont={* W4},
+    BoldItalicFont={* W6}
+  ]{Hiragino Sans}
+  \setCJKmonofont[
+    UprightFont={* W4},
+    BoldFont={* W6},
+    ItalicFont={* W4},
+    BoldItalicFont={* W6}
+  ]{Hiragino Sans}
+}{
+  \setCJKmainfont[BoldFont={HaranoAjiGothic-Medium.otf}]{HaranoAjiMincho-Regular.otf}
+  \setCJKsansfont{HaranoAjiGothic-Medium.otf}
+  \setCJKmonofont{HaranoAjiGothic-Medium.otf}
+}
+
 \hypersetup{
   unicode=true,
   colorlinks=true,
@@ -27,4 +52,8 @@
 \newcommand{\Pareto}{\mathrm{Pareto}}
 \newcommand{\Exp}{\mathrm{Exp}}
 \newcommand{\Qfull}{Q_{\mathrm{full}}}
+\newcommand{\Qearly}{Q_{\mathrm{early}}}
+\newcommand{\Lbeta}{L_\beta}
+\newcommand{\Hbeta}{H_\beta}
+\newcommand{\Mbeta}{M_\beta}
 \newcommand{\Dstar}{\Delta_\infty^\ast}

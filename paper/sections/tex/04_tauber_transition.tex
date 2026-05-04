@@ -2,9 +2,11 @@
 
 早期検知確率は
 \[
-  p_e(\beta)=\Prob(T_{\mathrm{det}}<T_d)=1-L_{T_d}(\beta)
+  p_e(\beta)=\Prob(T_{\mathrm{det}}<T_d)=1-\mathcal{L}_{T_d}(\beta)
 \]
-である．低投資域 $\beta\to0+$ での振る舞いは，潜伏時間分布の尾の重さを反映する．
+である．ここで $\mathcal{L}_{T_d}$ は $T_d$ の Laplace 変換を表す．
+低投資域 $\beta\to0+$ での振る舞いは，潜伏時間分布の尾の重さを反映する
+\cite{feller1971,bingham1989,resnick2007}．
 
 \begin{theorem}[Tauber 展開の剰余項]
 $T_d\sim\Pareto(t_m,\alpha)$，$\alpha\in(0,1)$，$\beta>0$ のとき，
@@ -57,7 +59,7 @@ $T_d\sim\Pareto(t_m,\alpha)$，$\beta\to0+$ において，
 \begin{theorem}[純粋検知費用の相転移]
 バックアップ世代境界なしの極限で
 \[
-  Q_\infty(\beta)=d_1\{\tau_RL_{T_d}(\beta)+\E[T_de^{-\beta T_d}]\}
+  Q_\infty(\beta)=d_1\{\tau_R\mathcal{L}_{T_d}(\beta)+\E[T_de^{-\beta T_d}]\}
 \]
 とおく．このとき $\beta\to0+$ で
 \[
@@ -75,4 +77,3 @@ d_1(\tau_R+\alpha t_m/(\alpha-1))<\infty,& \alpha>1.
 $\alpha\le1$ では低投資域で純粋検知設計の期待費用が発散する．
 従って，重尾潜伏下ではバックアップ設計が検知投資の補完として不可欠である．
 \end{remark}
-
