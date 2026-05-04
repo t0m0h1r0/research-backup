@@ -1,9 +1,10 @@
 {
-  "timestamp": "2026-05-04T03:01:56Z",
+  "timestamp": "2026-05-04T12:58:55Z",
   "environments": {
     "codex": {
       "agent_files": 23,
-      "base_file": "prompts/agents-codex/_base.yaml"
+      "base_file": "prompts/agents-codex/_base.yaml",
+      "profile_revision": "2026-05-04-codex-ops"
     },
     "claude": {
       "agent_files": 23,
@@ -15,7 +16,11 @@
     "project_rule_count": 6,
     "active_project": "ai_anomaly_detection_research",
     "legacy_domain_leakage": "PASS_WITH_PRESERVED_INACTIVE_LEGACY_ARTIFACTS",
-    "source_artifact_registered": "docs/interface/ResearchBrief.md"
+    "source_artifact_registered": "docs/interface/ResearchBrief.md",
+    "codex_runtime_guardrails": "PASS",
+    "codex_main_merge_guard": "PASS_EXPLICIT_USER_ONLY_NO_FF",
+    "codex_yaml_parse": "PASS",
+    "agents_instruction_profile": "PASS"
   },
-  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, and active project retargeting were validated by shell commands."
+  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project retargeting, Codex runtime guardrails, and main-merge safeguards were validated by shell/Ruby commands."
 }

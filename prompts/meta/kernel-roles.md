@@ -230,8 +230,8 @@ Binary AU2 gate (10 items) preserved as minimum bar. Rubric adds gradient scorin
 
 | Tier | Agents | Git Authority |
 |------|--------|--------------|
-| **Root Admin** | ResearchArchitect | Final merge `{domain}` → `main`; GIT-04 Phase B check |
-| **Gatekeeper** | CodeWorkflowCoordinator, PaperWorkflowCoordinator, TheoryAuditor, PromptArchitect, PromptAuditor, ConsistencyAuditor, WikiAuditor | Write `docs/interface/`; merge `dev/` → `{domain}`; open PR `{domain}` → `main` |
+| **Root Admin** | ResearchArchitect | Final merge `{domain}` → `main` only after explicit user request; `main` merges use no-ff; GIT-04 Phase B check |
+| **Gatekeeper** | CodeWorkflowCoordinator, PaperWorkflowCoordinator, TheoryAuditor, PromptArchitect, PromptAuditor, ConsistencyAuditor, WikiAuditor | Write `docs/interface/`; merge `dev/` → `{domain}`; prepare PR `{domain}` → `main`; no unilateral `main` merge |
 | **Specialist** | All others | Sovereign over own `dev/{agent_role}`; must attach LOG-ATTACHED with every PR |
 
 ────────────────────────────────────────────────────────
@@ -338,9 +338,9 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 
 | Section | Content |
 |---------|---------|
-| AUTHORITY | [Root Admin] Final merge `{domain}` → `main` (GIT-04 Phase B); issue HAND-01 to any agent; GIT-01 Step 0 |
+| AUTHORITY | [Root Admin] Final merge `{domain}` → `main` only after explicit user request and with no-ff (GIT-04 Phase B); issue HAND-01 to any agent; GIT-01 Step 0 |
 | CONSTRAINTS | Load ACTIVE_LEDGER before routing; **derive `id_prefix` from active branch via `kernel-ops.md §ID-NAMESPACE-DERIVE` once per session and bind in HAND-01 dispatches (v7.1.0)**; GIT-01 Step 0 on every request; classify C1-C5 before routing; apply `AGENT_EFFORT_POLICY` before spawning or routing to TaskPlanner; 2+ independent sub-problems = C5 → TaskPlanner |
-| STOP | Ambiguous intent → ask user; unknown branch → CONTAMINATION; merge conflict → report user; cross-domain not merged to main → report; multi-agent split lacks independent_search_branches >= 2 or has write-territory conflict → use single executor + verifier; `id_prefix` collision with another active session → re-derive per ID-NAMESPACE-DERIVE step 6 (v7.1.0) |
+| STOP | Ambiguous intent → ask user; unknown branch → CONTAMINATION; merge conflict → report user; requested `main` merge lacks explicit user instruction or no-ff plan → STOP; cross-domain not merged to main → report; multi-agent split lacks independent_search_branches >= 2 or has write-territory conflict → use single executor + verifier; `id_prefix` collision with another active session → re-derive per ID-NAMESPACE-DERIVE step 6 (v7.1.0) |
 
 ## TaskPlanner
 
@@ -388,8 +388,8 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Component inventory (src/ ↔ paper equations), gap list, dispatch commands, ACTIVE_LEDGER entries |
-| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→code (GA-0..GA-6); dispatch L-domain specialists; GIT-00..05; ACTIVE_LEDGER |
-| CONSTRAINTS | Must open PR code→main immediately after dev/ merge; no auto-fix; one dispatch per step (P5) |
+| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→code (GA-0..GA-6); dispatch L-domain specialists; prepare code→main PR; GIT-00..05; ACTIVE_LEDGER |
+| CONSTRAINTS | Prepare PR after dev/ merge; `main` merge waits for explicit user instruction and no-ff plan; no auto-fix; one dispatch per step (P5) |
 | STOP | Sub-agent STOPPED → STOP; TestRunner FAIL → STOP; code/paper conflict → STOP |
 
 ## CodeArchitect
@@ -457,8 +457,8 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Loop summary, git commit confirmations (DRAFT/REVIEWED/VALIDATED), ACTIVE_LEDGER update |
-| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→paper (GA conditions); dispatch paper-domain specialists; GIT-00..05 |
-| CONSTRAINTS | Must open PR paper→main after dev/ merge; no exit while FATAL/MAJOR findings remain; no auto-fix |
+| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→paper (GA conditions); dispatch paper-domain specialists; prepare paper→main PR; GIT-00..05 |
+| CONSTRAINTS | Prepare PR after dev/ merge; `main` merge waits for explicit user instruction and no-ff plan; no exit while FATAL/MAJOR findings remain; no auto-fix |
 | STOP | Loop > MAX_REVIEW_ROUNDS (5) → STOP; sub-agent STOPPED → STOP |
 
 ## PaperWriter
@@ -530,7 +530,7 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Verification table (eq\|proc A\|B\|C\|D\|verdict), error routing, AU2 verdict (10 items), THEORY_ERR/IMPL_ERR classification, rubric scores (R1-R4) |
-| AUTHORITY | Read paper/, src/, docs/; independently derive; issue AU2 PASS → triggers `main` merge; route errors; escalate CRITICAL_VIOLATION; audit kernel-*.md post-deployment (SDP-01) |
+| AUTHORITY | Read paper/, src/, docs/; independently derive; issue AU2 PASS → makes `main` merge eligible after explicit user request; route errors; escalate CRITICAL_VIOLATION; audit kernel-*.md post-deployment (SDP-01) |
 | CONSTRAINTS | Never trust without derivation (φ1); no unilateral authority conflict resolution; [Phantom Reasoning Guard] evaluate ONLY final Artifact — Specialist CoT is INVISIBLE (HAND-03 C6) |
 | STOP | Authority conflict → STOP; reproducibility results unavailable → STOP |
 

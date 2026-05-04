@@ -34,7 +34,7 @@ Also reads `prompts/agents-claude/_base.yaml` and `prompts/agents-codex/_base.ya
 | Env | Style |
 |-----|-------|
 | Claude | explicit constraints, role narrative, traceability emphasis |
-| Codex | executable clarity, patch-oriented work, compact invariants |
+| Codex | executable clarity, patch-oriented work, compact invariants, worktree-first commits, user-approved no-ff main merges |
 
 --------------------------------------------------------
 # § DEPLOYMENT WORKFLOW
@@ -77,6 +77,17 @@ Generated docs:
 | prompts/README.md | generated prompt-system guide |
 | AGENTS.md | lightweight external-agent instructions |
 
+`AGENTS.md` content profile:
+
+- first-read operational contract for external agents;
+- read order for active brief, ledger, project rules, project map, base prompt,
+  and role prompt;
+- source-integrity and output-location map;
+- Codex worktree, coherent-commit, user-change, and user-approved no-ff
+  `main` merge guardrails;
+- anomaly-detection research claim gates and Python experiment standard;
+- prompt-maintenance path back to `prompts/meta/` and `prompts/skills/`.
+
 ## Stage 3 - Generate Agent Prompts
 
 Primary output: `prompts/agents-{env}/{AgentName}.md`.
@@ -90,6 +101,15 @@ Agent Prompt = Base[env] + Domain[domain] + RoleContract[agent] + RULE_MANIFEST 
 Prompt compression rule: each generated agent prompt contains only role, STOP
 conditions, output contract, and JIT references. Full operation bodies stay in
 `kernel-ops.md` or `prompts/skills/`.
+
+Codex generation invariants:
+
+- Preserve `prompts/agents-codex/_base.yaml :: codex_runtime`.
+- Generated Codex prompts must not imply unilateral `main` merge authority.
+- Any Codex prompt that mentions a `main` merge must also require explicit user
+  instruction and no-ff merge semantics.
+- Coordinator prompts should say "prepare PR" or "merge eligible" unless the
+  step is explicitly user-approved `main` integration.
 
 ## Stage 4 - Validate
 
