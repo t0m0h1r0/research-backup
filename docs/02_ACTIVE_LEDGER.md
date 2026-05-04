@@ -48,3 +48,4 @@
 | ID | Branch | Worktree | Objective | Status | Updated |
 |----|--------|----------|-----------|--------|---------|
 | A-XELATEX-001 | `codex/researcharchitect-xelatex` | `worktrees/researcharchitect-xelatex` | XeLaTeX recast of `heavy_tail_backup_v13.pdf` | VALIDATED | 2026-05-04 |
+| A-REVIEW-001 | `codex/researcharchitect-paper-review` | `worktrees/researcharchitect-paper-review` | Whole-paper reviewer audit, narrative repair, and notation unification | ACTIVE | 2026-05-04 |
