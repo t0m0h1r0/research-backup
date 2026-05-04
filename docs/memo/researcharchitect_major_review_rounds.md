@@ -190,7 +190,54 @@ None.
   detection limitation, clean backup, recovery horizon, backup interval, and
   operational design.
 
-## Final Stop Decision
+## Round 10 Interim Stop Decision
 
 Stopped after Round 10 because MAJOR-or-higher findings are zero. This reaches
-but does not exceed the 10-round cap.
+but does not exceed the 10-round cap. A subsequent user review reopened the
+strict-review loop, so the next pass is tracked as a new post-Round-10 cycle
+rather than extending the closed 10-round sequence.
+
+## Post-Round-10 Cycle, Round 1
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| P10-R1-MAJ-01 | MAJOR | The dynamic-retention section defined the effective retention horizon as `(n+n_ext)\Delta-\tau_R`, while the manuscript's backup schedule and residual-loss model define the clean-backup horizon as generation count times interval. This made the additional-retention theorem and numerical table use a different recovery rule from the main model. | Rebase dynamic retention on the same effective horizon `T(n_ext)=(n+n_ext)\Delta`, update the continuous optimum, feasibility set, proof, reproducible script, and numerical table values. |
+| P10-R1-MAJ-02 | MAJOR | The numerical-example opening described `\Dstar` as the amount of old clean backup to keep, but `\Dstar` is an interval; the actual clean-recovery horizon is `n\Dstar`. This blurred the central practical recommendation. | Rewrite the numerical-example framing to distinguish backup interval `\Dstar` from clean-recovery horizon `n\Dstar`, and state the baseline horizon `n\Dstar=93.33` days. |
+
+### Minor Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| P10-R1-MIN-01 | MINOR | The finite-frequency curvature symbol `Q''_\infty` suggested an old limit object rather than curvature at `\Dstar`. | Rename it to `Q''_\star`. |
+| P10-R1-MIN-02 | MINOR | The practical input lists in the abstract and introduction omitted scan load even though the design formula depends on `\kappa_s`. | Add scan load to the operational-quantity lists. |
+
+### Status
+
+DONE. The dynamic-retention model now uses the same clean-backup horizon
+definition as the main loss model; the Python check and numerical table were
+regenerated; and the practical wording now keeps interval, retained horizon,
+and scan load distinct.
+
+## Post-Round-10 Cycle, Round 2
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`,
+  `Undefined`, `Error`, and `Missing`: only existing xeCJK font redefinition
+  warnings remain.
+- Stale-scan found no active matches for the old dynamic-retention
+  `-\tau_R` horizon, old numerical table values, or `Q''_\infty`.
+
+## Final Stop Decision
+
+Stopped after Post-Round-10 Cycle Round 2 because MAJOR-or-higher findings are
+zero, well below the reopened 10-round cap.
