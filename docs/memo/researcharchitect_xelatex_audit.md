@@ -62,3 +62,10 @@ latexmk -xelatex heavy_tail_backup_recast_xelatex.tex
 
 from `paper/sections` completed successfully after the split and regenerated the
 same 12-page PDF target.
+
+## Warning-Cleanup Verification
+
+After removing the duplicate `geometry` setup, avoiding italic theorem bodies for
+Japanese text, and tightening the TikZ state diagram, a clean rebuild completed
+successfully. Searching the final log for `Warning`, `Overfull`, `Underfull`,
+`undefined`, `Undefined`, and `Error` returned no matches.
