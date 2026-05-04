@@ -24,6 +24,9 @@
 | CHK-AD-004 | DONE | M | `docs/interface/ResearchBrief.md` | captured initial user scope as active contract | 2026-05-04 |
 | CHK-AD-005 | DONE | P | `prompts/agents-codex/`, `prompts/agents-claude/` | 23 agent files per environment verified | 2026-05-04 |
 | CHK-AD-006 | READY | M | `docs/memo/anomaly_detection_problem_frame.md` | first recommended planning artifact | 2026-05-04 |
+| CHK-RESEARCH-001 | DONE | T | `docs/memo/researcharchitect_math_derivation_audit.md` | strict derivation audit classified three MAJOR root-cause issues | 2026-05-04 |
+| CHK-RESEARCH-002 | DONE | A/R | `paper/sections/tex/`, `analysis/paper_review_checks/run.py` | repaired theorem domains, added tilted-moment proof, and guarded reproducible checks | 2026-05-04 |
+| CHK-RESEARCH-003 | DONE | Q | `analysis/paper_review_checks/results/manifest.json` | Python recomputation and XeLaTeX build passed after math repairs | 2026-05-04 |
 
 ## §ASSUMPTIONS
 
@@ -54,4 +57,4 @@
 | none | main | n/a | no active branch lock | INACTIVE | 2026-05-04 |
 | A-XELATEX-001 | `codex/researcharchitect-xelatex` | `worktrees/researcharchitect-xelatex` | XeLaTeX recast of `heavy_tail_backup_v13.pdf` | VALIDATED | 2026-05-04 |
 | A-REVIEW-001 | `codex/researcharchitect-paper-review` | `worktrees/researcharchitect-paper-review` | Whole-paper reviewer audit, narrative repair, and notation unification | MERGED | 2026-05-04 |
-| RESEARCH-MATH-001 | `codex/researcharchitect-math-audit` | `worktrees/researcharchitect-math-audit` | Strict derivation audit and root-cause repair for manuscript equations; session `fae80cac-2527-40e9-b80a-8d3a891de483`; id_prefix `RESEARCH` | ACTIVE | 2026-05-04 |
+| RESEARCH-MATH-001 | `codex/researcharchitect-math-audit` | `worktrees/researcharchitect-math-audit` | Strict derivation audit and root-cause repair for manuscript equations; session `fae80cac-2527-40e9-b80a-8d3a891de483`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |

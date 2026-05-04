@@ -63,3 +63,31 @@ the definition/proposition so the integer optimum rule is mathematically scoped.
 2. Add validation guards in `analysis/paper_review_checks/run.py` for the same
    parameter domain.
 3. Re-run the table generator and LaTeX/text checks.
+
+## Fix Status
+
+| Finding | Status | Repair |
+|---------|--------|--------|
+| MAJ-01 | DONE | Added the missing $\kappa_s>0$ condition to the interior-design assumption, scoped the abstract/conclusion claim to $L>d_1\tau_R+d_0$ and $\kappa_s>0$, and added the same guard to the table generator. |
+| MAJ-02 | DONE | Added a proof of the Pareto tilted-moment lemma from the integral representation, incomplete-gamma asymptotics, the exponential integral boundary case, and dominated convergence. |
+| MAJ-03 | DONE | Added positivity and feasibility conditions for dynamic retention and mirrored the parameter-domain requirements in the reproducible check. |
+
+## Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Error`, `undefined`, `Undefined`, `Overfull`,
+  `Underfull`, and `Missing`: no matches. Remaining matches are xeCJK font
+  redefinition warnings only.
+- Text-level drift scan found no stale `19.72`, old ceiling-only retention rule,
+  or old numerator form in active manuscript sections.
+
+## CoVe
+
+- Q1 logical/mathematical consistency: corrected; theorem domains now match the
+  derivative and integer convexity proofs.
+- Q2 axiom compliance: pass; source artifacts under `paper/source/` were not
+  modified.
+- Q3 scope/interface fidelity: pass; changes are limited to derivation audit,
+  manuscript math statements, and reproducible checks.
