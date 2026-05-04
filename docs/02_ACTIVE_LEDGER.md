@@ -33,6 +33,7 @@
 | CHK-RESEARCH-007 | DONE | A/Q | `paper/sections/tex/00_abstract.tex`, `paper/sections/tex/05_backup_optimization.tex`, `paper/sections/tex/08_conclusion.tex` | reviewer Rounds 7-8 repaired applied-research takeaway clarity and verified no MAJOR-or-higher findings | 2026-05-04 |
 | CHK-RESEARCH-008 | DONE | A/Q | `paper/sections/tex/00_title.tex`, `paper/sections/tex/01_introduction.tex`, `paper/sections/tex/06_dynamic_retention.tex`, `paper/sections/tex/07_numerical_examples.tex` | reviewer Rounds 9-10 aligned research motivation and section framing with the clean-backup recovery-horizon conclusion | 2026-05-04 |
 | CHK-RESEARCH-009 | DONE | A/R/Q | `paper/sections/tex/06_dynamic_retention.tex`, `paper/sections/tex/07_numerical_examples.tex`, `analysis/paper_review_checks/run.py` | reopened strict review repaired dynamic-retention horizon consistency and verified no MAJOR-or-higher findings | 2026-05-04 |
+| CHK-RESEARCH-010 | DONE | P/M | `AGENTS.md`, `prompts/agents-codex/`, `prompts/meta/kernel-roles.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/codex_config_optimization_audit.md` | optimized Codex worktree, commit, user-change, and explicit-user/no-ff main-merge guardrails | 2026-05-04 |
 
 ## §ASSUMPTIONS
 
@@ -49,6 +50,7 @@
 |----|--------|--------|----------|
 | LES-AD-001 | ACTIVE | Project retargeting should change `kernel-project.md` and generated runtime docs while keeping the generic kernel stable. | `prompts/meta/kernel-project.md` |
 | LES-AD-002 | ACTIVE | Anomaly detection research needs explicit leakage, thresholding, and benchmark-compatibility gates before writing claims. | `docs/03_PROJECT_RULES.md` |
+| LES-RESEARCH-CODEX-001 | ACTIVE | Codex agent prompts need an inherited runtime profile plus local coordinator wording so no generated role implies unilateral `main` merge. | `prompts/agents-codex/_base.yaml` |
 
 ## §REPLAN_LOG
 
@@ -64,4 +66,4 @@
 | A-XELATEX-001 | `codex/researcharchitect-xelatex` | `worktrees/researcharchitect-xelatex` | XeLaTeX recast of `heavy_tail_backup_v13.pdf` | VALIDATED | 2026-05-04 |
 | A-REVIEW-001 | `codex/researcharchitect-paper-review` | `worktrees/researcharchitect-paper-review` | Whole-paper reviewer audit, narrative repair, and notation unification | MERGED | 2026-05-04 |
 | RESEARCH-MATH-001 | `codex/researcharchitect-math-audit` | `worktrees/researcharchitect-math-audit` | Strict derivation audit and root-cause repair for manuscript equations; session `fae80cac-2527-40e9-b80a-8d3a891de483`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |
-| RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | ACTIVE | 2026-05-04 |
+| RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |
