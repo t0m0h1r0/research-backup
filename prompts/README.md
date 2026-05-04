@@ -24,6 +24,16 @@ dataset, or application domain has been selected yet.
 Substantial tasks should advance research evidence first and capture workflow
 lessons when they improve the agent system.
 
+## Operational Entry Points
+
+External agents start from `AGENTS.md`, then read `docs/interface/ResearchBrief.md`,
+`docs/02_ACTIVE_LEDGER.md`, `docs/03_PROJECT_RULES.md`, and `docs/01_PROJECT_MAP.md`.
+Named agents read their environment `_base.yaml` before their role prompt.
+
+Codex-facing operation is worktree-first: use a `codex/` task branch, commit
+coherent checkpoints, preserve user edits, and merge to `main` only after
+explicit user instruction with no-ff semantics.
+
 ## Agent Roster
 
 The deployed roster contains 23 roles per environment, including ResearchArchitect,

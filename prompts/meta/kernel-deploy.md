@@ -77,6 +77,17 @@ Generated docs:
 | prompts/README.md | generated prompt-system guide |
 | AGENTS.md | lightweight external-agent instructions |
 
+`AGENTS.md` content profile:
+
+- first-read operational contract for external agents;
+- read order for active brief, ledger, project rules, project map, base prompt,
+  and role prompt;
+- source-integrity and output-location map;
+- Codex worktree, coherent-commit, user-change, and user-approved no-ff
+  `main` merge guardrails;
+- anomaly-detection research claim gates and Python experiment standard;
+- prompt-maintenance path back to `prompts/meta/` and `prompts/skills/`.
+
 ## Stage 3 - Generate Agent Prompts
 
 Primary output: `prompts/agents-{env}/{AgentName}.md`.

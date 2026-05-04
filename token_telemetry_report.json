@@ -19,7 +19,8 @@
     "source_artifact_registered": "docs/interface/ResearchBrief.md",
     "codex_runtime_guardrails": "PASS",
     "codex_main_merge_guard": "PASS_EXPLICIT_USER_ONLY_NO_FF",
-    "codex_yaml_parse": "PASS"
+    "codex_yaml_parse": "PASS",
+    "agents_instruction_profile": "PASS"
   },
   "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project retargeting, Codex runtime guardrails, and main-merge safeguards were validated by shell/Ruby commands."
 }

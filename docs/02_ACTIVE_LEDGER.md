@@ -34,6 +34,7 @@
 | CHK-RESEARCH-008 | DONE | A/Q | `paper/sections/tex/00_title.tex`, `paper/sections/tex/01_introduction.tex`, `paper/sections/tex/06_dynamic_retention.tex`, `paper/sections/tex/07_numerical_examples.tex` | reviewer Rounds 9-10 aligned research motivation and section framing with the clean-backup recovery-horizon conclusion | 2026-05-04 |
 | CHK-RESEARCH-009 | DONE | A/R/Q | `paper/sections/tex/06_dynamic_retention.tex`, `paper/sections/tex/07_numerical_examples.tex`, `analysis/paper_review_checks/run.py` | reopened strict review repaired dynamic-retention horizon consistency and verified no MAJOR-or-higher findings | 2026-05-04 |
 | CHK-RESEARCH-010 | DONE | P/M | `AGENTS.md`, `prompts/agents-codex/`, `prompts/meta/kernel-roles.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/codex_config_optimization_audit.md` | optimized Codex worktree, commit, user-change, and explicit-user/no-ff main-merge guardrails | 2026-05-04 |
+| CHK-RESEARCH-011 | DONE | P/M | `AGENTS.md`, `prompts/README.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/agents_instruction_optimization_audit.md` | refined external-agent first-read instructions, artifact placement map, research gates, and prompt-maintenance path | 2026-05-04 |
 
 ## §ASSUMPTIONS
 
@@ -51,6 +52,7 @@
 | LES-AD-001 | ACTIVE | Project retargeting should change `kernel-project.md` and generated runtime docs while keeping the generic kernel stable. | `prompts/meta/kernel-project.md` |
 | LES-AD-002 | ACTIVE | Anomaly detection research needs explicit leakage, thresholding, and benchmark-compatibility gates before writing claims. | `docs/03_PROJECT_RULES.md` |
 | LES-RESEARCH-CODEX-001 | ACTIVE | Codex agent prompts need an inherited runtime profile plus local coordinator wording so no generated role implies unilateral `main` merge. | `prompts/agents-codex/_base.yaml` |
+| LES-RESEARCH-CODEX-002 | ACTIVE | External-agent instructions work best as a read-order and artifact-placement map, with detailed operation bodies kept in kernel files and skill capsules. | `AGENTS.md` |
 
 ## §REPLAN_LOG
 
