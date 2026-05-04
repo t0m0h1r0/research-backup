@@ -68,4 +68,4 @@
 | A-XELATEX-001 | `codex/researcharchitect-xelatex` | `worktrees/researcharchitect-xelatex` | XeLaTeX recast of `heavy_tail_backup_v13.pdf` | VALIDATED | 2026-05-04 |
 | A-REVIEW-001 | `codex/researcharchitect-paper-review` | `worktrees/researcharchitect-paper-review` | Whole-paper reviewer audit, narrative repair, and notation unification | MERGED | 2026-05-04 |
 | RESEARCH-MATH-001 | `codex/researcharchitect-math-audit` | `worktrees/researcharchitect-math-audit` | Strict derivation audit and root-cause repair for manuscript equations; session `fae80cac-2527-40e9-b80a-8d3a891de483`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |
-| RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |
+| RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | MERGED | 2026-05-04 |
