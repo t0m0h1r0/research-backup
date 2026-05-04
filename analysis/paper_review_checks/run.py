@@ -62,7 +62,59 @@ def tauber_c(alpha: float, beta: float, tm: float = 1.0) -> float:
     return -(1.0 - math.exp(-beta * tm)) + beta * tm * integral / (1.0 - alpha)
 
 
-def first_delta_root(alpha: float, lam: float, params: dict[str, float]) -> float:
+def exp_tilted_tail(alpha: float, beta: float, lower: float, tm: float = 1.0) -> float:
+    if lower < tm:
+        lower = tm
+
+    def integrand(t: float) -> float:
+        return math.exp(-beta * t) * alpha * (tm**alpha) * t ** (-(alpha + 1.0))
+
+    upper = lower
+    while True:
+        upper *= 2.0
+        tail_bound = math.exp(-beta * upper) * (tm / upper) ** alpha
+        if tail_bound < 1e-11 or upper > 1e5:
+            break
+    if upper == lower:
+        return 0.0
+    return adaptive_simpson(integrand, lower, upper, 1e-10, 24)
+
+
+def exp_tilted_truncated_moment(
+    alpha: float, beta: float, upper: float, tm: float = 1.0
+) -> float:
+    if upper <= tm:
+        return 0.0
+
+    def integrand(t: float) -> float:
+        return t * math.exp(-beta * t) * alpha * (tm**alpha) * t ** (-(alpha + 1.0))
+
+    return adaptive_simpson(integrand, tm, upper, 1e-10, 24)
+
+
+def residual_loss(alpha: float, delta: float, params: dict[str, float]) -> float:
+    tm = params["tm"]
+    n = int(params["n"])
+    beta = params["beta"]
+    eta = params["eta"]
+    d1 = params["d1"]
+    d0 = params["d0"]
+    tau = params["tau_R"]
+    kappa_s = params["kappa_s"]
+    loss = params["L"]
+    horizon = n * delta
+    l_beta = exp_tilted_tail(alpha, beta, tm, tm)
+    h_beta = exp_tilted_tail(alpha, beta, horizon, tm)
+    m_beta = exp_tilted_truncated_moment(alpha, beta, horizon, tm)
+    recoverable = l_beta - h_beta
+    return (
+        eta * (d1 * tau + d0) * recoverable
+        + eta * d1 * kappa_s * m_beta
+        + loss * ((1.0 - eta) * recoverable + h_beta)
+    )
+
+
+def stationary_candidates(alpha: float, lam: float, params: dict[str, float]) -> list[float]:
     tm = params["tm"]
     n = int(params["n"])
     beta = params["beta"]
@@ -84,12 +136,15 @@ def first_delta_root(alpha: float, lam: float, params: dict[str, float]) -> floa
     def gprime(delta: float) -> float:
         return -cb / (delta * delta) + lam * qprime(delta)
 
-    previous_x = dstar
+    roots: list[float] = []
+    previous_x = params["delta_min"]
     previous_y = gprime(previous_x)
     for i in range(1, 20001):
-        x = dstar + (delta_max - dstar) * i / 20000.0
+        x = params["delta_min"] + (delta_max - params["delta_min"]) * i / 20000.0
         y = gprime(x)
-        if previous_y * y <= 0.0:
+        if previous_y == 0.0:
+            roots.append(previous_x)
+        elif previous_y * y < 0.0:
             lo, hi = previous_x, x
             flo = previous_y
             for _ in range(80):
@@ -100,9 +155,29 @@ def first_delta_root(alpha: float, lam: float, params: dict[str, float]) -> floa
                 else:
                     lo = mid
                     flo = fmid
-            return (lo + hi) / 2.0
+            roots.append((lo + hi) / 2.0)
         previous_x, previous_y = x, y
-    return delta_max
+    if previous_y == 0.0:
+        roots.append(previous_x)
+    return sorted({round(root, 12) for root in roots if params["delta_min"] <= root <= delta_max})
+
+
+def optimal_delta(alpha: float, lam: float, params: dict[str, float]) -> dict[str, float | int]:
+    candidates = [
+        params["delta_min"],
+        params["delta_max"],
+        *stationary_candidates(alpha, lam, params),
+    ]
+
+    def objective(delta: float) -> float:
+        return params["cb"] / delta + lam * residual_loss(alpha, delta, params)
+
+    best_delta = min(candidates, key=objective)
+    return {
+        "delta": best_delta,
+        "objective": objective(best_delta),
+        "candidate_count": len(candidates),
+    }
 
 
 def retention_row(alpha: float, params: dict[str, float]) -> dict[str, float | int]:
@@ -182,7 +257,9 @@ def main() -> None:
     for alpha in [0.5, 0.7, 1.0, 1.5]:
         row = {"alpha": alpha}
         for lam in [1.0, 10.0, 100.0, 1000.0]:
-            row[f"lambda_{lam:g}"] = first_delta_root(alpha, lam, params)
+            optimum = optimal_delta(alpha, lam, params)
+            row[f"lambda_{lam:g}"] = optimum["delta"]
+            row[f"candidates_lambda_{lam:g}"] = optimum["candidate_count"]
         row["dstar"] = params["dstar"]
         delta_table.append(row)
 
