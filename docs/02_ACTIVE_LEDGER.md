@@ -27,6 +27,9 @@
 | CHK-RESEARCH-001 | DONE | T | `docs/memo/researcharchitect_math_derivation_audit.md` | strict derivation audit classified three MAJOR root-cause issues | 2026-05-04 |
 | CHK-RESEARCH-002 | DONE | A/R | `paper/sections/tex/`, `analysis/paper_review_checks/run.py` | repaired theorem domains, added tilted-moment proof, and guarded reproducible checks | 2026-05-04 |
 | CHK-RESEARCH-003 | DONE | Q | `analysis/paper_review_checks/results/manifest.json` | Python recomputation and XeLaTeX build passed after math repairs | 2026-05-04 |
+| CHK-RESEARCH-004 | DONE | A/T | `paper/sections/tex/04_tauber_transition.tex`, `paper/sections/tex/02_model_formulation.tex` | reviewer Round 4 aligned narrative, removed dead `T_e`, and recast the transition theorem around the repaired residual loss | 2026-05-04 |
+| CHK-RESEARCH-005 | DONE | A/R | `paper/sections/tex/06_dynamic_retention.tex`, `analysis/paper_review_checks/run.py` | reviewer Round 5 separated cost-rate retention notation from one-period retention cost notation | 2026-05-04 |
+| CHK-RESEARCH-006 | DONE | Q | `docs/memo/researcharchitect_major_review_rounds.md` | reviewer Round 6 found no MAJOR-or-higher findings before the 10-round cap | 2026-05-04 |
 
 ## §ASSUMPTIONS
 

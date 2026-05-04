@@ -56,8 +56,9 @@ None.
 
 ## Stop Decision
 
-Stopped after Round 3 because MAJOR-or-higher findings are zero. This is below
-the 10-round cap.
+Round 3 had no MAJOR-or-higher findings under the prior audit scope. The
+subsequent user request required a stricter reviewer pass focused on narrative,
+notation, and logical consistency, so review continued at Round 4.
 
 ## Round 4
 
@@ -72,7 +73,9 @@ the 10-round cap.
 
 ### Status
 
-IN PROGRESS. Root-level manuscript and check-script repairs are being applied.
+DONE. The manuscript now uses the actual backup-free limit of `\Qfull` for the
+phase-transition theorem, removes dead `T_e` notation, uses Poisson/Campbell
+language for the rate argument, and corrects the `c_b` unit.
 
 ## Round 5
 
@@ -84,4 +87,29 @@ IN PROGRESS. Root-level manuscript and check-script repairs are being applied.
 
 ### Status
 
-IN PROGRESS. Unit/notation separation is being applied.
+DONE. The calendar-time rate keeps `c_n` as an operating cost rate, while the
+single-period retention problem now uses the separate symbol `c_{\mathrm{ext}}`.
+The Python check and generated result parameters were updated accordingly.
+
+## Round 6
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Error`, `undefined`, `Undefined`, `Overfull`,
+  `Underfull`, and `Missing`: no matches. Remaining matches are xeCJK font
+  redefinition warnings only.
+- Stale-claim scan found no active-manuscript matches for dead `T_e`,
+  `純粋検知`, old `Q_\infty`, `万円・日`, old `c_n=50`, or old
+  dynamic-retention positivity notation.
+
+## Final Stop Decision
+
+Stopped after Round 6 because MAJOR-or-higher findings are zero. This is below
+the 10-round cap.
