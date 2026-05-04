@@ -109,7 +109,47 @@ None.
   `純粋検知`, old `Q_\infty`, `万円・日`, old `c_n=50`, or old
   dynamic-retention positivity notation.
 
-## Final Stop Decision
+## Round 6 Interim Stop Decision
 
 Stopped after Round 6 because MAJOR-or-higher findings are zero. This is below
-the 10-round cap.
+the 10-round cap. A subsequent user review reopened the narrative audit for
+applied-research clarity.
+
+## Round 7
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R7-MAJ-01 | MAJOR | The abstract and conclusion foregrounded derivation details while leaving the applied conclusion implicit. For an applied ransomware-defense paper, a reader should immediately understand what the formulas recommend for defense and backup recovery operations. | Rewrite the abstract and conclusion around the practical takeaway: detection alone is insufficient, clean-backup recovery horizon is a first-class defense variable, and the design formula gives an operational rule for backup interval and retained generations. Move the detailed interpretation of the formula into Section 5 as part of the derivation discussion. |
+
+### Status
+
+DONE. The abstract now opens with the applied conclusion and three practical
+recommendations. The conclusion now states the defense and recovery implications
+in plain language before summarizing the mathematical contributions. Section 5
+now includes a dedicated practical interpretation of the closed-form design
+rule.
+
+## Round 8
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`,
+  `Undefined`, `Error`, and `Missing`: only existing xeCJK font redefinition
+  warnings remain.
+- Active-manuscript scan found no matches for stale reviewer-facing wording such
+  as `査読上`, `小難しい`, or `未条件化`. Historical memo entries remain only as
+  audit history.
+
+## Final Stop Decision
+
+Stopped after Round 8 because MAJOR-or-higher findings are zero. This remains
+below the 10-round cap.
