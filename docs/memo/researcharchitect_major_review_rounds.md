@@ -73,3 +73,15 @@ the 10-round cap.
 ### Status
 
 IN PROGRESS. Root-level manuscript and check-script repairs are being applied.
+
+## Round 5
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R5-MAJ-01 | MAJOR | The manuscript uses `c_n n_{\mathrm{ext}}` both in the calendar-time cost rate and in the dynamic-retention single-period objective. In the rate equation it must be a cost rate, while in the retention objective it is a one-period storage cost. Reusing the same symbol makes the units inconsistent and undermines the notation discipline. | Define `c_I` and `c_n` in the rate equation as operating cost rates, introduce a separate `c_{\mathrm{ext}}` for the single-period retention objective, and update the reproducible check and numerical caption. |
+
+### Status
+
+IN PROGRESS. Unit/notation separation is being applied.
