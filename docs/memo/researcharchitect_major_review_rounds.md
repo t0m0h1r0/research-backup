@@ -149,7 +149,48 @@ None.
   as `査読上`, `小難しい`, or `未条件化`. Historical memo entries remain only as
   audit history.
 
-## Final Stop Decision
+## Round 8 Interim Stop Decision
 
 Stopped after Round 8 because MAJOR-or-higher findings are zero. This remains
-below the 10-round cap.
+below the 10-round cap. A subsequent user review reopened the narrative audit
+for consistency between research motivation and the applied conclusion.
+
+## Round 9
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R9-MAJ-01 | MAJOR | After R7, the abstract and conclusion clearly stated that detection alone is insufficient and that clean-backup recovery horizon is the applied design variable, but the title, introduction, numerical examples, and dynamic-retention setup still foregrounded mathematical generality more than the operational motivation. This left the manuscript's narrative arc inconsistent. | Retitle the paper around clean-backup retention and ransomware defense, rewrite the introduction from the practical problem of contaminated recent backups, recast the contribution list around recovery-horizon design, and add applied framing to the numerical and dynamic-retention sections. |
+
+### Status
+
+DONE. The manuscript now opens from the practical defense problem, introduces
+heavy-tailed dwell time as the reason recent backups may be contaminated, frames
+the model around the effective clean-recovery horizon `n\Delta`, and connects
+the numerical and dynamic-retention sections back to operational backup
+decisions.
+
+## Round 10
+
+### MAJOR Findings
+
+None.
+
+### Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from
+  `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`,
+  `Undefined`, `Error`, and `Missing`: only existing xeCJK font redefinition
+  warnings remain.
+- Narrative scan confirmed that the title, abstract, introduction, numerical
+  examples, dynamic retention, and conclusion all use the same core terms:
+  detection limitation, clean backup, recovery horizon, backup interval, and
+  operational design.
+
+## Final Stop Decision
+
+Stopped after Round 10 because MAJOR-or-higher findings are zero. This reaches
+but does not exceed the 10-round cap.

@@ -31,6 +31,7 @@
 | CHK-RESEARCH-005 | DONE | A/R | `paper/sections/tex/06_dynamic_retention.tex`, `analysis/paper_review_checks/run.py` | reviewer Round 5 separated cost-rate retention notation from one-period retention cost notation | 2026-05-04 |
 | CHK-RESEARCH-006 | DONE | Q | `docs/memo/researcharchitect_major_review_rounds.md` | reviewer Round 6 found no MAJOR-or-higher findings before the 10-round cap | 2026-05-04 |
 | CHK-RESEARCH-007 | DONE | A/Q | `paper/sections/tex/00_abstract.tex`, `paper/sections/tex/05_backup_optimization.tex`, `paper/sections/tex/08_conclusion.tex` | reviewer Rounds 7-8 repaired applied-research takeaway clarity and verified no MAJOR-or-higher findings | 2026-05-04 |
+| CHK-RESEARCH-008 | DONE | A/Q | `paper/sections/tex/00_title.tex`, `paper/sections/tex/01_introduction.tex`, `paper/sections/tex/06_dynamic_retention.tex`, `paper/sections/tex/07_numerical_examples.tex` | reviewer Rounds 9-10 aligned research motivation and section framing with the clean-backup recovery-horizon conclusion | 2026-05-04 |
 
 ## §ASSUMPTIONS
 
