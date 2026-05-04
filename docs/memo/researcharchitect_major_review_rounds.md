@@ -58,3 +58,18 @@ None.
 
 Stopped after Round 3 because MAJOR-or-higher findings are zero. This is below
 the 10-round cap.
+
+## Round 4
+
+### MAJOR Findings
+
+| ID | Severity | Finding | Repair |
+|----|----------|---------|--------|
+| R4-MAJ-01 | MAJOR | The phase-transition theorem used a simplified `Q_\infty` that did not equal the backup-free limit of the manuscript's repaired residual loss: it omitted `\eta`, `\kappa_s`, `d_0`, and the late full-loss term. This weakens both logical consistency and narrative credibility. | Redefine the theorem using the actual `\Qfull` limit as the holding boundary is removed, state the `\alpha=1` transition under `\kappa_s>0`, and update abstract/introduction/conclusion language. |
+| R4-MAJ-02 | MAJOR | The attack-phase definition retained an exponential destruction time `T_e`, but no cost, transition diagram, theorem, or numerical check used it. This creates a dead stochastic object and makes the model look more general than the loss kernel. | Remove `T_e` from the active model and describe the post-onset outcome as the symptom-detection branch already used by `\Qfull`. |
+| R4-MAJ-03 | MAJOR | The paper still invoked "renewal reward" as part of its core narrative after the rate formula had been repaired to marked-Poisson/Campbell accounting. The narrative therefore pointed readers toward the wrong denominator-free justification. | Replace core narrative and proof wording with Poisson reward process / Campbell formula language. |
+| R4-MAJ-04 | MAJOR | The numerical section assigns `c_b` units of `万円・日`, but the model defines `c_b/\Delta`; therefore `c_b` must be a per-backup fixed cost, not cost times time. | Correct the unit wording to per-backup cost and keep the table values unchanged. |
+
+### Status
+
+IN PROGRESS. Root-level manuscript and check-script repairs are being applied.
