@@ -235,7 +235,17 @@ def main() -> None:
         "L_fail": 50000.0,
     }
     params["lambda_loss"] = params["L"] - (params["d1"] * params["tau_R"] + params["d0"])
+    if params["kappa_s"] <= 0.0:
+        raise ValueError("The interior backup optimum requires kappa_s > 0.")
+    if params["lambda_loss"] <= 0.0:
+        raise ValueError("The interior backup optimum requires L > d1*tau_R + d0.")
+    if params["c_n"] <= 0.0 or params["L_fail"] <= 0.0:
+        raise ValueError("Dynamic retention requires positive c_n and L_fail.")
+    if params["retention_delta"] <= 0.0:
+        raise ValueError("Dynamic retention requires retention_delta > 0.")
     params["dstar"] = params["lambda_loss"] / (params["d1"] * params["kappa_s"] * params["n"])
+    if not params["delta_min"] < params["dstar"] < params["delta_max"]:
+        raise ValueError("dstar must lie inside the admissible design interval.")
 
     emin_alphas = [0.3, 0.5, 0.8, 1.0, 1.5]
     emin_betas = [0.1, 0.5, 1.0]

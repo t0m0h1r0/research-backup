@@ -56,6 +56,35 @@ $T_d\sim\Pareto(t_m,\alpha)$，$\beta\to0+$ において，
 \]
 \end{lemma}
 
+\begin{proof}
+密度表示から
+\[
+  \E[T_de^{-\beta T_d}]
+  =\alpha t_m^\alpha\int_{t_m}^{\infty}t^{-\alpha}e^{-\beta t}\dd t .
+\]
+$u=\beta t$ とおくと，$\alpha\in(0,1)$ では
+\[
+  \E[T_de^{-\beta T_d}]
+  =\alpha t_m^\alpha\beta^{\alpha-1}
+  \Gamma(1-\alpha,\beta t_m)
+  \sim \alpha t_m^\alpha\Gamma(1-\alpha)\beta^{\alpha-1}
+\]
+である．$\alpha=1$ では
+\[
+  \E[T_de^{-\beta T_d}]
+  =t_m\int_{\beta t_m}^{\infty}\frac{e^{-u}}{u}\dd u
+  =t_m E_1(\beta t_m)
+  \sim -t_m\log(\beta t_m),
+\]
+ただし $E_1(x)=-\gamma-\log x+O(x)$ を用いた．$\alpha>1$ では
+$t^{-\alpha}$ が $[t_m,\infty)$ 上可積分であるため，優収束定理より
+\[
+  \E[T_de^{-\beta T_d}]
+  \to\alpha t_m^\alpha\int_{t_m}^{\infty}t^{-\alpha}\dd t
+  =\frac{\alpha t_m}{\alpha-1}.
+\]
+\end{proof}
+
 \begin{theorem}[純粋検知費用の相転移]
 バックアップ世代境界なしの極限で
 \[
