@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-05-04T02:14:45Z",
+  "environments": {
+    "codex": {
+      "agent_files": 23,
+      "base_file": "prompts/agents-codex/_base.yaml"
+    },
+    "claude": {
+      "agent_files": 23,
+      "base_file": "prompts/agents-claude/_base.yaml"
+    }
+  },
+  "skill_capsules": 5,
+  "validation": {
+    "project_rule_count": 6,
+    "legacy_domain_leakage": "PASS",
+    "source_artifact_registered": true
+  },
+  "notes": "Static token counts were not computed with tokenizer tooling in this bootstrap pass; file counts and leakage checks were validated by shell commands."
+}

@@ -1,0 +1,11 @@
+.DS_Store
+**/.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+analysis/**/results/
+!analysis/**/results/.gitkeep

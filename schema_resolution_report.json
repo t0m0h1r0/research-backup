@@ -1,0 +1,24 @@
+{
+  "vocab_check": "PASS",
+  "balance_check": "PASS",
+  "id_registry": [
+    "HAND-01",
+    "HAND-02",
+    "HAND-03",
+    "HAND-04",
+    "META-ANTIPATTERNS",
+    "META-DEPLOY",
+    "META-DOMAINS",
+    "META-OPS",
+    "META-PROJECT",
+    "META-WORKFLOW",
+    "METRIC-01",
+    "OP-CONDENSE",
+    "TOOL-TRUST-01"
+  ],
+  "immutable_diff_results": [],
+  "ref_resolution_results": [],
+  "rfc2119_violations": [],
+  "source_integrity": "PASS",
+  "timestamp": "2026-05-04T02:14:45Z"
+}
