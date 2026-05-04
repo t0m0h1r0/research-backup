@@ -71,13 +71,20 @@ groups in the introduction and model sections, and align the abstract,
 introduction, theorem names, and conclusion around the corrected residual-loss
 claim.
 
-## Planned Fix Status
+## Fix Status
 
 | Finding | Status | Target |
 |---------|--------|--------|
-| F1 | TODO | `02_model_formulation.tex`, `05_backup_optimization.tex` |
-| F2 | TODO | `02_model_formulation.tex`, `05_backup_optimization.tex` |
-| F3 | TODO | `02_model_formulation.tex`, `07_numerical_examples.tex` |
-| F4 | TODO | `05_backup_optimization.tex` |
-| F5 | TODO | `06_dynamic_retention.tex`, `07_numerical_examples.tex` |
-| F6 | TODO | abstract, introduction, conclusion, references |
+| F1 | DONE | `02_model_formulation.tex`, `05_backup_optimization.tex` |
+| F2 | DONE | `02_model_formulation.tex`, `05_backup_optimization.tex` |
+| F3 | DONE | `02_model_formulation.tex`, `07_numerical_examples.tex` |
+| F4 | DONE | `05_backup_optimization.tex` |
+| F5 | DONE | `06_dynamic_retention.tex`, `07_numerical_examples.tex` |
+| F6 | DONE | abstract, introduction, conclusion, references |
+
+## Verification
+
+- `python3 analysis/paper_review_checks/run.py`: PASS.
+- `latexmk -xelatex heavy_tail_backup_recast_xelatex.tex` from `paper/sections`: PASS.
+- Final LaTeX log scan for `Warning`, `Overfull`, `Underfull`, `undefined`, `Undefined`, `Error`, and `Missing`: no matches.
+- Text-level drift scan for stale `ET`, `F(`, `L_{T_d}`, old `L-\eta` numerator, old ceiling-only retention rule, and stale numerical units: no matches in `paper/sections/tex`.

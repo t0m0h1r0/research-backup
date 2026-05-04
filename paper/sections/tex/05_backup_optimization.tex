@@ -2,65 +2,96 @@
 
 投資 $I$ と追加保持世代数を固定すると，$\Delta$ に関する最適化は
 \[
-  G(\Delta;\lambda)=\frac{c_b}{\Delta}+\lambda\Qfull(\Delta;\alpha)
+  G(\Delta;\lambda)=\frac{c_b}{\Delta}
+  +\lambda\Qfull(\Delta;\alpha,\beta)
 \]
-の最小化に帰着する．
+の最小化に帰着する．ここで $\alpha=\alpha(I)$，
+$\beta=\beta(I)$ であり，$\Qearly(I)$ と投資・保持費は
+$\Delta$ に依存しない定数として除いている．
 
-\begin{assumption}
+バックアップ間隔は数式上の正数全体ではなく，復旧時点目標や運用上の
+サービス水準によって制限される．以下では
 \[
-  \Lambda:=L-\eta(d_1\tau_R+d_0)>0 .
+  \mathcal{D}=[\Delta_{\min},\Delta_{\max}]
+  \subset (t_m/n,\infty)
 \]
-すなわち，全損時損失は期待復旧費用を上回る．
+を許容設計区間とする．
+
+\begin{assumption}[内点設計条件]
+\[
+  \Lambda:=L-(d_1\tau_R+d_0)>0,\qquad
+  \Dstar:=\frac{\Lambda}{d_1\kappa_s n}
+\]
+とおく．許容設計区間は
+$\Delta_{\min}<\Dstar<\Delta_{\max}$ を満たすとする．
 \end{assumption}
 
 \begin{theorem}[$\Qfull(\Delta)$ の閉形式微分と唯一の大域最小点]
-$\Qfull(\Delta;\alpha)$ を \eqref{eq:qfull} で定義する．
+$\Qfull(\Delta;\alpha,\beta)$ を \eqref{eq:qfull} で定義する．
 仮定 5.1 のもとで
 \begin{equation}
   \frac{\partial\Qfull}{\partial\Delta}
-  =(1-p_e)\alpha F(\Delta;\alpha)
-  \left(\eta d_1\kappa_s n-\frac{\Lambda}{\Delta}\right)
+  =\eta n e^{-\beta n\Delta}f_{T_d}(n\Delta)
+  \left(d_1\kappa_s n\Delta-\Lambda\right)
   \label{eq:qfull-derivative}
 \end{equation}
 が成立する．従って $\partial\Qfull/\partial\Delta=0$ の唯一解は
 \begin{equation}
-  \Dstar=\frac{\Lambda}{\eta d_1\kappa_s n}
-  =\frac{L-\eta(d_1\tau_R+d_0)}{\eta d_1\kappa_s n}.
+  \Dstar=\frac{L-(d_1\tau_R+d_0)}{d_1\kappa_s n}.
   \label{eq:dstar}
 \end{equation}
 また $\Delta<\Dstar$ では微分は負，$\Delta>\Dstar$ では正であり，
-$\Dstar$ は唯一の大域最小点である．さらに
+$\Dstar$ は $\mathcal{D}_n$ 上，したがって $\mathcal{D}$ 上でも
+唯一の大域最小点である．さらに
 \[
   \left.\frac{\partial^2\Qfull}{\partial\Delta^2}\right|_{\Dstar}
-  =(1-p_e)\alpha\frac{F(\Dstar;\alpha)}{\Dstar}\eta d_1\kappa_s n>0 .
+  =\eta d_1\kappa_s n^2 e^{-\beta n\Dstar}f_{T_d}(n\Dstar)>0 .
 \]
 \end{theorem}
 
 \begin{proof}
-$F(\Delta;\alpha)=t_m^\alpha n^{-\alpha}\Delta^{-\alpha}$ なので
-$\partial F/\partial\Delta=-\alpha F/\Delta$．また Leibniz の積分則より
-$\partial ET/\partial\Delta=\alpha nF$．
-\eqref{eq:qfull} を微分すると
+$a(\Delta)=n\Delta$ とおく．$\Delta\in\mathcal{D}_n$ では
+\[
+  \Hbeta(\Delta;\alpha)
+  =\int_{a(\Delta)}^\infty e^{-\beta t}f_{T_d}(t)\dd t,\qquad
+  \Mbeta(\Delta;\alpha)
+  =\int_{t_m}^{a(\Delta)} t e^{-\beta t}f_{T_d}(t)\dd t .
+\]
+Leibniz の積分則より
+\[
+  \frac{\partial\Hbeta}{\partial\Delta}
+  =-n e^{-\beta n\Delta}f_{T_d}(n\Delta),\qquad
+  \frac{\partial\Mbeta}{\partial\Delta}
+  =n^2\Delta e^{-\beta n\Delta}f_{T_d}(n\Delta).
+\]
+\eqref{eq:qfull} を微分すると，$\Lbeta$ は $\Delta$ に依存しないので
 \[
   \frac{\partial\Qfull}{\partial\Delta}
-  =(1-p_e)
-  \left\{-\eta(d_1\tau_R+d_0)\frac{\partial F}{\partial\Delta}
-  +\eta d_1\kappa_s\frac{\partial ET}{\partial\Delta}
-  +L\frac{\partial F}{\partial\Delta}\right\},
+  =-\eta(d_1\tau_R+d_0)\frac{\partial\Hbeta}{\partial\Delta}
+  +\eta d_1\kappa_s\frac{\partial\Mbeta}{\partial\Delta}
+  +\eta L\frac{\partial\Hbeta}{\partial\Delta}.
 \]
 これを整理して \eqref{eq:qfull-derivative} を得る．
-$(1-p_e)\alpha F>0$ なので符号は括弧内だけで決まり，
-零点は \eqref{eq:dstar} の一点に限られる．
+前因子 $\eta n e^{-\beta n\Delta}f_{T_d}(n\Delta)$ は正であるため，
+符号は $d_1\kappa_s n\Delta-\Lambda$ のみで決まる．
+よって零点は \eqref{eq:dstar} の一点に限られ，その前後で符号が
+負から正へ変わる．
 \end{proof}
 
 \begin{remark}
-$\Dstar$ は $\alpha,\lambda,\beta(I)$ に依存しない．ただし，
-微分の大きさには $(1-p_e)\alpha F$ が含まれるため，収束速度や
-有限 $\lambda$ での補正には尾指数や検知レートが影響する．
+$\Dstar$ は $\alpha,\lambda,\beta(I),\eta$ に依存しない．
+これは早期検知失敗分岐の周辺点で，保持期間を少し延ばす便益
+（全損から復旧可能へ移す効果）と追加スキャン停止時間の費用が，
+同じ指数傾き因子と同じ症状検知確率 $\eta$ を持つためである．
+ただし，微分の大きさと二階微分には
+$\eta e^{-\beta n\Delta}f_{T_d}(n\Delta)$ が含まれるため，
+有限 $\lambda$ での補正には尾指数，検知レート，症状検知確率が
+影響する．
 \end{remark}
 
 \begin{theorem}[頻度漸近独立性]
-$c_b>0$ とし，$G(\Delta;\lambda)=c_b/\Delta+\lambda\Qfull(\Delta;\alpha)$
+$c_b>0$ とし，許容設計区間 $\mathcal{D}$ 上で
+$G(\Delta;\lambda)=c_b/\Delta+\lambda\Qfull(\Delta;\alpha,\beta)$
 の最小点を $\Delta^\ast(\lambda)$ と書く．このとき
 \[
   \lim_{\lambda\to\infty}\Delta^\ast(\lambda)=\Dstar .
@@ -68,50 +99,32 @@ $c_b>0$ とし，$G(\Delta;\lambda)=c_b/\Delta+\lambda\Qfull(\Delta;\alpha)$
 \end{theorem}
 
 \begin{proof}
-最適性から
+$\mathcal{D}$ はコンパクトであり，$1/\Delta$ はその上で有界である．
+従って
 \[
-  \frac{c_b}{\Delta^\ast}+\lambda\Qfull(\Delta^\ast)
-  \le
-  \frac{c_b}{\Dstar}+\lambda\Qfull(\Dstar)
+  \frac{G(\Delta;\lambda)}{\lambda}
+  =\Qfull(\Delta;\alpha,\beta)+\frac{c_b}{\lambda\Delta}
 \]
-であり，従って
-\[
-  \Qfull(\Delta^\ast(\lambda))
-  \le \Qfull(\Dstar)+\frac{c_b}{\lambda\Dstar}.
-\]
-任意の $\lambda_0>0$ に対し，
-\[
-  M_0:=\Qfull(\Dstar)+\frac{c_b}{\lambda_0\Dstar}
-\]
-とおけば，すべての $\lambda\ge\lambda_0$ で
-$\Delta^\ast(\lambda)$ はレベル集合
-$K_{M_0}=\{\Delta>0:\Qfull(\Delta)\le M_0\}$ に入る．
-$\Delta\to0+$ では $F(\Delta;\alpha)\to\infty$ なので
-$\Qfull(\Delta)\to\infty$．$\alpha\le1$ では
-$ET(\Delta;\alpha)\to\infty$ により上側も有界となる．
-$\alpha>1$ では $\Qfull(\Delta)$ の無限遠極限が
-$\Qfull(\Dstar)$ より大きいことから，$\lambda_0$ を十分大きく取れば
-同様に上側有界となる．従って $K_{M_0}$ はコンパクトである．
-
-任意の部分列は収束部分列を持つ．一階条件
-\[
-  \lambda\frac{\partial\Qfull}{\partial\Delta}(\Delta^\ast(\lambda))
-  =\frac{c_b}{(\Delta^\ast(\lambda))^2}
-\]
-を $\lambda$ で割り，コンパクト性による正の下界と
-$\lambda\to\infty$ を用いると，極限点では
-$\partial\Qfull/\partial\Delta=0$ が成立する．
-定理 5.2 の一意性により極限点は必ず $\Dstar$ であるため，
-全列が $\Dstar$ に収束する．
+は $\lambda\to\infty$ で $\Qfull(\Delta;\alpha,\beta)$ に
+$\mathcal{D}$ 上一様収束する．定理 5.2 により
+$\Qfull$ は $\mathcal{D}$ 上で唯一の最小点 $\Dstar$ を持つ．
+一様収束と一意最小性から，任意の最小点列
+$\Delta^\ast(\lambda)$ の極限点は $\Dstar$ に限られる．
+コンパクト性により極限点は存在するので，全列が $\Dstar$ に収束する．
 \end{proof}
 
 \begin{corollary}[有限頻度での近似]
-$Q''_\infty=\left.\partial^2\Qfull/\partial\Delta^2\right|_{\Dstar}$ とおくと，
+$Q''_\infty=\left.\partial^2\Qfull/\partial\Delta^2\right|_{\Dstar}$ とおく．
+$\Delta^\ast(\lambda)$ が十分大きな $\lambda$ で内点にあるとき，
 一階条件の Taylor 展開から
 \[
   \Delta^\ast(\lambda)
-  =\Dstar+\frac{c_b}{\lambda{\Dstar}^2 Q''_\infty}+O(\lambda^{-2})
+  =\Dstar+\frac{c_b}{\lambda{\Dstar}^2 Q''_\infty}
+  +O(\lambda^{-2})
 \]
-を得る．
+を得る．ここで
+\[
+  Q''_\infty
+  =\eta d_1\kappa_s n^2 e^{-\beta n\Dstar}f_{T_d}(n\Dstar).
+\]
 \end{corollary}
-

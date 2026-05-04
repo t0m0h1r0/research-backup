@@ -3,9 +3,11 @@
 \subsection{半マルコフ過程}
 
 半マルコフ過程は，遷移先は現在状態のみに依存するが，各状態での
-滞在時間には指数分布に限らない任意の分布を許す確率過程である．
-本稿では，潜伏時間に Pareto 分布を直接導入するため，この枠組みを
-用いる．
+滞在時間には指数分布に限らない任意の分布を許す確率過程である
+\cite{limnios2001,cinlar1975,howard1971}．本稿では，潜伏時間に
+Pareto 分布を直接導入するため，この枠組みを用いる．
+全損または復旧完了は一つの更新サイクルの終端であり，費用を計上した
+後に正常状態へ再生するとみなす．
 
 \subsection{攻撃フェーズと防疫フェーズ}
 
@@ -24,15 +26,17 @@ $T_d\sim\Pareto(t_m,\alpha(I))$ とし，
   \Prob(T_d>t)=\left(\frac{t_m}{t}\right)^{\alpha(I)},\qquad
   f_{T_d}(t)=\alpha(I)t_m^{\alpha(I)}t^{-(\alpha(I)+1)}
 \]
-for $t\ge t_m>0$ とする．尾指数 $\alpha(I)>0$ は投資 $I$ の関数である．
+for $t\ge t_m>0$ とする．また $0\le t<t_m$ では
+$\Prob(T_d>t)=1$ である．尾指数 $\alpha(I)>0$ は投資 $I$ の関数である．
 \end{assumption}
 
 \begin{definition}[防疫フェーズ]
 状態空間を $\{D_0,D_1,D_2,D_3\}$ とする．
 $D_0$ は通常，$D_1$ は検知，$D_2$ は隔離，$D_3$ は復旧中を表す．
-早期検知時刻は $T_{\mathrm{det}}\sim\Exp(\beta(I))$ で，
-$T_{\mathrm{det}}<T_d$ の場合に早期検知が生起する．発症後には
-確率 $\eta\in(0,1]$ で症状検知される．
+早期検知時刻は $T_{\mathrm{det}}\sim\Exp(\beta(I))$ であり，
+$T_d$ とは独立とする．$T_{\mathrm{det}}<T_d$ の場合に早期検知が
+生起する．発症後には確率 $\eta\in(0,1]$ で症状検知され，
+症状検知に失敗した場合は全損として費用 $L$ を計上する．
 \end{definition}
 
 \begin{assumption}[投資応答関数]
@@ -83,11 +87,16 @@ $S_F$ は全損を表す．
 \subsection{バックアップと復旧}
 
 \begin{definition}[バックアップスケジュール]
-間隔 $\Delta>0$ で $n\in\mathbb{Z}_+$ 世代のバックアップを保持する．
-侵入後に取得されたバックアップは汚染されるとし，汚染世代数は
-早期検知時に $k=\lceil T_{\mathrm{det}}/\Delta\rceil$，
+間隔 $\Delta>0$ で $n\in\mathbb{Z}_{\ge1}$ 世代のバックアップを
+保持する．侵入後に取得されたバックアップは汚染されるとし，
+汚染世代数は早期検知時に $k=\lceil T_{\mathrm{det}}/\Delta\rceil$，
 症状検知時に $k=\lceil T_d/\Delta\rceil$ とする．
 $k\ge n$ なら全損，$k<n$ なら復旧可能である．
+Pareto 尾確率を保持期間で評価する議論では
+\[
+  \Delta\in\mathcal{D}_n:=\{\Delta>t_m/n\}
+\]
+を設計領域とする．
 \end{definition}
 
 \begin{definition}[コンテナベース復旧時間]
@@ -98,30 +107,56 @@ $T_{\mathrm{deploy}}\sim\Exp(\mu_d)$ とし，
 \[
   \tau_R:=\mu_{\mathrm{iso}}^{-1}+\mu_c^{-1}+\mu_d^{-1}.
 \]
-全停止時間は $T_{\mathrm{down}}=T_{\mathrm{iso}}+T_{\mathrm{rec}}$，
-$T_{\mathrm{rec}}=T_{\mathrm{scan}}+T_{\mathrm{clone}}+T_{\mathrm{deploy}}$，
-$T_{\mathrm{scan}}=\kappa_sT_{\mathrm{det}}$ とする．
+感染後経過時間を $T_{\mathrm{age}}$ と書く．早期検知分岐では
+$T_{\mathrm{age}}=T_{\mathrm{det}}$，症状検知分岐では
+$T_{\mathrm{age}}=T_d$ である．スキャンに伴う追加停止時間は
+$T_{\mathrm{scan}}=\kappa_sT_{\mathrm{age}}$ とする．ここで
+$\kappa_s\ge0$ は無次元のスキャン時間係数である．
 \end{definition}
 
 \subsection{期待損失と費用レート}
 
-更新サイクルあたりの期待損失を
+費用記号を次のように定める．$d_1$ は停止一日あたり損失，
+$d_0$ は復旧に伴う固定費，$L$ は全損時損失，$c_b$ は一回の
+バックアップ固定費，$c_I$ は投資一単位あたり費用，$c_n$ は
+追加保持一世代あたり費用である．
+
+投資 $I$ と保持世代数 $n$ を固定し，
+$\alpha=\alpha(I),\ \beta=\beta(I)$ と略記する．早期検知に失敗する
+確率は
+\[
+  \Lbeta:=\E[e^{-\beta T_d}]=1-p_e,\qquad
+  p_e=\Prob(T_{\mathrm{det}}<T_d)
+\]
+である．保持期間 $a(\Delta)=n\Delta$ に対し，
+\begin{align}
+  \Hbeta(\Delta;\alpha)
+  &:=\E[e^{-\beta T_d}\mathbf{1}_{\{T_d>a(\Delta)\}}],\\
+  \Mbeta(\Delta;\alpha)
+  &:=\E[T_d e^{-\beta T_d}\mathbf{1}_{\{T_d\le a(\Delta)\}}].
+\end{align}
+ここで $\Hbeta$ は「早期検知に失敗し，保持期間も超過する」確率，
+$\Lbeta-\Hbeta$ は「早期検知には失敗したが保持期間内で症状検知
+可能な」分岐確率である．
+
+早期検知に失敗した攻撃から生じる，バックアップ間隔依存の残余期待
+損失を
 \begin{equation}
-  \Qfull(\Delta;\alpha)
-  =(1-p_e)\left\{\eta(d_1\tau_R+d_0)(1-F)
-  +\eta d_1\kappa_s ET+F L\right\}
+  \Qfull(\Delta;\alpha,\beta)
+  =\eta(d_1\tau_R+d_0)(\Lbeta-\Hbeta)
+  +\eta d_1\kappa_s\Mbeta
+  +L\{(1-\eta)(\Lbeta-\Hbeta)+\Hbeta\}
   \label{eq:qfull}
 \end{equation}
-と定義する．ここで
-\[
-  p_e=\Prob(T_{\mathrm{det}}<T_d),\quad
-  F(\Delta;\alpha)=\left(\frac{t_m}{n\Delta}\right)^\alpha,\quad
-  ET(\Delta;\alpha)=\E[T_d\mathbf{1}_{\{T_d\le n\Delta\}}].
-\]
-バックアップ固定費，投資費，追加保持費を含む定常費用レートは
+と定義する．早期検知に成功した分岐の期待費用を
+$\Qearly(I)$ と書く．本稿では，早期検知時の封じ込め・隔離費用は
+$\Delta$ に依存しないものとして分離する．したがって，定常費用
+レートは
 \begin{equation}
   C(\Delta,I,n_{\mathrm{ext}})
-  =\lambda\Qfull(\Delta;\alpha(I))
+  =\lambda\{\Qearly(I)+\Qfull(\Delta;\alpha(I),\beta(I))\}
   +\frac{c_b}{\Delta}+c_I I+c_n n_{\mathrm{ext}}.
   \label{eq:cost-rate}
 \end{equation}
+$\Delta$ 最適化では $\Qearly(I)$，$c_I I$，$c_n n_{\mathrm{ext}}$ は
+定数として扱う．

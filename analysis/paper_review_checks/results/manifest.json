@@ -1,0 +1,40 @@
+{
+  "purpose": "Recompute numerical tables after reviewer-driven notation and loss-model repair.",
+  "source_references": [
+    "paper/sections/tex/02_model_formulation.tex",
+    "paper/sections/tex/05_backup_optimization.tex",
+    "paper/sections/tex/06_dynamic_retention.tex",
+    "paper/sections/tex/07_numerical_examples.tex"
+  ],
+  "command": "python3 analysis/paper_review_checks/run.py",
+  "python": "3.14.3",
+  "packages": {
+    "standard_library": true
+  },
+  "parameters": {
+    "tm": 1.0,
+    "n": 5.0,
+    "lambda_arrival": 1.0,
+    "d1": 1666.7,
+    "d0": 0.0,
+    "L": 50000.0,
+    "cb": 10.0,
+    "tau_R": 2.0,
+    "eta": 0.95,
+    "kappa_s": 0.3,
+    "beta": 0.01,
+    "delta_min": 1.0,
+    "delta_max": 40.0,
+    "retention_delta": 10.0,
+    "c_n": 50.0,
+    "L_fail": 50000.0,
+    "lambda_loss": 46666.6,
+    "dstar": 18.666266674666506
+  },
+  "random_seed": null,
+  "timestamp_utc": "2026-05-04T03:12:54.685189+00:00",
+  "output_files": [
+    "analysis/paper_review_checks/results/tables.json"
+  ],
+  "verdict": "PASS"
+}
