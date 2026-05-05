@@ -22,7 +22,7 @@
 | T | Theory & Claims | Logical/mathematical | docs/memo/ | TheoryArchitect | TheoryAuditor |
 | R | Research Implementation | Computational/functional | src/, analysis/, notebooks/ | CodeArchitect, CodeCorrector, TestRunner | CodeWorkflowCoordinator |
 | E | Evidence & Evaluation | Empirical/bibliographic | docs/evidence/, data/ | ExperimentRunner, EvidenceAnalyst | CodeWorkflowCoordinator |
-| A | Academic Writing | Manuscript/narrative | paper/ | PaperWriter, PaperCompiler, PaperReviewer | PaperWorkflowCoordinator |
+| A | Academic Writing | Manuscript/narrative/presentation | paper/ | PaperWriter, PresentationWriter, PaperCompiler, PaperReviewer | PaperWorkflowCoordinator |
 
 ## Horizontal Domains
 
@@ -80,7 +80,7 @@ coordinator: CodeWorkflowCoordinator
 specialists: [CodeArchitect, CodeCorrector, TestRunner]
 write: [src/, analysis/, notebooks/, tests/, docs/02_ACTIVE_LEDGER.md]
 read: [docs/interface/CheckSpec.md, paper/source/, docs/memo/]
-forbidden: [paper/sections/, prompts/meta/, docs/interface/ without IF-COMMIT]
+forbidden: [paper/sections/, paper/presentations/, prompts/meta/, docs/interface/ without IF-COMMIT]
 produces: docs/interface/AnalysisPackage/
 rules: [C1-C6, PR-5]
 lifecycle: DRAFT -> REVIEWED(TestRunner PASS) -> VALIDATED(AU2 PASS)
@@ -91,7 +91,7 @@ coordinator: CodeWorkflowCoordinator
 specialists: [ExperimentRunner, EvidenceAnalyst]
 write: [docs/evidence/, data/, artifacts/E/, docs/02_ACTIVE_LEDGER.md]
 read: [paper/source/, docs/interface/AnalysisPackage/, docs/memo/]
-forbidden: [src/ except invocation, paper/sections/, prompts/meta/]
+forbidden: [src/ except invocation, paper/sections/, paper/presentations/, prompts/meta/]
 produces: [docs/interface/EvidencePackage/, docs/interface/RevisionBrief.md]
 rules: [PR-4, PR-5]
 lifecycle: DRAFT -> REVIEWED(Evidence trace) -> VALIDATED(AU2 PASS)
@@ -99,11 +99,11 @@ lifecycle: DRAFT -> REVIEWED(Evidence trace) -> VALIDATED(AU2 PASS)
 domain: A
 branch: paper
 coordinator: PaperWorkflowCoordinator
-specialists: [PaperWriter, PaperCompiler, PaperReviewer]
-write: [paper/sections/, paper/figures/, paper/bibliography.bib, artifacts/A/, docs/02_ACTIVE_LEDGER.md]
+specialists: [PaperWriter, PresentationWriter, PaperCompiler, PaperReviewer]
+write: [paper/sections/, paper/figures/, paper/presentations/, paper/bibliography.bib, artifacts/A/, docs/02_ACTIVE_LEDGER.md]
 read: [paper/source/, docs/interface/RevisionBrief.md, docs/interface/EvidencePackage/, docs/memo/]
 forbidden: [src/, analysis/, notebooks/, data/, prompts/meta/, docs/interface/ without IF-COMMIT]
-produces: [paper/sections/, artifacts/A/revision_notes.md]
+produces: [paper/sections/, paper/presentations/, artifacts/A/revision_notes.md]
 rules: [P1-P4, PR-6]
 lifecycle: DRAFT -> REVIEWED(PaperReviewer + build/format PASS) -> VALIDATED(AU2 PASS)
 
@@ -122,7 +122,7 @@ coordinator: PromptArchitect
 specialists: [PromptAuditor]
 write: [prompts/agents-claude/, prompts/agents-codex/, prompts/skills/, artifacts/P/]
 read: [prompts/meta/kernel-*.md, docs/02_ACTIVE_LEDGER.md]
-forbidden: [paper/source/, src/, analysis/, paper/sections/]
+forbidden: [paper/source/, src/, analysis/, paper/sections/, paper/presentations/]
 rules: [Q1-Q4, PR-1]
 lifecycle: DRAFT -> REVIEWED(PromptAuditor Q3 PASS) -> VALIDATED
 
@@ -152,7 +152,8 @@ lifecycle: DRAFT -> REVIEWED(K-LINT) -> VALIDATED
 ```
 paper/source/      Immutable source PDFs and extracted text
 paper/sections/    Proposed manuscript sections or patches
-paper/figures/     Curated figures for manuscript use
+paper/figures/     Curated figures for manuscript or presentation use
+paper/presentations/  Paper-grounded slide decks, deck outlines, and presentation assets
 docs/memo/         Mathematical and conceptual audits
 docs/evidence/     Literature, citation, and empirical evidence notes
 docs/interface/    Signed cross-domain contracts

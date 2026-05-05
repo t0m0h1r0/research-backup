@@ -59,7 +59,7 @@ and source-integrity status.
 ## Stage 2 - Initialize Directories
 
 ```sh
-mkdir -p paper/source paper/sections paper/figures
+mkdir -p paper/source paper/sections paper/figures paper/presentations
 mkdir -p docs/memo docs/evidence docs/interface docs/locks docs/wiki/{theory,analysis,evidence,paper,cross-domain,changelog}
 mkdir -p src analysis notebooks tests data
 mkdir -p artifacts/{M,T,R,E,A,Q,K,P}
@@ -118,11 +118,11 @@ Required checks:
 | # | Check | Method |
 |---|-------|--------|
 | 1 | project rules count | `grep -c '^## PR-' docs/03_PROJECT_RULES.md` equals 6 |
-| 2 | agent count | 23 agent files per environment, excluding `_base.yaml` |
+| 2 | agent count | 24 agent files per environment, excluding `_base.yaml` |
 | 3 | source preserved | source PDF and extracted text exist and are unmodified by deployment |
 | 4 | domain leakage | no project-specific legacy terms outside `kernel-project.md` unless intentional |
 | 5 | handoff schema present | `kernel-roles.md` contains HandoffEnvelope |
-| 6 | prompt skills present | 5 skill capsules exist |
+| 6 | prompt skills present | 6 skill capsules exist |
 | 7 | token report present | `token_telemetry_report.json` exists |
 
 ## Stage 5 - Register

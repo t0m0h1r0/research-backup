@@ -47,6 +47,7 @@ experiments, ablation/error analysis, figures, and manuscript drafting.
 | `data/processed/` | R/E | processed data with provenance |
 | `paper/sections/` | A | manuscript drafts and section patches |
 | `paper/figures/` | A/E | curated manuscript figures |
+| `paper/presentations/` | A | paper-grounded presentation decks, outlines, and slide assets |
 | `artifacts/M/` | M | workflow lessons and prompt-improvement notes |
 | `prompts/meta/` | P/M | kernel source of truth |
 | `prompts/agents-*` | P | deployed agent prompts |

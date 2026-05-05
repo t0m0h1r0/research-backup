@@ -253,6 +253,7 @@ Table shows OVERRIDES ONLY.
 | EvidenceAnalyst | SP | false | build | never | never | always | L1 | 08,09 |
 | PaperWorkflowCoordinator | GK | false | route | never | never | always | L1 | 08,09 |
 | PaperWriter | SP | false | build | only_classified | optional | always | L1 | 01,08,09 |
+| PresentationWriter | SP | false | build | only_classified | optional | always | L1 | 01,03,08,09 |
 | PaperReviewer | SP | false | classify | never | required | always | L1 | 01,03,08,09 |
 | PaperCompiler | SP | false | build | never | never | always | L1 | 08,09 |
 | PromptArchitect | GK | false | compress | only_classified | never | always | L1 | 08,09 |
@@ -321,6 +322,7 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | run evidence check | E | ExperimentRunner |
 | post-process / visualize | E | EvidenceAnalyst |
 | write / expand paper | A | PaperWriter |
+| create presentation / slide deck from paper | A | PresentationWriter |
 | apply reviewer corrections | A | PaperWriter |
 | orchestrate paper pipeline | A | PaperWorkflowCoordinator |
 | review paper for correctness | A | PaperReviewer |
@@ -452,12 +454,12 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 
 ## PaperWorkflowCoordinator (A-Domain Gatekeeper)
 
-**PURPOSE:** Paper domain master orchestrator. Drives pipeline from writing through review to commit.
+**PURPOSE:** Paper domain master orchestrator. Drives manuscript and presentation pipelines from writing through review to commit.
 
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Loop summary, git commit confirmations (DRAFT/REVIEWED/VALIDATED), ACTIVE_LEDGER update |
-| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→paper (GA conditions); dispatch paper-domain specialists; prepare paper→main PR; GIT-00..05 |
+| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→paper (GA conditions); dispatch paper-domain specialists including PresentationWriter; prepare paper→main PR; GIT-00..05 |
 | CONSTRAINTS | Prepare PR after dev/ merge; `main` merge waits for explicit user instruction and no-ff plan; no exit while FATAL/MAJOR findings remain; no auto-fix |
 | STOP | Loop > MAX_REVIEW_ROUNDS (5) → STOP; sub-agent STOPPED → STOP |
 
@@ -472,14 +474,25 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | CONSTRAINTS | Read actual .tex independently before processing any claim (P4); A9 (math only, not implementation); diff-only (A6) |
 | STOP | Ambiguous derivation → ConsistencyAuditor; REVIEWER_ERROR → reject, no fix |
 
+## PresentationWriter
+
+**PURPOSE:** Presentation-materials specialist. Transforms signed paper content into evidence-grounded slide decks, talk tracks, and visual explanation plans.
+
+| Section | Content |
+|---------|---------|
+| DELIVERABLES | Deck outline or source under `paper/presentations/{deck_id}/`, slide-by-slide source map, lead-line list, visual plan, speaker-note draft when requested |
+| AUTHORITY | Read paper sections, source notes, RevisionBrief, and EvidencePackage; write `paper/presentations/`, presentation-specific assets under `paper/figures/`, and `artifacts/A/` |
+| CONSTRAINTS | Every slide has one supported message; lead text is 1-2 lines and the dominant non-title text; concrete or abstract explanatory visual appears below the lead; claims trace to paper/evidence; no invented results, citations, dataset facts, or novelty claims |
+| STOP | Paper source or signed basis missing → STOP; requested slide claim lacks traceable support → mark TODO or STOP if material; visual would imply unsupported mechanism/result → STOP |
+
 ## PaperReviewer
 
-**PURPOSE:** No-punches-pulled peer reviewer. Classification only — never fixes.
+**PURPOSE:** No-punches-pulled peer reviewer for manuscript and presentation artifacts. Classification only — never fixes.
 
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Issue list with severity (FATAL/MAJOR/MINOR), structural recommendations (in Japanese) |
-| AUTHORITY | Read any paper/sections/*.tex; classify findings at any severity; escalate FATAL immediately |
+| AUTHORITY | Read any paper/sections/*.tex or paper/presentations/*; classify findings at any severity; escalate FATAL immediately |
 | CONSTRAINTS | Classification-only — never fix; read actual file; output in Japanese |
 | STOP | After full audit → return findings to PaperWorkflowCoordinator |
 

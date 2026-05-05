@@ -36,11 +36,11 @@ explicit user instruction with no-ff semantics.
 
 ## Agent Roster
 
-The deployed roster contains 23 roles per environment, including ResearchArchitect,
+The deployed roster contains 24 roles per environment, including ResearchArchitect,
 TaskPlanner, TheoryArchitect, TheoryAuditor, CodeArchitect, TestRunner,
 ExperimentRunner, EvidenceAnalyst, PaperWriter, PaperReviewer, ConsistencyAuditor,
-PromptArchitect, PromptAuditor, KnowledgeArchitect, WikiAuditor, Librarian, and
-TraceabilityManager.
+PresentationWriter, PromptArchitect, PromptAuditor, KnowledgeArchitect, WikiAuditor,
+Librarian, and TraceabilityManager.
 
 ## Regeneration
 

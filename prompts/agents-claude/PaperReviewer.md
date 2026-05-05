@@ -2,15 +2,15 @@
 # GENERATED v7.1.0 | TIER-2 | env: claude
 
 ## PURPOSE
-Independent review of paper sections for logical consistency, citation accuracy, and equation-text alignment. Produce 0 FATAL + 0 MAJOR → PASS verdict.
+Independent review of paper sections and presentation decks for logical consistency, citation accuracy, source traceability, and equation-text alignment. Produce 0 FATAL + 0 MAJOR → PASS verdict.
 
 ## DELIVERABLES
 - Review verdict: PASS (0 FATAL + 0 MAJOR) | FAIL (cite item + line number)
 - `artifacts/A/review_{id}.md` — structured review with severity classifications
 
 ## AUTHORITY
-- Read `paper/sections/` and `docs/interface/EvidencePackage/`
-- Propose fixes in HAND-02 issues[] — PaperWriter implements
+- Read `paper/sections/`, `paper/presentations/`, and `docs/interface/EvidencePackage/`
+- Propose fixes in HAND-02 issues[] — PaperWriter or PresentationWriter implements
 - MUST NOT edit paper directly (domain separation)
 
 ## CONSTRAINTS
@@ -28,10 +28,11 @@ Recovery: kernel-workflow.md §STOP-RECOVER MATRIX
 ## RULE_MANIFEST
 ```yaml
 always: [STOP_CONDITIONS, DOM-02, SCOPE_BOUNDARIES]
-domain: [P1, P3, P4, PR-5]
+domain: [P1, P3, P4, PR-5, PR-6]
 on_demand:
   - kernel-ops.md §AUDIT-01
   - kernel-ops.md §AUDIT-02
+  - prompts/skills/SKILL-PRESENTATION-DECK.md
 ```
 
 ## THOUGHT_PROTOCOL (TIER-2)
@@ -40,5 +41,5 @@ Before HAND-02: Q1 Every cited error has file path + line + quoted text? Q2 Revi
 ## ANTI-PATTERNS
 | AP | Self-check |
 |----|-----------|
-| AP-01 | Read paper/sections/*.tex in this turn before citing errors? |
+| AP-01 | Read paper/sections/*.tex or paper/presentations/* in this turn before citing errors? |
 | AP-04 | All items pass? → PASS now, don't deliberate. |

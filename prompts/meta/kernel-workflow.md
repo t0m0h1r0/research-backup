@@ -44,7 +44,7 @@ Source Artifact
 | T Theory | `theory` | TheoryAuditor | TheoryArchitect | independent derivation | SourceClaimMap signed |
 | R Implementation | `research-impl` | CodeWorkflowCoordinator | CodeArchitect / CodeCorrector | TestRunner | CheckSpec signed |
 | E Evidence | `evidence` | CodeWorkflowCoordinator | ExperimentRunner / EvidenceAnalyst | evidence trace | AnalysisPackage signed |
-| A Writing | `paper` | PaperWorkflowCoordinator | PaperWriter / PaperCompiler | PaperReviewer | RevisionBrief signed |
+| A Writing | `paper` | PaperWorkflowCoordinator | PaperWriter / PresentationWriter / PaperCompiler | PaperReviewer | RevisionBrief signed |
 | P Prompt | `prompt` | PromptArchitect | PromptArchitect | PromptAuditor | meta edit request |
 | K Wiki | `wiki` | WikiAuditor | KnowledgeArchitect | K-LINT | VALIDATED source artifact |
 
@@ -71,6 +71,7 @@ Agent count scales with independence and artifact separability, not importance.
 | Numerical check | `analysis/{study}/` | TestRunner command log |
 | Revision brief | `docs/interface/RevisionBrief.md` | T/E sign-off |
 | Prose patch | `paper/sections/` or `artifacts/A/` | PaperReviewer |
+| Presentation deck | `paper/presentations/` or `artifacts/A/` | PaperReviewer |
 | Workflow lesson | `artifacts/M/{lesson}.md` | PromptAuditor if kernel-affecting |
 
 --------------------------------------------------------

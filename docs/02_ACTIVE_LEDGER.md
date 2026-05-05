@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | WIKI_COMPILED |
-| branch | `codex/researcharchitect-paper-wiki` |
-| current_objective | Compile reusable knowledge from the local ransomware heavy-tail backup manuscript into wiki memory |
+| phase | PROMPT_DEPLOYED |
+| branch | `codex/researcharchitect-presentation-agent` |
+| current_objective | Deployed an A-domain PresentationWriter agent for paper-grounded presentation materials |
 | active_brief | `docs/interface/ResearchBrief.md` |
-| source_artifact | `paper/source/heavy_tail_backup_v13.pdf` and `paper/sections/tex/*.tex` registered for wiki extraction only |
-| next_action | Use `docs/wiki/ransomware_heavy_tail_backup_design.md` carry-forward questions to refine ASM-AD-001 before model or dataset selection |
-| updated_at_utc | 2026-05-05T02:27:39Z |
+| source_artifact | none selected for anomaly-detection research; existing heavy-tail manuscript remains wiki memory only |
+| next_action | Use `PresentationWriter` with signed paper/evidence inputs when preparing a talk deck; continue ASM-AD-001 before anomaly-detection model design |
+| updated_at_utc | 2026-05-05T07:13:50Z |
 
 ## §CHECKLIST
 
@@ -36,6 +36,7 @@
 | CHK-RESEARCH-010 | DONE | P/M | `AGENTS.md`, `prompts/agents-codex/`, `prompts/meta/kernel-roles.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/codex_config_optimization_audit.md` | optimized Codex worktree, commit, user-change, and explicit-user/no-ff main-merge guardrails | 2026-05-04 |
 | CHK-RESEARCH-011 | DONE | P/M | `AGENTS.md`, `prompts/README.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/agents_instruction_optimization_audit.md` | refined external-agent first-read instructions, artifact placement map, research gates, and prompt-maintenance path | 2026-05-04 |
 | CHK-RESEARCH-012 | DONE | M/E | `docs/wiki/ransomware_heavy_tail_backup_design.md`, `docs/evidence/heavy_tail_backup_source_note.md`, `docs/memo/researcharchitect_paper_wiki_compile_audit.md` | compiled 12 reusable manuscript-derived knowledge items after 15 extraction rounds and stopped on saturation before the 20-round cap | 2026-05-05 |
+| CHK-RESEARCH-013 | DONE | P/A/M | `prompts/agents-codex/PresentationWriter.md`, `prompts/agents-claude/PresentationWriter.md`, `prompts/skills/SKILL-PRESENTATION-DECK.md`, `artifacts/P/presentation_agent_deployment_audit.md` | deployed a paper-grounded presentation-materials agent with lead-line, visual-plan, traceability, and prompt-audit gates | 2026-05-05 |
 
 ## §ASSUMPTIONS
 
@@ -56,6 +57,7 @@
 | LES-RESEARCH-CODEX-001 | ACTIVE | Codex agent prompts need an inherited runtime profile plus local coordinator wording so no generated role implies unilateral `main` merge. | `prompts/agents-codex/_base.yaml` |
 | LES-RESEARCH-CODEX-002 | ACTIVE | External-agent instructions work best as a read-order and artifact-placement map, with detailed operation bodies kept in kernel files and skill capsules. | `AGENTS.md` |
 | LES-RESEARCH-WIKI-001 | ACTIVE | When a protected source extract and repaired manuscript sections differ, wiki compilation should prefer the repaired sections and leave a source-boundary note. | `docs/evidence/heavy_tail_backup_source_note.md` |
+| LES-RESEARCH-PRESENTATION-001 | ACTIVE | Paper-to-presentation agents need a source map, one-message slide discipline, large 1-2 line lead text, and a concrete or abstract visual plan per slide to avoid unsupported narrative drift. | `prompts/skills/SKILL-PRESENTATION-DECK.md` |
 
 ## §REPLAN_LOG
 
@@ -73,3 +75,4 @@
 | RESEARCH-MATH-001 | `codex/researcharchitect-math-audit` | `worktrees/researcharchitect-math-audit` | Strict derivation audit and root-cause repair for manuscript equations; session `fae80cac-2527-40e9-b80a-8d3a891de483`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |
 | RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | MERGED | 2026-05-04 |
 | RESEARCH-WIKI-001 | `codex/researcharchitect-paper-wiki` | `/private/tmp/research-backup-paper-wiki` | Compile manuscript-derived ransomware heavy-tail backup knowledge into wiki; id_prefix `RESEARCH` | VALIDATED | 2026-05-05 |
+| RESEARCH-PRESENTATION-001 | `codex/researcharchitect-presentation-agent` | `/private/tmp/research-backup-presentation-agent` | Deploy a paper-grounded presentation-materials agent and prompt audit gates; id_prefix `RESEARCH` | VALIDATED | 2026-05-05 |

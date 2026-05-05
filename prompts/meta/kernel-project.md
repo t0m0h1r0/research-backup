@@ -28,10 +28,10 @@
 | Field | Value |
 |-------|-------|
 | Project type | AI-assisted anomaly detection research + deployable research-agent workflow |
-| Research artifacts | Research brief, papers, datasets, model specs, code, experiment configs/results, figures, and manuscript drafts |
+| Research artifacts | Research brief, papers, datasets, model specs, code, experiment configs/results, figures, manuscript drafts, and presentation materials |
 | Research focus | AI/ML anomaly detection, including problem framing, normal/anomaly definitions, model design, anomaly scoring, thresholding, evaluation, robustness, interpretability, and deployment constraints |
 | Primary method | Literature grounding, hypothesis/model design, reproducible implementation, controlled experiments, ablation/statistical analysis, error analysis, and academic writing |
-| Target output | Review-ready anomaly detection research artifacts plus reusable AI-agent prompts/workflow artifacts |
+| Target output | Review-ready anomaly detection research artifacts, paper-grounded presentation materials, plus reusable AI-agent prompts/workflow artifacts |
 | Primary objective | Produce credible, reproducible anomaly detection research outcomes |
 | Secondary objective | Improve the reusable AI-agent research workflow through traceable lessons |
 
@@ -78,6 +78,7 @@ Allowed source and derived locations:
 | Reproducible experiments | `analysis/{study}/` |
 | Exploratory notebooks | `notebooks/` |
 | Manuscript sections and figures | `paper/sections/`, `paper/figures/`, `artifacts/A/` |
+| Presentation decks and visual communication assets | `paper/presentations/`, `paper/figures/`, `artifacts/A/` |
 | Workflow lessons | `artifacts/M/` and `docs/02_ACTIVE_LEDGER.md` |
 
 Any performance value, table, or figure promoted to writing MUST cite dataset
@@ -175,7 +176,8 @@ Agents MUST prioritize:
 5. error analysis, ablation, and robustness checks,
 6. honest limitation and failure-mode reporting,
 7. concise academic prose in the chosen manuscript language,
-8. deployable prompts, docs, and workflow artifacts.
+8. presentation materials that preserve the paper's claims while using strong lead lines and evidence-grounded visuals,
+9. deployable prompts, docs, and workflow artifacts.
 
 Stylistic rewrites that do not improve at least one of these points are out of
 scope.

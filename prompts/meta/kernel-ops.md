@@ -64,6 +64,7 @@ AUTH levels: ROOT > GATE > SPEC > any.
 | ExperimentRunner | Spec | E | HAND-02,03; EXP-01,02; GIT-SP |
 | EvidenceAnalyst | Spec | E | HAND-02,03; GIT-SP; K-COMPILE |
 | PaperWriter | Spec | A | HAND-02,03; GIT-SP |
+| PresentationWriter | Spec | A | HAND-02,03; GIT-SP |
 | PaperReviewer | Spec | A | HAND-02,03; AUDIT-01,02 |
 | PaperCompiler | Spec | A | HAND-02,03; BUILD-01,02; GIT-SP |
 | KnowledgeArchitect | Spec | K | HAND-02,03; K-COMPILE,REFACTOR; GIT-SP |

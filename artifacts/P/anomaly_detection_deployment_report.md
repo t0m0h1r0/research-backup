@@ -2,12 +2,16 @@
 
 created_at_utc: 2026-05-04T03:01:56Z
 status: DEPLOYED
+updated_at_utc: 2026-05-05T07:06:15Z
 
 ## Scope
 
 Retargeted the project profile from the previous research topic to AI-assisted
 anomaly detection research and redeployed the runtime docs that active agents
 read before work.
+
+Updated deployment now includes a paper-grounded `PresentationWriter` role and
+the `SKILL-PRESENTATION-DECK` skill capsule.
 
 ## Produced
 
@@ -24,9 +28,9 @@ read before work.
 ## Validation
 
 - PR rule count: PASS, 6 rules.
-- Codex agent count: PASS, 23 files plus `_base.yaml`.
-- Claude agent count: PASS, 23 files plus `_base.yaml`.
-- Skill capsule count: PASS, 5 files.
+- Codex agent count: PASS, 24 files plus `_base.yaml`.
+- Claude agent count: PASS, 24 files plus `_base.yaml`.
+- Skill capsule count: PASS, 6 files.
 - Active source status: PASS, initial brief registered; source papers/datasets pending.
 - Legacy artifacts: preserved but not active evidence unless re-registered.
 

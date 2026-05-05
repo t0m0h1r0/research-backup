@@ -29,8 +29,8 @@
 
 - P1: Claims must trace to proof, evidence, or explicit assumption.
 - P2: Notation must be consistent across source, memo, and revision.
-- P3: Reviewer-facing prose should be concise and defensible.
-- P4: Paper edits require a revision brief unless the edit is purely typographic.
+- P3: Reviewer- or audience-facing prose should be concise and defensible.
+- P4: Paper and presentation edits require a revision brief unless the edit is purely typographic or presentational.
 
 ## §Q Prompt Rules
 

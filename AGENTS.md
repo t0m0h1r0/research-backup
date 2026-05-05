@@ -38,6 +38,7 @@ for Codex and other external agents.
 | Exploratory notebooks | `notebooks/` |
 | Paper section patches | `paper/sections/` |
 | Paper figures | `paper/figures/` |
+| Presentation decks and slide assets | `paper/presentations/` |
 | Agent/workflow lessons | `artifacts/M/` |
 | Prompt/configuration audits | `artifacts/P/` |
 

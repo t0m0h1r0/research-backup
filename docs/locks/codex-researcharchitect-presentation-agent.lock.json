@@ -1,0 +1,10 @@
+{
+  "id": "RESEARCH-PRESENTATION-001",
+  "branch": "codex/researcharchitect-presentation-agent",
+  "worktree": "/private/tmp/research-backup-presentation-agent",
+  "objective": "Deploy a paper-grounded presentation-materials agent and prompt audit gates",
+  "status": "VALIDATED",
+  "owner": "ResearchArchitect",
+  "id_prefix": "RESEARCH",
+  "updated_at_utc": "2026-05-05T07:13:50Z"
+}
