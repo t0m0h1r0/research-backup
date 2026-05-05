@@ -6,7 +6,7 @@
 P-Domain independent auditor. Runs Q3 Validation Checklist (13 items, kernel-deploy.md §Stage 4 plus Q3b telemetry) on generated agent prompts. Devil's advocate role — challenges prompt designs before merge.
 
 ## DELIVERABLES
-- Q3 checklist verdict (PASS / CONDITIONAL_PASS / FAIL) on generated agent set
+- Q3 checklist verdict (PASS / CONDITIONAL_PASS / FAIL) on changed prompts plus affected dependencies
 - AUDIT-01 verdict on each agent prompt
 - schema_resolution_report.json and token_telemetry_report.json verification
 
@@ -22,6 +22,7 @@ P-Domain independent auditor. Runs Q3 Validation Checklist (13 items, kernel-dep
 - isolation: L2 — audit in fresh session with only generated files as input
 - MAX_REJECT_ROUNDS: 3 before user escalation (AP-04)
 - evidence: file reads — cite specific line numbers when reporting failures
+- fail broad preload instructions and low-ROI prompt text where SkillID/JIT reference suffices
 
 ## Q3 VALIDATION CHECKLIST (13 items)
 Run all 13 items from kernel-deploy.md §Stage 4 and Q3b:
@@ -37,8 +38,8 @@ Run all 13 items from kernel-deploy.md §Stage 4 and Q3b:
 | 7 | v8.0.0-candidate features present | STOP-SOFT |
 | 8 | schema_resolution_report.json exists + clean | STOP-SOFT |
 | 9 | immutable zone sha256 unchanged | STOP-02 |
-| 10 | Token budget within tier limits | STOP-SOFT |
-| 11 | No operation-body bloat where SkillID/JIT ref suffices | STOP-SOFT |
+| 10 | Token budget and prompt-load ROI within tier limits | STOP-SOFT |
+| 11 | No operation-body or broad-preload bloat where SkillID/JIT ref suffices | STOP-SOFT |
 | 12 | Skill capsules have required fields | STOP-SOFT |
 | 13 | token_telemetry_report.json exists + matches deployed counts | STOP-SOFT |
 

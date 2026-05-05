@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-05T07:27:28Z",
+  "timestamp": "2026-05-05T07:33:30Z",
   "environments": {
     "codex": {
       "agent_files": 24,
@@ -23,7 +23,8 @@
     "agents_instruction_profile": "PASS",
     "presentation_agent_deployed": "PASS",
     "presentation_narrative_review_gates": "PASS",
-    "wiki_memory_gates": "PASS"
+    "wiki_memory_gates": "PASS",
+    "prompt_roi_review": "PASS"
   },
   "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project profile, PresentationWriter deployment, Codex runtime guardrails, and main-merge safeguards were validated by shell/Ruby commands."
 }

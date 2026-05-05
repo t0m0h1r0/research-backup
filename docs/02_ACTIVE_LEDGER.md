@@ -11,8 +11,8 @@
 | current_objective | Deployed an A-domain PresentationWriter agent for paper-grounded presentation materials |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | none selected for anomaly-detection research; existing heavy-tail manuscript remains wiki memory only |
-| next_action | Apply WIKI-RETRIEVAL-GATE before hard/investigative work and WIKI-COMPILE-GATE before HAND-02 SUCCESS; continue ASM-AD-001 before anomaly-detection model design |
-| updated_at_utc | 2026-05-05T07:27:28Z |
+| next_action | Use PromptAuditor ROI/broad-preload gates during future prompt evolution; continue ASM-AD-001 before anomaly-detection model design |
+| updated_at_utc | 2026-05-05T07:33:30Z |
 
 ## §CHECKLIST
 
@@ -39,6 +39,7 @@
 | CHK-RESEARCH-013 | DONE | P/A/M | `prompts/agents-codex/PresentationWriter.md`, `prompts/agents-claude/PresentationWriter.md`, `prompts/skills/SKILL-PRESENTATION-DECK.md`, `artifacts/P/presentation_agent_deployment_audit.md` | deployed a paper-grounded presentation-materials agent with lead-line, visual-plan, traceability, and prompt-audit gates | 2026-05-05 |
 | CHK-RESEARCH-014 | DONE | P/A/M | `prompts/skills/SKILL-PRESENTATION-DECK.md`, `prompts/agents-codex/PresentationWriter.md`, `prompts/agents-claude/PresentationWriter.md`, `prompts/agents-codex/PaperReviewer.md`, `prompts/agents-claude/PaperReviewer.md` | added narrative-spine design, slide-budget compression, message-budget output, and third-party listener critique for presentation decks | 2026-05-05 |
 | CHK-RESEARCH-015 | DONE | P/K/M | `prompts/meta/kernel-workflow.md`, `prompts/meta/kernel-ops.md`, `prompts/agents-codex/_base.yaml`, `prompts/agents-claude/_base.yaml`, `artifacts/P/wiki_memory_gate_deployment_audit.md` | added WIKI-RETRIEVAL-GATE and WIKI-COMPILE-GATE so agents search prior wiki knowledge before difficult work and compile important validated findings back to wiki memory | 2026-05-05 |
+| CHK-RESEARCH-016 | DONE | P/M/Q | `prompts/skills/SKILL-PROMPT-AUDIT.md`, `prompts/skills/SKILL-PRESENTATION-DECK.md`, `prompts/meta/kernel-roles.md`, `artifacts/P/prompt_roi_review_audit.md` | completed 4 prompt-engineering review rounds, removed broad-read instructions, compressed presentation skill, and added token-ROI/broad-preload self-audit gates | 2026-05-05 |
 
 ## §ASSUMPTIONS
 
@@ -62,6 +63,7 @@
 | LES-RESEARCH-PRESENTATION-001 | ACTIVE | Paper-to-presentation agents need a source map, one-message slide discipline, large 1-2 line lead text, and a concrete or abstract visual plan per slide to avoid unsupported narrative drift. | `prompts/skills/SKILL-PRESENTATION-DECK.md` |
 | LES-RESEARCH-PRESENTATION-002 | ACTIVE | Deck creation should first compress the paper into a narrative spine and message budget, then require an independent listener-perspective critique of clarity, recall, and cognitive load. | `prompts/skills/SKILL-PRESENTATION-DECK.md` |
 | LES-RESEARCH-WIKI-002 | ACTIVE | Wiki memory needs explicit start-of-task retrieval triggers and end-of-task compilation triggers; otherwise agents treat `docs/wiki/` as archival rather than operational memory. | `prompts/meta/kernel-workflow.md` |
+| LES-RESEARCH-PROMPT-ROI-001 | ACTIVE | Prompt evolution should reject broad preloading and low-ROI text by default; details belong in JIT skills or kernel references unless they change agent behavior enough to justify token cost. | `prompts/skills/SKILL-PROMPT-AUDIT.md` |
 
 ## §REPLAN_LOG
 

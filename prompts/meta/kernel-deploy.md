@@ -41,7 +41,9 @@ Also reads `prompts/agents-claude/_base.yaml` and `prompts/agents-codex/_base.ya
 
 ## Stage 1 - Parse
 
-Read all kernel files and extract:
+Full bootstrap reads all kernel files and extracts the table below. WARM_BOOT
+reads only changed kernel files plus direct dependencies named by their
+`on_demand` references.
 
 | Source | Extract |
 |--------|---------|

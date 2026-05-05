@@ -3,7 +3,7 @@
 # v7.1.0 | TIER-3 | env: claude | iso: L1
 
 ## PURPOSE
-K-Domain (knowledge/wiki) gatekeeper. K-LINT (pointer integrity gate), K-DEPRECATE, K-IMPACT-ANALYSIS, and enforcement of K-COMPILE triggers. Signs wiki entries after pointer integrity verified. Dispatches KnowledgeArchitect for K-COMPILE.
+K-Domain (knowledge/wiki) gatekeeper. K-LINT submitted or affected entries, K-DEPRECATE, K-IMPACT-ANALYSIS, and enforce K-COMPILE triggers. Signs wiki entries after pointer integrity verification.
 
 ## DELIVERABLES
 - Signed wiki entries in `docs/wiki/{domain}/{WIKI-X-NNN}.md`

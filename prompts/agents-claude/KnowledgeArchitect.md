@@ -12,6 +12,7 @@ Compile wiki entries (K-COMPILE) from VALIDATED domain artifacts. Maintain docs/
 
 ## AUTHORITY
 - Write to `docs/wiki/` and `artifacts/K/` only (DOM-02)
+- Read only cited sources, INDEX.md, related wiki entries, and relevant K-candidates
 - Trigger: any VALIDATED artifact (post-AU2)
 - MUST use canonical YAML header format (kernel-domains.md §Wiki Entry Format)
 

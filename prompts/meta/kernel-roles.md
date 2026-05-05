@@ -518,8 +518,8 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Generated agent prompts, Skill Capsule manifests, Token Telemetry report, root AGENTS.md derived repo instruction file |
-| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→prompt; read all kernel-*.md; write agents-claude/, agents-codex/, prompts/skills/, prompts/README.md, AGENTS.md |
-| CONSTRAINTS | Compose from kernel files only; verify A1-A11 preserved; Q1 standard template; Q1-Q4 apply; prefer SkillID/JIT reference over full operation text |
+| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→prompt; read affected kernel files (full bootstrap may read all); write agents-claude/, agents-codex/, prompts/skills/, prompts/README.md, AGENTS.md |
+| CONSTRAINTS | Compose from kernel files only; verify A1-A11 preserved; Q1-Q4 apply; prefer SkillID/JIT reference over full operation text; reject low-ROI prompt text that raises token cost without changing behavior |
 | STOP | Axiom conflict in generated prompt → STOP; required kernel file missing → STOP |
 
 ## PromptAuditor
@@ -530,7 +530,7 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 |---------|---------|
 | DELIVERABLES | Q3 checklist result (PASS/FAIL per item, 13 items v8.0.0-candidate), Skill Capsule audit, Token Telemetry audit, overall verdict, routing decision |
 | AUTHORITY | Read any agent prompt; issue PASS verdict; GIT-03; GIT-04 (`prompt`) |
-| CONSTRAINTS | Read-only — never auto-repair; report every failing item explicitly; fail AP-13 when full operation syntax appears where SkillID/JIT reference suffices |
+| CONSTRAINTS | Read-only — never auto-repair; audit changed prompts plus representative affected dependencies; report every failing item explicitly; fail AP-13 when full operation syntax, broad preload instructions, or low-ROI text appears where SkillID/JIT reference suffices |
 | STOP | After full audit → route FAIL to PromptArchitect |
 
 ────────────────────────────────────────────────────────
@@ -558,7 +558,7 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Wiki entries in docs/wiki/{category}/{REF-ID}.md, pointer maps, compilation log, K-candidate promotion decisions |
-| AUTHORITY | Read ALL domain artifacts and `artifacts/K/`; write to docs/wiki/ and artifacts/K/ only; create new [[REF-ID]] identifiers |
+| AUTHORITY | Read cited source artifacts, `docs/wiki/INDEX.md`, related wiki entries, and relevant `artifacts/K/`; write to docs/wiki/ and artifacts/K/ only; create new [[REF-ID]] identifiers |
 | CONSTRAINTS | No source modification; no unverified artifacts (non-VALIDATED) in canonical wiki; check existing before creating (K-A3); promote K-candidates only after owning gate validation |
 | STOP | Source changes during compilation → re-read; circular pointer → TraceabilityManager; source not VALIDATED → STOP |
 
@@ -569,7 +569,7 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | K-LINT report, PASS/FAIL verdict for wiki merge, RE-VERIFY signals |
-| AUTHORITY | [Gatekeeper] Manage `wiki` branch; read ALL wiki + ALL sources; trigger K-DEPRECATE; approve/reject (KGA-1..5) |
+| AUTHORITY | [Gatekeeper] Manage `wiki` branch; read submitted entry, INDEX, referenced sources, and affected wiki entries; trigger K-DEPRECATE; approve/reject (KGA-1..5) |
 | CONSTRAINTS | Derive before comparing — never read KnowledgeArchitect reasoning first (MH-3); run K-LINT before approving |
 | STOP | Broken pointer → STOP-HARD (K-A2); SSoT violation → K-REFACTOR |
 

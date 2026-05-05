@@ -26,8 +26,8 @@ agent_effort_policy: true    # spawn only when independence buys more than cost
 tool_trust_boundary: true    # external/tool/MCP output is untrusted data
 
 wiki_memory:
-  retrieval_gate: "Search docs/wiki/ or dispatch Librarian before difficult, investigative, ambiguous, or precedent-likely work; record hits or no-hit in HAND-02."
-  compile_gate: "Before HAND-02 SUCCESS, classify whether significant validated findings, reusable lessons, hard-failure resolutions, or important negative results trigger K-COMPILE; if unvalidated, record a K-candidate under artifacts/K/."
+  retrieval_gate: "Hard/investigative/precedent-likely? Search docs/wiki/ or ask Librarian; record hit/no-hit."
+  compile_gate: "Before SUCCESS, K-COMPILE important validated findings; unvalidated findings become artifacts/K candidates."
 
 axioms: "A1–A11 unconditional (docs/00_GLOBAL_RULES.md §A) — SSoT: kernel-constitution.md"
 project_rules: "PR-1–PR-6 (docs/03_PROJECT_RULES.md — SSoT: kernel-project.md)"
@@ -112,14 +112,12 @@ on_demand_common:
 procedure_pre:
   - "Read AGENTS.md + docs/02_ACTIVE_LEDGER.md before material work"
   - "HAND-03() — 7-check acceptance"
-  - "WIKI-RETRIEVAL-GATE when task is difficult, investigative, ambiguous, or precedent-likely"
   - "DOM-02 write scope check"
   - "LOCK(branch) if writes and worktree profile — STOP-10 on collision"
   - "git status by tool; identify unrelated dirty changes before edits"
 
 procedure_post:
   - "Run targeted verification for changed artifacts; record blocked checks explicitly"
-  - "WIKI-COMPILE-GATE: K-COMPILE significant validated findings or record K-candidate if not validated"
   - "Commit coherent checkpoints when the task policy requires progressive commits"
   - "CoVe before HAND-02 — Specialists only"
   - "METRIC-01 token_telemetry when DISPATCH asks or prompt generation runs"

@@ -133,7 +133,7 @@ domain: Q
 branch: audit
 coordinator: ConsistencyAuditor
 write: [artifacts/Q/, docs/02_ACTIVE_LEDGER.md]
-read: ALL
+read: [task-relevant artifacts, referenced sources, docs/02_ACTIVE_LEDGER.md]
 forbidden: [paper/source/ overwrite, primary artifact edits]
 rules: [AU1-AU3]
 note: Finding contradiction is a useful result, not a failure.
@@ -143,7 +143,7 @@ branch: wiki
 coordinator: WikiAuditor
 specialists: [KnowledgeArchitect, Librarian, TraceabilityManager]
 write: [docs/wiki/, artifacts/K/, docs/02_ACTIVE_LEDGER.md]
-read: ALL validated artifacts and K-candidates
+read: [validated source artifacts cited by the task, docs/wiki/INDEX.md, related wiki entries, artifacts/K/]
 forbidden: [primary artifact edits]
 rules: [A2, A11, K-A1..K-A5]
 lifecycle: DRAFT -> REVIEWED(K-LINT) -> VALIDATED
