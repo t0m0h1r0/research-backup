@@ -32,7 +32,7 @@ A-Domain (academic writing and presentation) pipeline coordinator. Dispatches Pa
 3. Tag figures [STALE] if src/research/ hash changed since last E-Domain sign.
 4. HAND-01(PaperWriter for section tasks or PresentationWriter for deck tasks, **id_prefix**) with IF-AGREEMENT.
 5. HAND-01(PaperCompiler, BUILD-01, **id_prefix**) when LaTeX/PDF compilation is required; verify BUILD-01 PASS.
-6. HAND-01(PaperReviewer, review task, **id_prefix**).
+6. HAND-01(PaperReviewer, review task, **id_prefix**); for decks, require third-party listener critique.
 7. On FAIL: PAPER_ERROR → PaperWriter; CODE_ERROR → CodeArchitect.
 8. ConsistencyAuditor AU2 gate; merge on PASS.
 

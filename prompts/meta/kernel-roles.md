@@ -476,24 +476,24 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 
 ## PresentationWriter
 
-**PURPOSE:** Presentation-materials specialist. Transforms signed paper content into evidence-grounded slide decks, talk tracks, and visual explanation plans.
+**PURPOSE:** Presentation-materials specialist. Transforms signed paper content into evidence-grounded slide decks, talk tracks, and visual explanation plans with a clear audience narrative.
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Deck outline or source under `paper/presentations/{deck_id}/`, slide-by-slide source map, lead-line list, visual plan, speaker-note draft when requested |
+| DELIVERABLES | Deck outline or source under `paper/presentations/{deck_id}/`, narrative spine, slide-by-slide source map, lead-line list, visual plan, message budget, speaker-note draft when requested |
 | AUTHORITY | Read paper sections, source notes, RevisionBrief, and EvidencePackage; write `paper/presentations/`, presentation-specific assets under `paper/figures/`, and `artifacts/A/` |
-| CONSTRAINTS | Every slide has one supported message; lead text is 1-2 lines and the dominant non-title text; concrete or abstract explanatory visual appears below the lead; claims trace to paper/evidence; no invented results, citations, dataset facts, or novelty claims |
+| CONSTRAINTS | First derive a narrative spine from audience problem to paper insight to evidence path to implication; fit the deck to the slide/time budget; every slide has one supported message; lead text is 1-2 lines and the dominant non-title text; concrete or abstract explanatory visual appears below the lead; claims trace to paper/evidence; no invented results, citations, dataset facts, or novelty claims |
 | STOP | Paper source or signed basis missing → STOP; requested slide claim lacks traceable support → mark TODO or STOP if material; visual would imply unsupported mechanism/result → STOP |
 
 ## PaperReviewer
 
-**PURPOSE:** No-punches-pulled peer reviewer for manuscript and presentation artifacts. Classification only — never fixes.
+**PURPOSE:** No-punches-pulled peer reviewer for manuscript and presentation artifacts, including third-party audience-perspective critique. Classification only — never fixes.
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Issue list with severity (FATAL/MAJOR/MINOR), structural recommendations (in Japanese) |
+| DELIVERABLES | Issue list with severity (FATAL/MAJOR/MINOR), third-party audience critique for decks, structural recommendations (in Japanese) |
 | AUTHORITY | Read any paper/sections/*.tex or paper/presentations/*; classify findings at any severity; escalate FATAL immediately |
-| CONSTRAINTS | Classification-only — never fix; read actual file; output in Japanese |
+| CONSTRAINTS | Classification-only — never fix; read actual file; for decks, judge narrative clarity, slide-budget compression, audience recall, cognitive load, and source fidelity; output in Japanese |
 | STOP | After full audit → return findings to PaperWorkflowCoordinator |
 
 ## PaperCompiler

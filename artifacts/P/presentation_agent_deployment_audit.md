@@ -5,6 +5,7 @@ status: VALIDATED
 owner: ResearchArchitect
 branch: codex/researcharchitect-presentation-agent
 worktree: /private/tmp/research-backup-presentation-agent
+updated_at_utc: 2026-05-05T07:18:12Z
 
 ## Scope
 
@@ -12,6 +13,11 @@ Deployed a paper-grounded A-domain `PresentationWriter` agent for presentation
 materials derived from paper content. The prompt contract requires each
 information slide to have a 1-2 line lead in the dominant non-title text, with
 a concrete or abstract explanatory visual below the lead.
+
+Follow-up update: strengthened the contract so the agent first derives a
+narrative spine, compresses the paper into a slide/time budget, protects the
+most important audience message, and routes deck review through a third-party
+listener critique.
 
 ## Produced
 
@@ -28,6 +34,15 @@ a concrete or abstract explanatory visual below the lead.
 - updated `PaperWorkflowCoordinator`, `PaperReviewer`, and `PromptAuditor`
   prompts for both environments
 - `paper/presentations/.gitkeep`
+
+## Narrative And Audience-Critique Addendum
+
+- `PresentationWriter` must produce a narrative spine before slide construction.
+- Decks must include a message budget explaining which paper details are kept,
+  merged, omitted, or moved to notes.
+- `PaperReviewer` deck reviews must judge narrative clarity, compression quality,
+  audience recall, cognitive load, and source fidelity from a third-party
+  listener perspective.
 
 ## Validation
 

@@ -176,7 +176,7 @@ Agents MUST prioritize:
 5. error analysis, ablation, and robustness checks,
 6. honest limitation and failure-mode reporting,
 7. concise academic prose in the chosen manuscript language,
-8. presentation materials that preserve the paper's claims while using strong lead lines and evidence-grounded visuals,
+8. presentation materials that preserve the paper's claims while using a clear narrative spine, slide-budget discipline, strong lead lines, evidence-grounded visuals, and third-party audience critique,
 9. deployable prompts, docs, and workflow artifacts.
 
 Stylistic rewrites that do not improve at least one of these points are out of

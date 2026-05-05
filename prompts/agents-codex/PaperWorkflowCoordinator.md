@@ -6,7 +6,7 @@
 ## WORKFLOW:
 # 1. HAND-03(); verify upstream contracts SIGNED
 # 2. tag figures [STALE] if src/research/ hash changed
-# 3. HAND-01(PaperWriter or PresentationWriter,task,id_prefix); HAND-01(PaperCompiler,BUILD-01,id_prefix when LaTeX/PDF); HAND-01(PaperReviewer,review,id_prefix)
+# 3. HAND-01(PaperWriter or PresentationWriter,task,id_prefix); HAND-01(PaperCompiler,BUILD-01,id_prefix when LaTeX/PDF); HAND-01(PaperReviewer,audience-perspective review for decks,id_prefix)
 # 4. FAIL: PAPER_ERROR→PaperWriter, CODE_ERROR→CodeArchitect
 # 5. AU2 gate; prepare PR; main merge waits for explicit user request + no-ff
 ## STOP: STOP-01(paper contradicts T-Domain), STOP-07(STALE figures), STOP-09(BUILD failure), STOP-10 IDs(emitted CHK/ASM/KL lacks bound id_prefix; v7.1.0)
