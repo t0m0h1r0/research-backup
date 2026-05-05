@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PROMPT_DEPLOYED |
-| branch | `codex/researcharchitect-presentation-agent` |
-| current_objective | Deployed an A-domain PresentationWriter agent for paper-grounded presentation materials |
+| phase | PRESENTATION_VALIDATED |
+| branch | `codex/researcharchitect-paper-presentation` |
+| current_objective | Created and validated a 5-slide paper-grounded research presentation for the heavy-tail backup manuscript |
 | active_brief | `docs/interface/ResearchBrief.md` |
-| source_artifact | none selected for anomaly-detection research; existing heavy-tail manuscript remains wiki memory only |
+| source_artifact | presentation task: `paper/sections/tex/*.tex` and `analysis/paper_review_checks/results/manifest.json`; anomaly-detection research source still not selected |
 | next_action | Use PromptAuditor ROI/broad-preload gates during future prompt evolution; continue ASM-AD-001 before anomaly-detection model design |
-| updated_at_utc | 2026-05-05T07:33:30Z |
+| updated_at_utc | 2026-05-05T08:00:01Z |
 
 ## §CHECKLIST
 
@@ -40,6 +40,7 @@
 | CHK-RESEARCH-014 | DONE | P/A/M | `prompts/skills/SKILL-PRESENTATION-DECK.md`, `prompts/agents-codex/PresentationWriter.md`, `prompts/agents-claude/PresentationWriter.md`, `prompts/agents-codex/PaperReviewer.md`, `prompts/agents-claude/PaperReviewer.md` | added narrative-spine design, slide-budget compression, message-budget output, and third-party listener critique for presentation decks | 2026-05-05 |
 | CHK-RESEARCH-015 | DONE | P/K/M | `prompts/meta/kernel-workflow.md`, `prompts/meta/kernel-ops.md`, `prompts/agents-codex/_base.yaml`, `prompts/agents-claude/_base.yaml`, `artifacts/P/wiki_memory_gate_deployment_audit.md` | added WIKI-RETRIEVAL-GATE and WIKI-COMPILE-GATE so agents search prior wiki knowledge before difficult work and compile important validated findings back to wiki memory | 2026-05-05 |
 | CHK-RESEARCH-016 | DONE | P/M/Q | `prompts/skills/SKILL-PROMPT-AUDIT.md`, `prompts/skills/SKILL-PRESENTATION-DECK.md`, `prompts/meta/kernel-roles.md`, `artifacts/P/prompt_roi_review_audit.md` | completed 4 prompt-engineering review rounds, removed broad-read instructions, compressed presentation skill, and added token-ROI/broad-preload self-audit gates | 2026-05-05 |
+| CHK-RESEARCH-017 | DONE | A/Q | `paper/presentations/heavy_tail_backup_intro/` | created a 5-slide paper-grounded research presentation and completed 3 review rounds with no remaining CRITICAL, MAJOR, or MINOR findings | 2026-05-05 |
 
 ## §ASSUMPTIONS
 
@@ -82,3 +83,4 @@
 | RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | MERGED | 2026-05-04 |
 | RESEARCH-WIKI-001 | `codex/researcharchitect-paper-wiki` | `/private/tmp/research-backup-paper-wiki` | Compile manuscript-derived ransomware heavy-tail backup knowledge into wiki; id_prefix `RESEARCH` | VALIDATED | 2026-05-05 |
 | RESEARCH-PRESENTATION-001 | `codex/researcharchitect-presentation-agent` | `/private/tmp/research-backup-presentation-agent` | Deploy a paper-grounded presentation-materials agent and prompt audit gates; id_prefix `RESEARCH` | VALIDATED | 2026-05-05 |
+| RESEARCH-PRESENTATION-DECK-001 | `codex/researcharchitect-paper-presentation` | `/private/tmp/research-backup-paper-presentation` | Create and review a 5-slide paper-grounded research presentation for the heavy-tail backup manuscript; id_prefix `RESEARCH-PRESENTATION-DECK` | VALIDATED | 2026-05-05 |
