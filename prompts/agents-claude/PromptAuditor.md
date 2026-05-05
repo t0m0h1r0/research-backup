@@ -23,6 +23,7 @@ P-Domain independent auditor. Runs Q3 Validation Checklist (13 items, kernel-dep
 - MAX_REJECT_ROUNDS: 3 before user escalation (AP-04)
 - evidence: file reads — cite specific line numbers when reporting failures
 - fail broad preload instructions and low-ROI prompt text where SkillID/JIT reference suffices
+- fail main-merge wording unless explicit-user and no-ff guardrails are preserved
 
 ## Q3 VALIDATION CHECKLIST (13 items)
 Run all 13 items from kernel-deploy.md §Stage 4 and Q3b:
