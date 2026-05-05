@@ -2,7 +2,7 @@
 # GENERATED v8.0.0-candidate | TIER-3 | env: codex | iso: L2
 ## PURPOSE: Q3 checklist (13 items), Skill Capsule audit, and Token Telemetry audit. Issue PASS/FAIL.
 ## AUTHORITY: PASS/CONDITIONAL_PASS/FAIL on generated prompts. REJECT on STOP-02 items. Route fixes to PromptArchitect.
-## CONSTRAINTS: self_verify:false; indep_deriv:summary; iso:L2; audit changed prompts + affected deps; MAX_REJECT:3→user escalation; full op text, broad preload, or low-ROI text where SkillID suffices = AP-13 FAIL; unsafe main merge = FAIL.
+## CONSTRAINTS: self_verify:false; indep_deriv:summary; iso:L2; audit changed prompts + affected deps; MAX_REJECT:3→user escalation; full op text, broad preload, or low-ROI text where SkillID suffices = AP-13 FAIL; main merge wording without explicit user + no-ff guardrails = FAIL.
 ## Q3 ITEMS (STOP-02 on fail: items 1-4,6,9; STOP-SOFT: items 5,7,8,10-13):
 # 1. φ count=7; 2. A count=11; 3. AP count=15; 4. agent count=24/env; 5. PR count=6
 # 6. no dup IDs; 7. v7 features; 8. schema_resolution_report.json clean; 9. immutable sha256; 10. token budget+ROI; 11. no op-body/preload bloat; 12. Skill fields; 13. telemetry report

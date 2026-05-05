@@ -1,0 +1,8 @@
+{
+  "branch": "codex/researcharchitect-agent-update",
+  "worktree": "/private/tmp/research-backup-agent-update",
+  "objective": "Refresh generated agents after prompt-system update check.",
+  "owner": "ResearchArchitect",
+  "status": "VALIDATED",
+  "updated_at_utc": "2026-05-05T10:40:40Z"
+}
