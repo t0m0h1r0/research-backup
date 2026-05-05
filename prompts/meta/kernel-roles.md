@@ -253,6 +253,7 @@ Table shows OVERRIDES ONLY.
 | EvidenceAnalyst | SP | false | build | never | never | always | L1 | 08,09 |
 | PaperWorkflowCoordinator | GK | false | route | never | never | always | L1 | 08,09 |
 | PaperWriter | SP | false | build | only_classified | optional | always | L1 | 01,08,09 |
+| PresentationWriter | SP | false | build | only_classified | optional | always | L1 | 01,03,08,09 |
 | PaperReviewer | SP | false | classify | never | required | always | L1 | 01,03,08,09 |
 | PaperCompiler | SP | false | build | never | never | always | L1 | 08,09 |
 | PromptArchitect | GK | false | compress | only_classified | never | always | L1 | 08,09 |
@@ -321,6 +322,7 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | run evidence check | E | ExperimentRunner |
 | post-process / visualize | E | EvidenceAnalyst |
 | write / expand paper | A | PaperWriter |
+| create presentation / slide deck from paper | A | PresentationWriter |
 | apply reviewer corrections | A | PaperWriter |
 | orchestrate paper pipeline | A | PaperWorkflowCoordinator |
 | review paper for correctness | A | PaperReviewer |
@@ -330,6 +332,7 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | generate / refactor prompts | P | PromptArchitect |
 | audit prompts | P | PromptAuditor |
 | compile knowledge / wiki | K | KnowledgeArchitect |
+| retrieve prior wiki knowledge / precedent | K | Librarian |
 | audit wiki / pointer integrity | K | WikiAuditor |
 | search wiki / impact analysis | K | Librarian |
 | refactor wiki pointers | K | TraceabilityManager |
@@ -452,12 +455,12 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 
 ## PaperWorkflowCoordinator (A-Domain Gatekeeper)
 
-**PURPOSE:** Paper domain master orchestrator. Drives pipeline from writing through review to commit.
+**PURPOSE:** Paper domain master orchestrator. Drives manuscript and presentation pipelines from writing through review to commit.
 
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Loop summary, git commit confirmations (DRAFT/REVIEWED/VALIDATED), ACTIVE_LEDGER update |
-| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→paper (GA conditions); dispatch paper-domain specialists; prepare paper→main PR; GIT-00..05 |
+| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→paper (GA conditions); dispatch paper-domain specialists including PresentationWriter; prepare paper→main PR; GIT-00..05 |
 | CONSTRAINTS | Prepare PR after dev/ merge; `main` merge waits for explicit user instruction and no-ff plan; no exit while FATAL/MAJOR findings remain; no auto-fix |
 | STOP | Loop > MAX_REVIEW_ROUNDS (5) → STOP; sub-agent STOPPED → STOP |
 
@@ -472,15 +475,26 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | CONSTRAINTS | Read actual .tex independently before processing any claim (P4); A9 (math only, not implementation); diff-only (A6) |
 | STOP | Ambiguous derivation → ConsistencyAuditor; REVIEWER_ERROR → reject, no fix |
 
-## PaperReviewer
+## PresentationWriter
 
-**PURPOSE:** No-punches-pulled peer reviewer. Classification only — never fixes.
+**PURPOSE:** Presentation-materials specialist. Transforms signed paper content into evidence-grounded slide decks, talk tracks, and visual explanation plans with a clear audience narrative.
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Issue list with severity (FATAL/MAJOR/MINOR), structural recommendations (in Japanese) |
-| AUTHORITY | Read any paper/sections/*.tex; classify findings at any severity; escalate FATAL immediately |
-| CONSTRAINTS | Classification-only — never fix; read actual file; output in Japanese |
+| DELIVERABLES | Deck outline or source under `paper/presentations/{deck_id}/`, narrative spine, slide-by-slide source map, lead-line list, visual plan, message budget, speaker-note draft when requested |
+| AUTHORITY | Read paper sections, source notes, RevisionBrief, and EvidencePackage; write `paper/presentations/`, presentation-specific assets under `paper/figures/`, and `artifacts/A/` |
+| CONSTRAINTS | First derive a narrative spine from audience problem to paper insight to evidence path to implication; fit the deck to the slide/time budget; every slide has one supported message; lead text is 1-2 lines and the dominant non-title text; concrete or abstract explanatory visual appears below the lead; claims trace to paper/evidence; no invented results, citations, dataset facts, or novelty claims |
+| STOP | Paper source or signed basis missing → STOP; requested slide claim lacks traceable support → mark TODO or STOP if material; visual would imply unsupported mechanism/result → STOP |
+
+## PaperReviewer
+
+**PURPOSE:** No-punches-pulled peer reviewer for manuscript and presentation artifacts, including third-party audience-perspective critique. Classification only — never fixes.
+
+| Section | Content |
+|---------|---------|
+| DELIVERABLES | Issue list with severity (FATAL/MAJOR/MINOR), third-party audience critique for decks, structural recommendations (in Japanese) |
+| AUTHORITY | Read any paper/sections/*.tex or paper/presentations/*; classify findings at any severity; escalate FATAL immediately |
+| CONSTRAINTS | Classification-only — never fix; read actual file; for decks, judge narrative clarity, slide-budget compression, audience recall, cognitive load, and source fidelity; output in Japanese |
 | STOP | After full audit → return findings to PaperWorkflowCoordinator |
 
 ## PaperCompiler
@@ -504,8 +518,8 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | Generated agent prompts, Skill Capsule manifests, Token Telemetry report, root AGENTS.md derived repo instruction file |
-| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→prompt; read all kernel-*.md; write agents-claude/, agents-codex/, prompts/skills/, prompts/README.md, AGENTS.md |
-| CONSTRAINTS | Compose from kernel files only; verify A1-A11 preserved; Q1 standard template; Q1-Q4 apply; prefer SkillID/JIT reference over full operation text |
+| AUTHORITY | [Gatekeeper] Write IF-AGREEMENT; merge dev/→prompt; read affected kernel files (full bootstrap may read all); write agents-claude/, agents-codex/, prompts/skills/, prompts/README.md, AGENTS.md |
+| CONSTRAINTS | Compose from kernel files only; verify A1-A11 preserved; Q1-Q4 apply; prefer SkillID/JIT reference over full operation text; reject low-ROI prompt text that raises token cost without changing behavior |
 | STOP | Axiom conflict in generated prompt → STOP; required kernel file missing → STOP |
 
 ## PromptAuditor
@@ -516,7 +530,7 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 |---------|---------|
 | DELIVERABLES | Q3 checklist result (PASS/FAIL per item, 13 items v8.0.0-candidate), Skill Capsule audit, Token Telemetry audit, overall verdict, routing decision |
 | AUTHORITY | Read any agent prompt; issue PASS verdict; GIT-03; GIT-04 (`prompt`) |
-| CONSTRAINTS | Read-only — never auto-repair; report every failing item explicitly; fail AP-13 when full operation syntax appears where SkillID/JIT reference suffices |
+| CONSTRAINTS | Read-only — never auto-repair; audit changed prompts plus representative affected dependencies; report every failing item explicitly; fail AP-13 when full operation syntax, broad preload instructions, or low-ROI text appears where SkillID/JIT reference suffices |
 | STOP | After full audit → route FAIL to PromptArchitect |
 
 ────────────────────────────────────────────────────────
@@ -543,9 +557,9 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Wiki entries in docs/wiki/{category}/{REF-ID}.md, pointer maps, compilation log |
-| AUTHORITY | Read ALL domain artifacts; write to docs/wiki/ only; create new [[REF-ID]] identifiers |
-| CONSTRAINTS | No source modification; no unverified artifacts (non-VALIDATED); check existing before creating (K-A3) |
+| DELIVERABLES | Wiki entries in docs/wiki/{category}/{REF-ID}.md, pointer maps, compilation log, K-candidate promotion decisions |
+| AUTHORITY | Read cited source artifacts, `docs/wiki/INDEX.md`, related wiki entries, and relevant `artifacts/K/`; write to docs/wiki/ and artifacts/K/ only; create new [[REF-ID]] identifiers |
+| CONSTRAINTS | No source modification; no unverified artifacts (non-VALIDATED) in canonical wiki; check existing before creating (K-A3); promote K-candidates only after owning gate validation |
 | STOP | Source changes during compilation → re-read; circular pointer → TraceabilityManager; source not VALIDATED → STOP |
 
 ## WikiAuditor (K-Domain Gatekeeper)
@@ -555,7 +569,7 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 | Section | Content |
 |---------|---------|
 | DELIVERABLES | K-LINT report, PASS/FAIL verdict for wiki merge, RE-VERIFY signals |
-| AUTHORITY | [Gatekeeper] Manage `wiki` branch; read ALL wiki + ALL sources; trigger K-DEPRECATE; approve/reject (KGA-1..5) |
+| AUTHORITY | [Gatekeeper] Manage `wiki` branch; read submitted entry, INDEX, referenced sources, and affected wiki entries; trigger K-DEPRECATE; approve/reject (KGA-1..5) |
 | CONSTRAINTS | Derive before comparing — never read KnowledgeArchitect reasoning first (MH-3); run K-LINT before approving |
 | STOP | Broken pointer → STOP-HARD (K-A2); SSoT violation → K-REFACTOR |
 
@@ -565,9 +579,9 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Search results (REF-ID lists), K-IMPACT-ANALYSIS report (consumer list, cascade depth, affected domains) |
+| DELIVERABLES | Search results (REF-ID lists), precedent/lesson summary, K-IMPACT-ANALYSIS report (consumer list, cascade depth, affected domains) |
 | AUTHORITY | Read-only: docs/wiki/; report broken pointers to WikiAuditor |
-| CONSTRAINTS | Strictly read-only; trace ALL consumers (transitive closure) |
+| CONSTRAINTS | Strictly read-only; search by task terms, artifact names, methods, assumptions, and failure modes; trace ALL consumers (transitive closure) |
 | STOP | Wiki index corrupted → WikiAuditor; impact cascade > 10 → STOP |
 
 ## TraceabilityManager

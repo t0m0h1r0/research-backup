@@ -34,13 +34,17 @@ Codex-facing operation is worktree-first: use a `codex/` task branch, commit
 coherent checkpoints, preserve user edits, and merge to `main` only after
 explicit user instruction with no-ff semantics.
 
+All environments use wiki-first memory gates: search `docs/wiki/` before
+difficult, investigative, ambiguous, or precedent-likely work, and classify
+important validated findings for K-COMPILE before HAND-02 SUCCESS.
+
 ## Agent Roster
 
-The deployed roster contains 23 roles per environment, including ResearchArchitect,
+The deployed roster contains 24 roles per environment, including ResearchArchitect,
 TaskPlanner, TheoryArchitect, TheoryAuditor, CodeArchitect, TestRunner,
 ExperimentRunner, EvidenceAnalyst, PaperWriter, PaperReviewer, ConsistencyAuditor,
-PromptArchitect, PromptAuditor, KnowledgeArchitect, WikiAuditor, Librarian, and
-TraceabilityManager.
+PresentationWriter, PromptArchitect, PromptAuditor, KnowledgeArchitect, WikiAuditor,
+Librarian, and TraceabilityManager.
 
 ## Regeneration
 

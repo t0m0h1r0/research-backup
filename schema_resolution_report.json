@@ -6,6 +6,7 @@
     "HAND-02",
     "HAND-03",
     "HAND-04",
+    "K-RETRIEVE",
     "META-ANTIPATTERNS",
     "META-DEPLOY",
     "META-DOMAINS",
@@ -21,5 +22,5 @@
   "rfc2119_violations": [],
   "source_integrity": "PASS_INITIAL_RESEARCH_BRIEF_REGISTERED",
   "active_project": "ai_anomaly_detection_research",
-  "timestamp": "2026-05-04T03:01:56Z"
+  "timestamp": "2026-05-05T07:33:30Z"
 }
