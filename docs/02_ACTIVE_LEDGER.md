@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | DEPLOYED |
-| branch | main |
-| current_objective | Start AI-assisted anomaly detection research with deployed research agents |
+| phase | WIKI_COMPILED |
+| branch | `codex/researcharchitect-paper-wiki` |
+| current_objective | Compile reusable knowledge from the local ransomware heavy-tail backup manuscript into wiki memory |
 | active_brief | `docs/interface/ResearchBrief.md` |
-| source_artifact | none registered yet |
-| next_action | Dispatch ASM-AD-001 to TaskPlanner for domain/taxonomy/research-question framing |
-| updated_at_utc | 2026-05-04T03:01:56Z |
+| source_artifact | `paper/source/heavy_tail_backup_v13.pdf` and `paper/sections/tex/*.tex` registered for wiki extraction only |
+| next_action | Use `docs/wiki/ransomware_heavy_tail_backup_design.md` carry-forward questions to refine ASM-AD-001 before model or dataset selection |
+| updated_at_utc | 2026-05-05T02:27:39Z |
 
 ## §CHECKLIST
 
@@ -35,6 +35,7 @@
 | CHK-RESEARCH-009 | DONE | A/R/Q | `paper/sections/tex/06_dynamic_retention.tex`, `paper/sections/tex/07_numerical_examples.tex`, `analysis/paper_review_checks/run.py` | reopened strict review repaired dynamic-retention horizon consistency and verified no MAJOR-or-higher findings | 2026-05-04 |
 | CHK-RESEARCH-010 | DONE | P/M | `AGENTS.md`, `prompts/agents-codex/`, `prompts/meta/kernel-roles.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/codex_config_optimization_audit.md` | optimized Codex worktree, commit, user-change, and explicit-user/no-ff main-merge guardrails | 2026-05-04 |
 | CHK-RESEARCH-011 | DONE | P/M | `AGENTS.md`, `prompts/README.md`, `prompts/meta/kernel-deploy.md`, `artifacts/P/agents_instruction_optimization_audit.md` | refined external-agent first-read instructions, artifact placement map, research gates, and prompt-maintenance path | 2026-05-04 |
+| CHK-RESEARCH-012 | DONE | M/E | `docs/wiki/ransomware_heavy_tail_backup_design.md`, `docs/evidence/heavy_tail_backup_source_note.md`, `docs/memo/researcharchitect_paper_wiki_compile_audit.md` | compiled 12 reusable manuscript-derived knowledge items after 15 extraction rounds and stopped on saturation before the 20-round cap | 2026-05-05 |
 
 ## §ASSUMPTIONS
 
@@ -44,6 +45,7 @@
 | ASM-AD-002 | OPEN | No active source paper, benchmark dataset, or application domain has been selected yet. | M/E |
 | ASM-AD-003 | OPEN | Literature and benchmark protocol should precede any SOTA or performance claim. | E |
 | ASM-AD-004 | OPEN | Existing T/R/E/A domains can route model design, implementation, evaluation, and writing without kernel changes. | Q |
+| ASM-AD-005 | OPEN | The ransomware heavy-tail backup manuscript provides model-derived wiki questions, but does not by itself select the active anomaly-detection domain or benchmark. | M/E |
 
 ## §LESSONS
 
@@ -53,6 +55,7 @@
 | LES-AD-002 | ACTIVE | Anomaly detection research needs explicit leakage, thresholding, and benchmark-compatibility gates before writing claims. | `docs/03_PROJECT_RULES.md` |
 | LES-RESEARCH-CODEX-001 | ACTIVE | Codex agent prompts need an inherited runtime profile plus local coordinator wording so no generated role implies unilateral `main` merge. | `prompts/agents-codex/_base.yaml` |
 | LES-RESEARCH-CODEX-002 | ACTIVE | External-agent instructions work best as a read-order and artifact-placement map, with detailed operation bodies kept in kernel files and skill capsules. | `AGENTS.md` |
+| LES-RESEARCH-WIKI-001 | ACTIVE | When a protected source extract and repaired manuscript sections differ, wiki compilation should prefer the repaired sections and leave a source-boundary note. | `docs/evidence/heavy_tail_backup_source_note.md` |
 
 ## §REPLAN_LOG
 
@@ -69,3 +72,4 @@
 | A-REVIEW-001 | `codex/researcharchitect-paper-review` | `worktrees/researcharchitect-paper-review` | Whole-paper reviewer audit, narrative repair, and notation unification | MERGED | 2026-05-04 |
 | RESEARCH-MATH-001 | `codex/researcharchitect-math-audit` | `worktrees/researcharchitect-math-audit` | Strict derivation audit and root-cause repair for manuscript equations; session `fae80cac-2527-40e9-b80a-8d3a891de483`; id_prefix `RESEARCH` | VALIDATED | 2026-05-04 |
 | RESEARCH-CODEX-001 | `codex/researcharchitect-codex-config` | `/private/tmp/research-backup-codex-config` | Optimize Codex agent configuration files; session `073ed11d-d33c-4fde-989e-446bd7544029`; id_prefix `RESEARCH` | MERGED | 2026-05-04 |
+| RESEARCH-WIKI-001 | `codex/researcharchitect-paper-wiki` | `/private/tmp/research-backup-paper-wiki` | Compile manuscript-derived ransomware heavy-tail backup knowledge into wiki; id_prefix `RESEARCH` | VALIDATED | 2026-05-05 |

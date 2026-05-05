@@ -1,0 +1,10 @@
+{
+  "id": "RESEARCH-WIKI-001",
+  "branch": "codex/researcharchitect-paper-wiki",
+  "worktree": "/private/tmp/research-backup-paper-wiki",
+  "objective": "Compile manuscript-derived ransomware heavy-tail backup knowledge into wiki",
+  "status": "VALIDATED",
+  "owner": "ResearchArchitect",
+  "id_prefix": "RESEARCH",
+  "updated_at_utc": "2026-05-05T02:27:39Z"
+}
