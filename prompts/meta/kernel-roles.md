@@ -332,6 +332,7 @@ Does NOT produce content. M-Domain Protocol Enforcer (Root Admin archetype).
 | generate / refactor prompts | P | PromptArchitect |
 | audit prompts | P | PromptAuditor |
 | compile knowledge / wiki | K | KnowledgeArchitect |
+| retrieve prior wiki knowledge / precedent | K | Librarian |
 | audit wiki / pointer integrity | K | WikiAuditor |
 | search wiki / impact analysis | K | Librarian |
 | refactor wiki pointers | K | TraceabilityManager |
@@ -556,9 +557,9 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Wiki entries in docs/wiki/{category}/{REF-ID}.md, pointer maps, compilation log |
-| AUTHORITY | Read ALL domain artifacts; write to docs/wiki/ only; create new [[REF-ID]] identifiers |
-| CONSTRAINTS | No source modification; no unverified artifacts (non-VALIDATED); check existing before creating (K-A3) |
+| DELIVERABLES | Wiki entries in docs/wiki/{category}/{REF-ID}.md, pointer maps, compilation log, K-candidate promotion decisions |
+| AUTHORITY | Read ALL domain artifacts and `artifacts/K/`; write to docs/wiki/ and artifacts/K/ only; create new [[REF-ID]] identifiers |
+| CONSTRAINTS | No source modification; no unverified artifacts (non-VALIDATED) in canonical wiki; check existing before creating (K-A3); promote K-candidates only after owning gate validation |
 | STOP | Source changes during compilation → re-read; circular pointer → TraceabilityManager; source not VALIDATED → STOP |
 
 ## WikiAuditor (K-Domain Gatekeeper)
@@ -578,9 +579,9 @@ Release gate for all domains. v6.0.0: applies EVALUATOR-OPTIMIZER rubric (R1-R4)
 
 | Section | Content |
 |---------|---------|
-| DELIVERABLES | Search results (REF-ID lists), K-IMPACT-ANALYSIS report (consumer list, cascade depth, affected domains) |
+| DELIVERABLES | Search results (REF-ID lists), precedent/lesson summary, K-IMPACT-ANALYSIS report (consumer list, cascade depth, affected domains) |
 | AUTHORITY | Read-only: docs/wiki/; report broken pointers to WikiAuditor |
-| CONSTRAINTS | Strictly read-only; trace ALL consumers (transitive closure) |
+| CONSTRAINTS | Strictly read-only; search by task terms, artifact names, methods, assumptions, and failure modes; trace ALL consumers (transitive closure) |
 | STOP | Wiki index corrupted → WikiAuditor; impact cascade > 10 → STOP |
 
 ## TraceabilityManager

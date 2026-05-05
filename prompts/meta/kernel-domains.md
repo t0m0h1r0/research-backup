@@ -35,6 +35,9 @@
 
 **Sovereignty rule:** All inter-domain communication uses an Interface Contract in `docs/interface/`.
 **Broken Symmetry:** Gatekeeper and Specialist are different roles for any material review.
+**Wiki-first rule:** Agents search K-domain memory before difficult or
+precedent-likely work, and compile significant validated findings back into
+K-domain memory before closing the task.
 
 --------------------------------------------------------
 # § INTER-DOMAIN INTERFACES
@@ -139,8 +142,8 @@ domain: K
 branch: wiki
 coordinator: WikiAuditor
 specialists: [KnowledgeArchitect, Librarian, TraceabilityManager]
-write: [docs/wiki/, docs/02_ACTIVE_LEDGER.md]
-read: ALL validated artifacts
+write: [docs/wiki/, artifacts/K/, docs/02_ACTIVE_LEDGER.md]
+read: ALL validated artifacts and K-candidates
 forbidden: [primary artifact edits]
 rules: [A2, A11, K-A1..K-A5]
 lifecycle: DRAFT -> REVIEWED(K-LINT) -> VALIDATED
@@ -158,6 +161,7 @@ docs/memo/         Mathematical and conceptual audits
 docs/evidence/     Literature, citation, and empirical evidence notes
 docs/interface/    Signed cross-domain contracts
 docs/wiki/         Compiled reusable knowledge
+artifacts/K/       Wiki candidates, K-domain audits, and compilation logs
 analysis/          Reproducible scripts and outputs
 notebooks/         Reproducible exploratory notebooks promoted to artifacts
 src/               Reusable research code

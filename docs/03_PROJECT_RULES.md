@@ -39,4 +39,5 @@ seed, split protocol, metrics, outputs, timestamp, and verdict.
 Outputs prioritize clear problem framing, prior-work positioning, fair baselines,
 reproducibility, error analysis, robustness checks, honest limitations, concise
 academic prose, paper-grounded presentation materials with narrative compression
-and audience-perspective critique, and redeployable agent workflow artifacts.
+and audience-perspective critique, reusable wiki memory, and redeployable agent
+workflow artifacts.

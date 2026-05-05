@@ -40,6 +40,7 @@ for Codex and other external agents.
 | Paper figures | `paper/figures/` |
 | Presentation decks and slide assets | `paper/presentations/` |
 | Agent/workflow lessons | `artifacts/M/` |
+| Wiki candidates and K-domain audits | `artifacts/K/` |
 | Prompt/configuration audits | `artifacts/P/` |
 
 ## Agent Rules
@@ -48,6 +49,9 @@ for Codex and other external agents.
 - Generated role prompts: `prompts/agents-codex/` and `prompts/agents-claude/`.
 - Skill capsules: `prompts/skills/`.
 - Follow PLAN -> EXECUTE -> VERIFY -> AUDIT for material outputs.
+- Search `docs/wiki/` before difficult, investigative, ambiguous, or precedent-likely work.
+- Compile important validated findings and reusable lessons into `docs/wiki/`;
+  use `artifacts/K/` for unvalidated wiki candidates.
 - Do not promote novelty, model-performance, dataset, benchmark, or deployment
   claims without traceable evidence.
 - Material research outputs should update the ledger or leave a memo/audit trail.

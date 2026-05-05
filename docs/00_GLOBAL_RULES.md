@@ -15,6 +15,8 @@
 - Domain sovereignty: each artifact has one owning domain.
 - Diff-first change control: changes should be reviewable and scoped.
 - Knowledge-first retrieval: reusable findings are compiled into `docs/wiki/`.
+- Wiki retrieval gate: search `docs/wiki/` before difficult, investigative, or precedent-likely work.
+- Wiki compile gate: important validated findings and reusable lessons should become wiki entries.
 
 ## §C Research Implementation Rules
 
@@ -54,3 +56,6 @@ and ConsistencyAuditor pass, or after explicit user approval.
 
 PLAN -> EXECUTE -> VERIFY -> AUDIT. FAST-TRACK may collapse phases only when no
 material claim, evidence, code, or paper section changes.
+
+Before substantial PLAN/EXECUTE work, check whether prior wiki knowledge applies.
+Before HAND-02 SUCCESS, state whether K-COMPILE was triggered or why it was not.

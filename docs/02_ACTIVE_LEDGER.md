@@ -11,8 +11,8 @@
 | current_objective | Deployed an A-domain PresentationWriter agent for paper-grounded presentation materials |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | none selected for anomaly-detection research; existing heavy-tail manuscript remains wiki memory only |
-| next_action | Use `PresentationWriter` with signed paper/evidence inputs and PaperReviewer audience critique when preparing a talk deck; continue ASM-AD-001 before anomaly-detection model design |
-| updated_at_utc | 2026-05-05T07:18:12Z |
+| next_action | Apply WIKI-RETRIEVAL-GATE before hard/investigative work and WIKI-COMPILE-GATE before HAND-02 SUCCESS; continue ASM-AD-001 before anomaly-detection model design |
+| updated_at_utc | 2026-05-05T07:27:28Z |
 
 ## §CHECKLIST
 
@@ -38,6 +38,7 @@
 | CHK-RESEARCH-012 | DONE | M/E | `docs/wiki/ransomware_heavy_tail_backup_design.md`, `docs/evidence/heavy_tail_backup_source_note.md`, `docs/memo/researcharchitect_paper_wiki_compile_audit.md` | compiled 12 reusable manuscript-derived knowledge items after 15 extraction rounds and stopped on saturation before the 20-round cap | 2026-05-05 |
 | CHK-RESEARCH-013 | DONE | P/A/M | `prompts/agents-codex/PresentationWriter.md`, `prompts/agents-claude/PresentationWriter.md`, `prompts/skills/SKILL-PRESENTATION-DECK.md`, `artifacts/P/presentation_agent_deployment_audit.md` | deployed a paper-grounded presentation-materials agent with lead-line, visual-plan, traceability, and prompt-audit gates | 2026-05-05 |
 | CHK-RESEARCH-014 | DONE | P/A/M | `prompts/skills/SKILL-PRESENTATION-DECK.md`, `prompts/agents-codex/PresentationWriter.md`, `prompts/agents-claude/PresentationWriter.md`, `prompts/agents-codex/PaperReviewer.md`, `prompts/agents-claude/PaperReviewer.md` | added narrative-spine design, slide-budget compression, message-budget output, and third-party listener critique for presentation decks | 2026-05-05 |
+| CHK-RESEARCH-015 | DONE | P/K/M | `prompts/meta/kernel-workflow.md`, `prompts/meta/kernel-ops.md`, `prompts/agents-codex/_base.yaml`, `prompts/agents-claude/_base.yaml`, `artifacts/P/wiki_memory_gate_deployment_audit.md` | added WIKI-RETRIEVAL-GATE and WIKI-COMPILE-GATE so agents search prior wiki knowledge before difficult work and compile important validated findings back to wiki memory | 2026-05-05 |
 
 ## §ASSUMPTIONS
 
@@ -60,6 +61,7 @@
 | LES-RESEARCH-WIKI-001 | ACTIVE | When a protected source extract and repaired manuscript sections differ, wiki compilation should prefer the repaired sections and leave a source-boundary note. | `docs/evidence/heavy_tail_backup_source_note.md` |
 | LES-RESEARCH-PRESENTATION-001 | ACTIVE | Paper-to-presentation agents need a source map, one-message slide discipline, large 1-2 line lead text, and a concrete or abstract visual plan per slide to avoid unsupported narrative drift. | `prompts/skills/SKILL-PRESENTATION-DECK.md` |
 | LES-RESEARCH-PRESENTATION-002 | ACTIVE | Deck creation should first compress the paper into a narrative spine and message budget, then require an independent listener-perspective critique of clarity, recall, and cognitive load. | `prompts/skills/SKILL-PRESENTATION-DECK.md` |
+| LES-RESEARCH-WIKI-002 | ACTIVE | Wiki memory needs explicit start-of-task retrieval triggers and end-of-task compilation triggers; otherwise agents treat `docs/wiki/` as archival rather than operational memory. | `prompts/meta/kernel-workflow.md` |
 
 ## §REPLAN_LOG
 
