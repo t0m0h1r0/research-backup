@@ -1,6 +1,6 @@
 # Review Rounds
 
-status: ROUND1_ADDRESSED
+status: ROUND2_ADDRESSED
 review_target: `paper/presentations/heavy_tail_backup_intro/heavy_tail_backup_intro.pptx`
 created_at_utc: 2026-05-06T04:35:17Z
 
@@ -89,4 +89,31 @@ Verification after response:
 
 ## Review Loop Status
 
-Round 1 findings addressed. Round 2 pending.
+Round 1 findings addressed.
+
+## Round 2: Independent Review
+
+Reviewers: Tesla, Leibniz, Ptolemy
+Verdict: CHANGES_REQUIRED
+Max severity: CRITICAL
+
+Findings and response:
+
+| ID | Severity | Slide | Finding | Response |
+|----|----------|-------|---------|----------|
+| R2-C01 | CRITICAL | 3 | “平均が同じに見えても” implied a same-mean distribution comparison not supported by the source and risky because Pareto means may be undefined. | Replaced with source-safer wording: “典型例が短く見えても、少数の長期潜伏が保持窓を超える.” |
+| R2-m01 | MINOR | 2 | `a_n` and `t_m` rendered with visible underscores. | Changed to typographic subscripts `aₙ` and `tₘ` in display and legend. |
+| R2-m02 | MINOR | 4 | Formula slide remained dense. | Trimmed variable bullets and kept the slide as the technical anchor while preserving the condition and guardrail. |
+| R2-m03 | MINOR | 5 | Step-card body copy could be more direct for non-technical audiences. | Tightened Step 3 to the operational object: infection age at detection versus `a*`. |
+| R2-m04 | MINOR | 4 | “安全に戻れる” sounded broader than the model supports. | Changed lead to “清浄に戻れる.” |
+| R2-m05 | MINOR | 5 | “潜伏分布が a* を超える” was abstract. | Reworded to “検知時点の感染後経過時間が a* を超えないかを見る.” |
+
+Verification after response:
+- `build_artifact_deck.mjs --slide-count 5`: PASS.
+- `check_layout_quality.mjs --layout ... --min-gap 8`: PASS with
+  0 errors and 0 warnings.
+- `unzip -t heavy_tail_backup_intro.pptx`: PASS.
+
+## Review Loop Status
+
+Round 2 findings addressed. Round 3 pending.

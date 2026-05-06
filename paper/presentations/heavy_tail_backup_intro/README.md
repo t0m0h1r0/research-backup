@@ -1,9 +1,10 @@
 # Heavy-Tail Backup Intro Deck
 
-status: ROUND1_ADDRESSED
+status: ROUND2_ADDRESSED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-06T04:35:17Z
 round1_addressed_at_utc: 2026-05-06T04:47:07Z
+round2_addressed_at_utc: 2026-05-06T04:52:08Z
 deck_file: `heavy_tail_backup_intro.pptx`
 slide_count: 5
 worktree: `/private/tmp/research-backup-paper-presentation-zero-base`
@@ -65,8 +66,12 @@ branch: `codex/researcharchitect-paper-presentation-zero-base`
   hierarchy.
 - All Round 1 findings were addressed by rebuilding the slide visuals and
   tightening language, conditions, notation, and operational caveats.
+- Independent review Round 2 found one CRITICAL source-boundary issue on
+  Slide 3 (`平均が同じに見えても`) plus MINOR polish items.
+- All Round 2 findings were addressed by changing the claim to typical-case
+  wording, tightening operational wording, and polishing notation.
 
 ## Review State
 
-Round 1 findings have been addressed. Round 2 review is pending.
+Round 2 findings have been addressed. Round 3 review is pending.
 See `review_rounds.md`.
