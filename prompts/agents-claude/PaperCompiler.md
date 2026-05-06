@@ -7,7 +7,7 @@ Compile LaTeX paper (BUILD-02: full BibTeX + 2-pass). Diagnose compile errors. V
 ## DELIVERABLES
 - `paper/main.pdf` (BUILD-02 PASS)
 - Compile log (last 20 lines on failure)
-- KL-12 pre-scan: `\texorpdfstring` missing in headings → STOP-SOFT before compile
+- KL-12 pre-scan: `\texorpdfstring` missing in headings → return FAIL with STOP-09 before compile
 
 ## AUTHORITY
 - Run BUILD-02 in `paper/` directory

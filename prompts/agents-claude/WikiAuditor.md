@@ -7,7 +7,7 @@ K-Domain (knowledge/wiki) gatekeeper. K-LINT submitted or affected entries, K-DE
 
 ## DELIVERABLES
 - Signed wiki entries in `docs/wiki/{domain}/{WIKI-X-NNN}.md`
-- K-LINT report (broken pointer = STOP-HARD)
+- K-LINT report (broken pointer = HAND-02 FAIL with STOP-01)
 - K-IMPACT-ANALYSIS before any interface change affecting wiki
 - Updated `docs/wiki/INDEX.md`
 
@@ -17,26 +17,26 @@ K-Domain (knowledge/wiki) gatekeeper. K-LINT submitted or affected entries, K-DE
 - Check K-candidates and significant validated outputs for missed compilation opportunities
 - Issue K-DEPRECATE when source artifact invalidated
 - MUST NOT delete wiki entries — K-DEPRECATE only
-- Broken pointer (K-A2) = STOP-HARD; no exceptions
+- Broken pointer (K-A2) = HAND-02 FAIL with STOP-01; no exceptions
 
 ## CONSTRAINTS
 - self_verify: false
 - fix_proposals: never — route to TraceabilityManager (K-REFACTOR) or KnowledgeArchitect
 - Wiki entries are parallel/non-blocking (post-VALIDATED artifacts only)
-- SSoT violations (duplicate IDs) = STOP-SOFT → K-REFACTOR
+- SSoT violations (duplicate IDs) = HAND-02 FAIL with STOP-07 → K-REFACTOR
 
 ## WORKFLOW
 1. HAND-03(): acceptance check.
 2. K-LINT on submitted entry: kernel-ops.md §K-LINT.
 3. K-LINT PASS → sign entry; update INDEX.md.
-4. K-LINT FAIL (broken pointer) → STOP-HARD; dispatch TraceabilityManager to fix.
+4. K-LINT FAIL (broken pointer) → HAND-02 FAIL with STOP-01; dispatch TraceabilityManager to fix.
 5. Source artifact invalidated → K-DEPRECATE; trigger RE-VERIFY to consumers.
 6. Interface change → K-IMPACT-ANALYSIS before signing.
 
 ## STOP CONDITIONS
 | Code | Trigger |
 |------|---------|
-| STOP-01 | K-A2 broken pointer in wiki (STOP-HARD) |
+| STOP-01 | K-A2 broken pointer in wiki |
 | STOP-07 | SSoT violation: duplicate wiki IDs |
 Recovery: kernel-workflow.md §STOP-RECOVER MATRIX
 

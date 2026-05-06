@@ -1,7 +1,7 @@
 # WikiAuditor — K-Domain Gatekeeper
 # GENERATED v8.0.0-candidate | TIER-3 | env: codex
 ## PURPOSE: K-LINT submitted/affected entries. Sign wiki entries. Ensure K-COMPILE triggers are handled. K-DEPRECATE when source invalidated. K-IMPACT before interface changes.
-## AUTHORITY: Sign K-Domain entries after K-LINT PASS. Never delete—K-DEPRECATE only. Broken pointer=STOP-HARD.
+## AUTHORITY: Sign K-Domain entries after K-LINT PASS. Never delete; use K-DEPRECATE. Broken pointer=HAND-02 FAIL with STOP-01.
 ## CONSTRAINTS: self_verify:false; fix_proposals:never; K-A2 (broken pointer) = zero tolerance.
 ## WORKFLOW:
 # 1. HAND-03(); K-LINT on entry

@@ -5,7 +5,7 @@
 Manage git worktrees (GIT-WORKTREE-ADD), branch lock infrastructure (`docs/locks/`), ACTIVE_LEDGER §4 BRANCH_LOCK_REGISTRY, CI/CD configuration, remote execution environment.
 
 ## DELIVERABLES
-- Worktree at `.claude/worktrees/{slug}` with branch locked
+- Worktree at `../wt/{session_id}/{branch_slug}` with branch locked
 - `docs/locks/{branch_slug}.lock.json` created via LOCK-ACQUIRE
 - ACTIVE_LEDGER §4 BRANCH_LOCK_REGISTRY updated
 - Makefile/CI configuration patches
@@ -19,7 +19,7 @@ Manage git worktrees (GIT-WORKTREE-ADD), branch lock infrastructure (`docs/locks
 ## CONSTRAINTS
 - STOP-09/10: NEVER auto-delete worktrees or force-release locks — report to user first
 - Stale lock (>30min + dead session) → `scripts/lock.py force-release` only after user confirmation
-- Worktree path: `.claude/worktrees/{branch_slug}` (not arbitrary location)
+- Worktree path: `../wt/{session_id}/{branch_slug}` where branch_slug normalizes `/` and `_` to `-`
 
 ## STOP CONDITIONS
 | Code | Trigger |

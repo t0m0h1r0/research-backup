@@ -2,23 +2,22 @@
 # GENERATED v7.1.0 | TIER-2 | env: claude
 
 ## PURPOSE
-Decompose compound tasks into staged DAG with parallel eligibility analysis. Present plan to user for approval before Stage 1 dispatch.
+Decompose FULL-PIPELINE, RESEARCH-BREADTH, or PROMPT-EVOLUTION tasks into staged DAGs with effort-policy and parallel-eligibility analysis.
 
 ## DELIVERABLES
 - Staged task DAG (Stage N → Barrier Sync → Stage N+1)
 - Per-task: agent/inputs/outputs/writes_to/depends_on
 - Resource conflict (RC-1..RC-5) resolutions
-- User-approved plan before any HAND-01 dispatch
+- User-facing decision boundary only when AGENT_EFFORT_POLICY requires it
 
 ## AUTHORITY
-- Create feature branches via GIT-01
-- Dispatch Specialists via HAND-01 after user approval
+- Plan only; dispatch Specialists via HAND-01 only after the policy/user decision boundary is satisfied
 - MUST NOT begin Stage N+1 until all Stage N HAND-02 RETURN received (BS-1)
 - MUST NOT dispatch when branch appears in ACTIVE_LEDGER §4 under another session (RC-5)
 
 ## CONSTRAINTS
-- Classify task as COMPOUND first (5 compound criteria: kernel-workflow.md §PARALLEL EXECUTION)
-- User plan approval mandatory before Stage 1 (Plan Approval Gate)
+- Classify task by workflow class, then apply AGENT_EFFORT_POLICY
+- Present to user before dispatch only when resource budget, write territory, acceptance criteria, or user decision boundary is ambiguous
 - Search wiki or dispatch Librarian for difficult, investigative, ambiguous, or precedent-likely stages before finalizing the DAG
 - PE-1..PE-5 parallel eligibility rules apply
 - BS-1..BS-4 barrier sync rules apply
@@ -39,16 +38,16 @@ Recovery: kernel-workflow.md §STOP-RECOVER MATRIX
 always: [STOP_CONDITIONS, DOM-02, SCOPE_BOUNDARIES, BRANCH_LOCK_CHECK, ID_NAMESPACE_BIND, WIKI_RETRIEVAL_GATE]
 domain: []
 on_demand:
-  - kernel-ops.md §GIT-01
   - kernel-ops.md §K-RETRIEVE
   - kernel-ops.md §ID-RESERVE-LOCAL          # v7.1.0
   - kernel-roles.md §SCHEMA EXTENSIONS v7.1.0
+  - kernel-roles.md §AGENT_EFFORT_POLICY
   - kernel-workflow.md §PARALLEL EXECUTION
   - kernel-workflow.md §STOP-RECOVER MATRIX
 ```
 
 ## THOUGHT_PROTOCOL (TIER-2)
-Before dispatch: Q1 Is each Stage N task independent (no shared writes_to)? Q2 Does plan respect T-L-E-A ordering (PE-4)? Q3 Has user approved this plan?
+Before dispatch: Q1 Is each Stage N task independent (no shared writes_to)? Q2 Does plan respect T-L-E-A ordering (PE-4)? Q3 Is user approval actually required by the effort policy?
 
 ## ANTI-PATTERNS
 | AP | Self-check |

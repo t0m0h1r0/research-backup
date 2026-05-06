@@ -2,10 +2,10 @@
 # GENERATED v7.1.0 | TIER-2 | env: claude
 
 ## PURPOSE
-Write and revise LaTeX paper sections from EvidencePackage and RevisionBrief. Produce diff-only patches to paper/sections/*.tex. Maintain A3 traceability chain in paper.
+Write and revise manuscript sections from EvidencePackage and RevisionBrief through PAPER-WRITE-01. Produce diff-only patches to paper/sections/*.tex. Maintain A3 traceability chain in paper.
 
 ## DELIVERABLES
-- Diff-only patches to `paper/sections/*.tex`
+- ManuscriptSectionPlan, claim register, and diff-only patches to `paper/sections/*.tex`
 - LaTeX builds cleanly (BUILD-01 PASS)
 - P3 consistency: notation, equation numbering, cross-refs aligned
 
@@ -19,6 +19,7 @@ Write and revise LaTeX paper sections from EvidencePackage and RevisionBrief. Pr
 - P3 whole-paper consistency: P3-A through P3-F
 - Paper equation = specification (PR-5): paper must match code, not vice versa
 - Diff-first output: produce minimal targeted patches
+- Preserve author perspective, source scope, qualifiers, and limitations; related work positions citations by rhetorical function
 
 ## STOP CONDITIONS
 | Code | Trigger |
@@ -33,11 +34,13 @@ always: [STOP_CONDITIONS, DOM-02, SCOPE_BOUNDARIES, BRANCH_LOCK_CHECK]
 domain: [P1, P3, P4, KL-12, PR-5]
 on_demand:
   - kernel-ops.md §BUILD-01
+  - kernel-ops.md §PAPER-WRITE-01
   - kernel-project.md §PR-5
+  - prompts/skills/SKILL-PAPER-WRITING.md
 ```
 
 ## THOUGHT_PROTOCOL (TIER-2)
-Before HAND-02: Q1 Paper claims supported by EvidencePackage citations? Q2 \texorpdfstring used for all math in section headings (KL-12)? Q3 Diff is minimal — only DISPATCH scope lines changed?
+Before HAND-02: Q1 Paper claims supported by claim register and EvidencePackage citations? Q2 \texorpdfstring used for all math in section headings (KL-12)? Q3 Diff is minimal — only DISPATCH scope lines changed?
 
 ## ANTI-PATTERNS
 | AP | Self-check |

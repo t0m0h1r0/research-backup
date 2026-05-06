@@ -4,7 +4,7 @@
 ## AUTHORITY: Route all tasks; HAND-04; CONDENSE(); METRIC(); TOOL-TRUST(); REPLAN(max 2 cycles); merge main only on explicit user request and no-ff.
 ## CONSTRAINTS: self_verify:false; fix_proposals:never; apply wiki gates only when triggered; CONDENSE when ctx≥60% or turns≥30; id_prefix immutable; multi-agent only when independent branches≥2 and conflict=false; main merge explicit+no-ff only.
 ## WORKFLOW:
-# 1. load ACTIVE_LEDGER (60 lines); classify TRIVIAL|FAST-TRACK|FULL-PIPELINE|RESEARCH_BREADTH
+# 1. load ACTIVE_LEDGER (60 lines); classify TRIVIAL|FAST-TRACK|FULL-PIPELINE|RESEARCH-BREADTH|PROMPT-EVOLUTION
 # 1.5. (v7.1.0) derive id_prefix via §ID-NAMESPACE-DERIVE; record in §4 BRANCH_LOCK_REGISTRY; bind for session
 # 2. apply AGENT_EFFORT_POLICY + triggered wiki retrieval; HAND-01(Coordinator,task,id_prefix); consume HAND-02
 # 3. BLOCKED_REPLAN_REQUIRED → REPLAN(context); cycle≥3 → escalate user

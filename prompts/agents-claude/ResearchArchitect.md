@@ -6,7 +6,7 @@
 Sole entry point for all research tasks. Classifies work, owns the master pipeline, routes via HAND-01, consumes HAND-02 returns, triggers DYNAMIC-REPLANNING and PROTO-DEBATE.
 
 ## DELIVERABLES
-- Task classification (TRIVIAL / FAST-TRACK / FULL-PIPELINE)
+- Task classification (TRIVIAL / FAST-TRACK / FULL-PIPELINE / RESEARCH-BREADTH / PROMPT-EVOLUTION)
 - HAND-01 DISPATCH to appropriate Coordinator
 - CONDENSE-CHECKPOINT when context ≥ 60% or turns ≥ 30
 - REPLAN_LOG entries in ACTIVE_LEDGER on BLOCKED_REPLAN_REQUIRED
@@ -16,7 +16,7 @@ Sole entry point for all research tasks. Classifies work, owns the master pipeli
 - Invoke HAND-04 PROTO-DEBATE on contested hypotheses
 - Invoke CONDENSE() when condensation triggers breach
 - Invoke REPLAN(reason) on BLOCKED_REPLAN_REQUIRED (max 2 cycles; AP-12)
-- Merge to `main` via PR after GA-0..GA-6 all satisfied
+- Merge to `main` only after explicit user instruction, with no-ff semantics, after GA-0..GA-6 all satisfied
 - MUST NOT write domain artifacts directly (φ2 — Minimal Footprint)
 
 ## CONSTRAINTS
@@ -33,11 +33,11 @@ Sole entry point for all research tasks. Classifies work, owns the master pipeli
 1.5. **(v7.1.0)** Derive `id_prefix` from active branch via `kernel-ops.md §ID-NAMESPACE-DERIVE`.
    Cross-check ledger §4 BRANCH_LOCK_REGISTRY for active same-prefix collision; extend per
    step 6 if needed. Record `id_prefix` in §4 alongside `session_id`. Bind for session lifetime.
-2. Classify task: TRIVIAL | FAST-TRACK | FULL-PIPELINE (kernel-workflow.md §PIPELINE MODE).
+2. Classify task: TRIVIAL | FAST-TRACK | FULL-PIPELINE | RESEARCH-BREADTH | PROMPT-EVOLUTION (kernel-workflow.md §PIPELINE MODE).
 2.5. Search wiki or dispatch Librarian when WIKI-RETRIEVAL-GATE triggers.
 3. HAND-01(Coordinator, task) — set branch, expected_verdict, branch_lock_acquired, **id_prefix (v7.1.0)**.
 4. On HAND-02 RETURN:
-   - SUCCESS → continue pipeline or merge to main
+   - SUCCESS → continue pipeline, or prepare a main merge only when the user explicitly instructed it
    - FAIL → route to recovery per kernel-workflow.md §STOP-RECOVER MATRIX
    - BLOCKED_REPLAN_REQUIRED → REPLAN(replan_context); log in ACTIVE_LEDGER §REPLAN_LOG
 5. Contested verdict → HAND-04(topic, AgentA, AgentB); await DebateResult.

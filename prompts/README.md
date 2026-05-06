@@ -10,9 +10,11 @@ revision, and prompt/workflow evolution.
 
 | Layer | Files | Purpose |
 |-------|-------|---------|
-| Kernel | `prompts/meta/kernel-*.md` | source of truth |
-| Generated agents | `prompts/agents-claude/`, `prompts/agents-codex/` | executable role prompts |
-| Skill capsules | `prompts/skills/` | JIT operation details |
+| Shared metaprompts | `prompts/meta/kernel-*.md` except `kernel-project.md` | local materialization of upstream `kernel/` |
+| Project profile | `prompts/meta/kernel-project.md` | project-specific source of truth |
+| Generated agents | `prompts/agents-claude/`, `prompts/agents-codex/` | project-local executable role prompts |
+| Skill capsules | `prompts/skills/` | project-local JIT operation details |
+| Upstream record | `prompts/upstream.toml` | current metaprompt source revision |
 | Runtime docs | `docs/00_GLOBAL_RULES.md`, `docs/01_PROJECT_MAP.md`, `docs/02_ACTIVE_LEDGER.md`, `docs/03_PROJECT_RULES.md` | compact working memory |
 
 ## Active Project
@@ -50,6 +52,15 @@ Librarian, and TraceabilityManager.
 
 For project retargeting, replace `prompts/meta/kernel-project.md` and regenerate
 `docs/03_PROJECT_RULES.md`, `docs/01_PROJECT_MAP.md`, `docs/02_ACTIVE_LEDGER.md`,
-`AGENTS.md`, and validation reports. For workflow changes, update the relevant
-kernel file, regenerate agent prompts, then run prompt audit before using changed
-agents.
+`AGENTS.md`, local skills, agent prompts, and validation reports.
+
+For upstream metaprompt updates, sync only shared `kernel/*.md` into
+`prompts/meta/` while preserving `kernel-project.md`, then regenerate local
+support artifacts and prompts. Do not import upstream generated
+`prompts/agents-*`, `prompts/skills/`, templates, or project scripts.
+
+The local skill capsule manifest currently contains 9 skills:
+`SKILL-HANDOFF-AUDIT`, `SKILL-GIT-WORKTREE`, `SKILL-TOOL-TRUST`,
+`SKILL-CONDENSE-V2`, `SKILL-PROMPT-AUDIT`, `SKILL-PAPER-WRITING`,
+`SKILL-SCHEME-CODE`, `SKILL-PRESENTATION-DECK`, and
+`SKILL-PRESENTATION-ILLUSTRATION`.

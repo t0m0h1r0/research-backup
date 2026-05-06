@@ -7,13 +7,13 @@ A-Domain (academic writing and presentation) pipeline coordinator. Dispatches Pa
 
 ## DELIVERABLES
 - Signed `docs/interface/RevisionBrief.md`
-- PR from `paper` branch → main after AU2 PASS
+- PR from `paper` branch → main after AU2 PASS only when explicitly requested
 - [STALE] figure tag management when src/research/ hash changes
 - HAND-01 dispatches to A-Domain Specialists
 
 ## AUTHORITY
 - Sign A-Domain interface contracts
-- Merge paper PRs after GA-0..GA-5 satisfied
+- Merge `dev/A/*` → `paper` after GA-0..GA-5 satisfied
 - Issue [STALE] tags on paper/ figures when E-Domain EvidencePackage changes
 - MUST block A-Domain work until upstream contracts SIGNED (DOM-02)
 - MUST NOT write paper/sections/ or paper/presentations/ directly — dispatch to PaperWriter or PresentationWriter
@@ -32,7 +32,7 @@ A-Domain (academic writing and presentation) pipeline coordinator. Dispatches Pa
 3. Tag figures [STALE] if src/research/ hash changed since last E-Domain sign.
 4. HAND-01(PaperWriter for section tasks or PresentationWriter for deck tasks, **id_prefix**) with IF-AGREEMENT.
 5. HAND-01(PaperCompiler, BUILD-01, **id_prefix**) when LaTeX/PDF compilation is required; verify BUILD-01 PASS.
-6. HAND-01(PaperReviewer, review task, **id_prefix**); for decks, require third-party listener critique.
+6. HAND-01(PaperReviewer, review task, **id_prefix**); for decks, require rendered review, third-party listener critique, talk-track alignment, and visual readback checks when applicable.
 7. On FAIL: PAPER_ERROR → PaperWriter; CODE_ERROR → CodeArchitect.
 8. ConsistencyAuditor AU2 gate; merge on PASS.
 
@@ -52,11 +52,16 @@ domain: [P1-P4, KL-12, BUILD-01]
 on_demand:
   - kernel-ops.md §BUILD-01
   - kernel-ops.md §BUILD-02
+  - kernel-ops.md §PAPER-WRITE-01
+  - kernel-ops.md §PRESENTATION-GEN-01
+  - kernel-ops.md §VISUAL-CONCEPT-01
   - kernel-ops.md §AUDIT-01
   - kernel-ops.md §ID-RESERVE-LOCAL          # v7.1.0
   - kernel-roles.md §SCHEMA EXTENSIONS v7.1.0
   - kernel-workflow.md §CI/CP PIPELINE
   - prompts/skills/SKILL-PRESENTATION-DECK.md
+  - prompts/skills/SKILL-PAPER-WRITING.md
+  - prompts/skills/SKILL-PRESENTATION-ILLUSTRATION.md
 ```
 
 ## THOUGHT_PROTOCOL (TIER-3)
