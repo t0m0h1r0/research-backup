@@ -1,49 +1,54 @@
 # Heavy-Tail Backup Intro Deck
 
-status: VALIDATED
+status: ZERO_BASE_SELF_QA
 created_by: ResearchArchitect
-created_at_utc: 2026-05-05T07:47:45Z
+created_at_utc: 2026-05-06T04:35:17Z
 deck_file: `heavy_tail_backup_intro.pptx`
 slide_count: 5
+worktree: `/private/tmp/research-backup-paper-presentation-zero-base`
+branch: `codex/researcharchitect-paper-presentation-zero-base`
 
 ## Purpose
 
 研究内容紹介用に，ローカル論文
 `paper/sections/heavy_tail_backup_recast_xelatex.tex` および
-`paper/sections/tex/*.tex` の内容を 5 枚程度に圧縮したプレゼン資料。
-対象聴衆は，リスクモデル・セキュリティ運用・数理最適化に関心のある
-研究者または技術者を想定する。
+`paper/sections/tex/*.tex` の内容から，スライド内容をゼロベースで
+再作成したプレゼン資料。
+
+既存デッキの文言・構成を前提にせず，初学者が研究の重要性を理解しやすい
+ように，ランサムウェア発症時の復旧判断から入り，検知評価を
+「清浄バックアップが残っているか」という運用指標へ翻訳し，最後に
+清浄復旧ホライズンを設計する手順へ着地させる。
 
 ## Evidence Boundary
 
 - 本デッキは，修正版の論文セクションに基づくモデル由来の説明である。
-- 数値例は `analysis/paper_review_checks/results/manifest.json` で再計算された
-  式のスケール確認であり，実務推奨値や実証結果として扱わない。
-- 外部の SOTA，ベンチマーク，実運用での尾指数・検知率・攻撃頻度に関する
-  新規主張は追加していない。
+- `docs/wiki/ransomware_heavy_tail_backup_design.md` は内部コンパイル済み
+  知識として参照したが，外部実証根拠としては扱わない。
+- 外部の SOTA，ベンチマーク，実運用での尾指数・検知率・攻撃頻度に
+  関する新規主張は追加していない。
+- 数値例はスケール確認としてのみ扱い，実務推奨値や実証結果として
+  扱わない。
 
-## Narrative Spine
+## Zero-Base Narrative Spine
 
-1. Problem: 検知の速さだけでは，汚染後バックアップにより復旧可能性を
-   失う危険を評価できない。
-2. Model: Pareto 潜伏時間と指数検知を合成半マルコフ分岐として扱い，
-   早期検知・症状検知・全損の費用を分離する。
-3. Insight: 正の検知率は暦時間費用率を有限にするが，保持境界なしでは
-   重尾リスクの相転移が残る。
-4. Design: 内点条件で得られる閉形式解は，まず清浄復旧可能期間
-   `a* = nΔ*` として読む。
-5. Implication: 数値例は，損失・復旧時間・スキャン負荷・保持世代数から
-   初期設計を作る読み替えを示す。
+1. Incident-Day Question: 最新バックアップが，いちばん危ない復元先に
+   なる場合がある。
+2. Evaluation Reframe: 良いアラートは，清浄世代が消える前に鳴る。
+3. Heavy-Tail Motivation: 重尾潜伏では，まれな長期感染が保持窓を壊す。
+4. Paper Insight: まず決めるのは，間隔ではなく清浄復旧ホライズンである。
+5. Operational Takeaway: バックアップは後始末ではなく，防御設計の入力に
+   なる。
 
 ## Slide Source Map
 
 | Slide | Lead message | Primary sources |
 |-------|--------------|-----------------|
-| 1 | 検知の速さだけでは，復旧点は守れない | `00_abstract.tex`, `01_introduction.tex`, `02_model_formulation.tex` |
-| 2 | 攻撃の潜伏と防疫の分岐を一つの費用式に載せる | `02_model_formulation.tex` |
-| 3 | 検知は潜伏を打ち切るが，保持境界なしでは尾が残る | `03_renewal_reward.tex`, `04_tauber_transition.tex` |
-| 4 | 閉形式解は「清浄に戻れる期間」として読む | `05_backup_optimization.tex` |
-| 5 | 5世代保持なら，例では約18.67日間隔・約93.33日保持 | `05_backup_optimization.tex`, `06_dynamic_retention.tex`, `07_numerical_examples.tex`, `analysis/paper_review_checks/results/manifest.json` |
+| 1 | 最新バックアップが，いちばん危ない復元先になる | `01_introduction.tex`, `02_model_formulation.tex` |
+| 2 | 良いアラートは，清浄世代が消える前に鳴る | `02_model_formulation.tex`, `08_conclusion.tex` |
+| 3 | 重尾潜伏では，まれな長期感染が保持窓を壊す | `01_introduction.tex`, `04_tauber_transition.tex` |
+| 4 | まず決めるのは，間隔ではなく清浄復旧ホライズン | `05_backup_optimization.tex`, `08_conclusion.tex` |
+| 5 | バックアップは後始末ではなく，防御設計の入力になる | `05_backup_optimization.tex`, `06_dynamic_retention.tex`, `07_numerical_examples.tex`, `docs/evidence/heavy_tail_backup_source_note.md` |
 
 ## Build And QA
 
@@ -52,9 +57,10 @@ slide_count: 5
 - `build_artifact_deck.mjs --slide-count 5`: PASS.
 - `check_layout_quality.mjs --layout ... --min-gap 8`: PASS with
   0 errors and 0 warnings.
+- `unzip -t heavy_tail_backup_intro.pptx`: PASS.
 - Rendered contact sheet was visually inspected after layout QA.
 
 ## Review State
 
-Independent review reached no remaining CRITICAL, MAJOR, or MINOR findings in
-Round 3. See `review_rounds.md`.
+Independent review has not yet been completed for this zero-base version.
+See `review_rounds.md`.

@@ -1,57 +1,41 @@
 # Review Rounds
 
-status: COMPLETE
+status: ZERO_BASE_SELF_QA
 review_target: `paper/presentations/heavy_tail_backup_intro/heavy_tail_backup_intro.pptx`
-stop_rule: stop when no MAJOR-or-higher findings remain, or after more than 10 rounds
+created_at_utc: 2026-05-06T04:35:17Z
 
-## Round 0: Builder Self-QA
+## Zero-Base Rebuild
 
 Reviewer: ResearchArchitect
-Verdict: PASS_FOR_REVIEW
-Max severity: MINOR
+Trigger: User requested the slide content be recreated from zero, then reviewed
+with as many findings as possible per round and all findings addressed until
+MAJOR-or-higher findings disappear or the loop exceeds 10 rounds.
+Verdict: PASS_SELF_QA
+Max severity after self-QA: NONE
 
-Checks:
+Changes:
+- Recreated the deck narrative from source material instead of editing the prior
+  slide story.
+- Started from the incident-day recovery question: newest backup may be unsafe.
+- Reframed detection as whether the alert arrives before the clean-backup
+  horizon expires.
+- Added heavy-tail motivation without promoting empirical tail claims.
+- Recast the formula around the clean-recovery horizon `a* = nΔ*`.
+- Ended with an operations workflow: estimate loss, measure recovery, decide
+  horizon, and extend retention when risk changes.
+
+Self-QA checks:
 - Slide count is 5.
-- Each slide has one lead message, one primary visual, and source references.
-- No empirical recommendation or SOTA/benchmark claim was added.
-- Layout checker passed with 0 errors and 0 warnings.
-- Contact sheet was visually inspected for readability and flow.
+- Every slide has one lead, one proof visual, and a source footer.
+- Post-intrusion backups are marked as contaminated in the timeline.
+- `Δ*` as interval and `a* = nΔ*` as clean-recovery horizon are separated.
+- No empirical recommendation, SOTA claim, benchmark claim, or unverified
+  ransomware statistic was added.
+- Numerical example remains labeled as a scale check, not a recommendation.
+- `check_layout_quality.mjs --layout ... --min-gap 8`: PASS with
+  0 errors and 0 warnings.
+- `unzip -t heavy_tail_backup_intro.pptx`: PASS.
 
-Findings:
-- None blocking before external review.
+## Review Loop Status
 
-## Round 1: Independent Review
-
-Reviewer: Raman
-Verdict: CHANGES_REQUIRED
-Max severity: MAJOR
-
-Findings and response:
-
-| ID | Severity | Slide | Finding | Response |
-|----|----------|-------|---------|----------|
-| R1-F1 | MAJOR | 2 | `η` branch from `S_S` did not visually connect to `S_I`, despite the model defining symptom-detection success as `S_S -> S_I`. | Addressed by redrawing the green `η` connector as an explicit routed branch into `S_I`. |
-| R1-F2 | MAJOR | 3 | Tail-probability sketch placed teal points below the x-axis, implying negative probability. | Addressed by rescaling the sketch so all tail-probability points remain at or above the axis. |
-| R1-F3 | MAJOR | 5 | Bottom caution band overlapped the step 3 card, and the title orphaned `保持` on a separate line. | Addressed by shortening the title and moving the caution band below the card area. |
-| R1-F4 | MINOR | 5 | Parameter box omitted key units and baseline conditions from the numerical example. | Addressed by adding units for `d1`, `L`, `c_b`, `lambda`, `eta`, and `d0` from the numerical section and manifest. |
-
-## Round 2: Independent Review
-
-Reviewer: Raman
-Verdict: NO_MAJOR_OR_HIGHER
-Max severity: MINOR
-
-Findings and response:
-
-| ID | Severity | Slide | Finding | Response |
-|----|----------|-------|---------|----------|
-| R2-F1 | MINOR | 3 | The final teal tail-probability marker sat on or slightly straddled the x-axis at thumbnail size. | Addressed by rescaling the chart markers so the final points are visibly above the probability baseline. |
-
-## Round 3: Independent Review
-
-Reviewer: Raman
-Verdict: PASS
-Max severity: NONE
-
-Findings:
-- No CRITICAL, MAJOR, or MINOR issues remain.
+Pending independent review Round 1.

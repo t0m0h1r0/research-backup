@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | UPSTREAM_METAPROMPT_REDEPLOY_VALIDATED |
-| branch | `codex/researcharchitect-meta-master-redeploy` |
-| current_objective | Sync upstream metaprompt revision `c985b65` and redeploy project-local prompt artifacts |
+| phase | PRESENTATION_ZERO_BASE_SELF_QA |
+| branch | `codex/researcharchitect-paper-presentation-zero-base` |
+| current_objective | Recreate the heavy-tail backup presentation from zero and run review/fix loops until no MAJOR-or-higher findings remain |
 | active_brief | `docs/interface/ResearchBrief.md` |
-| source_artifact | upstream metaprompt `git@github.com:t0m0h1r0/research-agent.git@c985b65`, local `prompts/meta/`, generated skills/prompts/docs, and validation reports; anomaly-detection research source still not selected |
-| next_action | Commit the validated upstream metaprompt redeploy, then continue ASM-AD-001 before model design; merge only after explicit user instruction |
-| updated_at_utc | 2026-05-06T03:50:35Z |
+| source_artifact | presentation task: `paper/sections/tex/*.tex`, `docs/wiki/ransomware_heavy_tail_backup_design.md`, and `docs/evidence/heavy_tail_backup_source_note.md`; anomaly-detection research source still not selected |
+| next_action | Run independent presentation review rounds, address every finding, and stop when no MAJOR-or-higher findings remain or after more than 10 rounds |
+| updated_at_utc | 2026-05-06T04:35:17Z |
 
 ## §CHECKLIST
 
@@ -43,6 +43,7 @@
 | CHK-RESEARCH-017 | DONE | A/Q | `paper/presentations/heavy_tail_backup_intro/` | created a 5-slide paper-grounded research presentation and completed 3 review rounds with no remaining CRITICAL, MAJOR, or MINOR findings | 2026-05-05 |
 | CHK-RESEARCH-018 | DONE | P/M/Q | `prompts/meta/kernel-roles.md`, `prompts/agents-codex/PromptAuditor.md`, `prompts/agents-claude/PromptAuditor.md`, `artifacts/P/researcharchitect_agent_refresh_audit.md` | pulled latest main, verified no pending remote meta delta, and refreshed PromptAuditor main-merge guardrail wording plus validation reports | 2026-05-05 |
 | CHK-RESEARCH-019 | DONE | P/M/Q | `prompts/meta/`, `prompts/skills/`, `prompts/agents-codex/`, `prompts/agents-claude/`, `prompts/upstream.toml`, `artifacts/P/researcharchitect_metaprompt_redeploy_audit.md` | synced upstream metaprompt revision `c985b65`, preserved `kernel-project.md`, regenerated local support artifacts and prompts, and ran prompt audit checks | 2026-05-06 |
+| CHK-RESEARCH-020 | READY | A/Q | `paper/presentations/heavy_tail_backup_intro/` | zero-base recreated the 5-slide heavy-tail backup presentation and prepared it for independent review loops | 2026-05-06 |
 
 ## §ASSUMPTIONS
 
@@ -90,3 +91,4 @@
 | RESEARCH-PRESENTATION-DECK-001 | `codex/researcharchitect-paper-presentation` | `/private/tmp/research-backup-paper-presentation` | Create and review a 5-slide paper-grounded research presentation for the heavy-tail backup manuscript; id_prefix `RESEARCH-PRESENTATION-DECK` | VALIDATED | 2026-05-05 |
 | RESEARCH-PROMPT-001 | `codex/researcharchitect-agent-update` | `/private/tmp/research-backup-agent-update` | Refresh generated agents after prompt-system update check; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-05 |
 | RESEARCH-PROMPT-002 | `codex/researcharchitect-meta-master-redeploy` | `/private/tmp/research-backup-meta-master-redeploy` | Sync and redeploy upstream metaprompt revision `c985b65`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-06 |
+| RESEARCH-PRESENTATION-ZERO-001 | `codex/researcharchitect-paper-presentation-zero-base` | `/private/tmp/research-backup-paper-presentation-zero-base` | Recreate the heavy-tail backup presentation from zero and complete review/fix loops; id_prefix `RESEARCH-PRESENTATION-ZERO` | IN_PROGRESS | 2026-05-06 |
