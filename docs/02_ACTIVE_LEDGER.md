@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PROMPT_AGENT_REFRESH_VALIDATED |
-| branch | `codex/researcharchitect-agent-update` |
-| current_objective | Refreshed PromptAuditor generated prompts after checking pulled meta-prompt state |
+| phase | UPSTREAM_METAPROMPT_REDEPLOY_VALIDATED |
+| branch | `codex/researcharchitect-meta-master-redeploy` |
+| current_objective | Sync upstream metaprompt revision `c985b65` and redeploy project-local prompt artifacts |
 | active_brief | `docs/interface/ResearchBrief.md` |
-| source_artifact | prompt-system task: `prompts/meta/kernel-roles.md`, generated PromptAuditor prompts, and validation reports; anomaly-detection research source still not selected |
-| next_action | Continue ASM-AD-001 before anomaly-detection model design; merge this prompt refresh only after explicit user instruction |
-| updated_at_utc | 2026-05-05T10:40:40Z |
+| source_artifact | upstream metaprompt `git@github.com:t0m0h1r0/research-agent.git@c985b65`, local `prompts/meta/`, generated skills/prompts/docs, and validation reports; anomaly-detection research source still not selected |
+| next_action | Commit the validated upstream metaprompt redeploy, then continue ASM-AD-001 before model design; merge only after explicit user instruction |
+| updated_at_utc | 2026-05-06T03:50:35Z |
 
 ## §CHECKLIST
 
@@ -42,6 +42,7 @@
 | CHK-RESEARCH-016 | DONE | P/M/Q | `prompts/skills/SKILL-PROMPT-AUDIT.md`, `prompts/skills/SKILL-PRESENTATION-DECK.md`, `prompts/meta/kernel-roles.md`, `artifacts/P/prompt_roi_review_audit.md` | completed 4 prompt-engineering review rounds, removed broad-read instructions, compressed presentation skill, and added token-ROI/broad-preload self-audit gates | 2026-05-05 |
 | CHK-RESEARCH-017 | DONE | A/Q | `paper/presentations/heavy_tail_backup_intro/` | created a 5-slide paper-grounded research presentation and completed 3 review rounds with no remaining CRITICAL, MAJOR, or MINOR findings | 2026-05-05 |
 | CHK-RESEARCH-018 | DONE | P/M/Q | `prompts/meta/kernel-roles.md`, `prompts/agents-codex/PromptAuditor.md`, `prompts/agents-claude/PromptAuditor.md`, `artifacts/P/researcharchitect_agent_refresh_audit.md` | pulled latest main, verified no pending remote meta delta, and refreshed PromptAuditor main-merge guardrail wording plus validation reports | 2026-05-05 |
+| CHK-RESEARCH-019 | DONE | P/M/Q | `prompts/meta/`, `prompts/skills/`, `prompts/agents-codex/`, `prompts/agents-claude/`, `prompts/upstream.toml`, `artifacts/P/researcharchitect_metaprompt_redeploy_audit.md` | synced upstream metaprompt revision `c985b65`, preserved `kernel-project.md`, regenerated local support artifacts and prompts, and ran prompt audit checks | 2026-05-06 |
 
 ## §ASSUMPTIONS
 
@@ -50,7 +51,7 @@
 | ASM-AD-001 | OPEN | The user wants broad AI-based anomaly detection research support before narrowing domain or dataset. | M |
 | ASM-AD-002 | OPEN | No active source paper, benchmark dataset, or application domain has been selected yet. | M/E |
 | ASM-AD-003 | OPEN | Literature and benchmark protocol should precede any SOTA or performance claim. | E |
-| ASM-AD-004 | OPEN | Existing T/R/E/A domains can route model design, implementation, evaluation, and writing without kernel changes. | Q |
+| ASM-AD-004 | OPEN | Existing T/L/E/A domains can route model design, implementation, evaluation, and writing without kernel changes. | Q |
 | ASM-AD-005 | OPEN | The ransomware heavy-tail backup manuscript provides model-derived wiki questions, but does not by itself select the active anomaly-detection domain or benchmark. | M/E |
 
 ## §LESSONS
@@ -67,6 +68,7 @@
 | LES-RESEARCH-WIKI-002 | ACTIVE | Wiki memory needs explicit start-of-task retrieval triggers and end-of-task compilation triggers; otherwise agents treat `docs/wiki/` as archival rather than operational memory. | `prompts/meta/kernel-workflow.md` |
 | LES-RESEARCH-PROMPT-ROI-001 | ACTIVE | Prompt evolution should reject broad preloading and low-ROI text by default; details belong in JIT skills or kernel references unless they change agent behavior enough to justify token cost. | `prompts/skills/SKILL-PROMPT-AUDIT.md` |
 | LES-RESEARCH-PROMPT-MERGE-001 | ACTIVE | PromptAuditor main-merge checks should name the required explicit-user and no-ff guardrails directly so safety scans do not mistake a fail condition for an unsafe permission. | `prompts/meta/kernel-roles.md` |
+| LES-RESEARCH-PROMPT-UPSTREAM-001 | ACTIVE | Upstream metaprompt sync must copy only shared kernel sources, preserve project-local `kernel-project.md`, and regenerate local skills/prompts before removing `REDEPLOY_REQUIRED`. | `prompts/upstream.toml` |
 
 ## §REPLAN_LOG
 
@@ -87,3 +89,4 @@
 | RESEARCH-PRESENTATION-001 | `codex/researcharchitect-presentation-agent` | `/private/tmp/research-backup-presentation-agent` | Deploy a paper-grounded presentation-materials agent and prompt audit gates; id_prefix `RESEARCH` | VALIDATED | 2026-05-05 |
 | RESEARCH-PRESENTATION-DECK-001 | `codex/researcharchitect-paper-presentation` | `/private/tmp/research-backup-paper-presentation` | Create and review a 5-slide paper-grounded research presentation for the heavy-tail backup manuscript; id_prefix `RESEARCH-PRESENTATION-DECK` | VALIDATED | 2026-05-05 |
 | RESEARCH-PROMPT-001 | `codex/researcharchitect-agent-update` | `/private/tmp/research-backup-agent-update` | Refresh generated agents after prompt-system update check; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-05 |
+| RESEARCH-PROMPT-002 | `codex/researcharchitect-meta-master-redeploy` | `/private/tmp/research-backup-meta-master-redeploy` | Sync and redeploy upstream metaprompt revision `c985b65`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-06 |

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-05T10:40:40Z",
+  "timestamp": "2026-05-06T03:50:35Z",
   "environments": {
     "codex": {
       "agent_files": 24,
@@ -11,7 +11,12 @@
       "base_file": "prompts/agents-claude/_base.yaml"
     }
   },
-  "skill_capsules": 6,
+  "skill_capsules": 9,
+  "token_fields": [
+    "static_prompt_tokens",
+    "loaded_rule_tokens",
+    "skill_trigger_tokens"
+  ],
   "validation": {
     "project_rule_count": 6,
     "active_project": "ai_anomaly_detection_research",
@@ -25,7 +30,13 @@
     "presentation_narrative_review_gates": "PASS",
     "wiki_memory_gates": "PASS",
     "prompt_roi_review": "PASS",
-    "prompt_auditor_main_merge_wording": "PASS"
+    "prompt_auditor_main_merge_wording": "PASS",
+    "upstream_metaprompt_revision": "c985b65",
+    "metaprompt_only_distribution_boundary": "PASS",
+    "local_support_artifact_generation": "PASS_9_SKILLS",
+    "q3_audit_labeling": "PASS",
+    "scheme_code_paper_write_presentation_visual_protocols": "PASS",
+    "implementation_domain_identifier": "PASS_TLEA_USES_L"
   },
-  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project profile, PresentationWriter deployment, Codex runtime guardrails, PromptAuditor wording, and main-merge safeguards were validated by shell/Ruby commands."
+  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project profile, upstream metaprompt revision, local skill manifest count, Codex runtime guardrails, Q3-AUDIT wording, and main-merge safeguards were validated by shell/Ruby commands. skill_trigger_tokens is recorded as a schema field for future quantified reports."
 }

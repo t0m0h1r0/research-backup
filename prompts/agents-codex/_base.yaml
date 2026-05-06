@@ -106,8 +106,16 @@ on_demand_common:
   SKILL-PROMPT-AUDIT: "prompts/skills/SKILL-PROMPT-AUDIT.md"
   SKILL-CONDENSE-V2:  "prompts/skills/SKILL-CONDENSE-V2.md"
   SKILL-TOOL-TRUST:   "prompts/skills/SKILL-TOOL-TRUST.md"
+  SKILL-PAPER-WRITING: "prompts/skills/SKILL-PAPER-WRITING.md"
+  SKILL-SCHEME-CODE:   "prompts/skills/SKILL-SCHEME-CODE.md"
+  SKILL-PRESENTATION-DECK: "prompts/skills/SKILL-PRESENTATION-DECK.md"
+  SKILL-PRESENTATION-ILLUSTRATION: "prompts/skills/SKILL-PRESENTATION-ILLUSTRATION.md"
   K-COMPILE:         "kernel-ops.md §K-COMPILE"
   K-LINT:            "kernel-ops.md §K-LINT"
+  SCHEME-CODE-01:    "kernel-ops.md §SCHEME-CODE-01"
+  PAPER-WRITE-01:    "kernel-ops.md §PAPER-WRITE-01"
+  PRESENTATION-GEN-01: "kernel-ops.md §PRESENTATION-GEN-01"
+  VISUAL-CONCEPT-01: "kernel-ops.md §VISUAL-CONCEPT-01"
 
 procedure_pre:
   - "Read AGENTS.md + docs/02_ACTIVE_LEDGER.md before material work"

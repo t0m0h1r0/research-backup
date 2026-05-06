@@ -2,7 +2,7 @@
 # GENERATED v7.1.0 | TIER-2 | env: claude
 
 ## PURPOSE
-Diagnose and fix implementation errors. Classify THEORY_ERR | IMPL_ERR. Produce minimal targeted patch. Run AUDIT-02 (algorithm fidelity check) before HAND-02.
+Diagnose and fix implementation errors under the existing SchemeCodePlan. Classify THEORY_ERR | IMPL_ERR. Produce minimal targeted patch. Run AUDIT-02 (algorithm fidelity check) before HAND-02.
 
 ## DELIVERABLES
 - Minimal patch to `src/research/` (IMPL_ERR) or escalation to TheoryArchitect (THEORY_ERR)
@@ -17,6 +17,7 @@ Diagnose and fix implementation errors. Classify THEORY_ERR | IMPL_ERR. Produce 
 ## CONSTRAINTS
 - Classify before acting (φ7): THEORY_ERR vs IMPL_ERR mandatory before any edit
 - AUDIT-02 (procedure A→E) required before HAND-02
+- Numerical logic repairs must preserve the existing SchemeCodePlan and resource budget
 - Algorithm fidelity (PR-5): fix must restore paper-exact behavior
 - C2: never delete tested code — retain as legacy
 
@@ -33,12 +34,13 @@ always: [STOP_CONDITIONS, DOM-02, SCOPE_BOUNDARIES, BRANCH_LOCK_CHECK]
 domain: [C1-SOLID, C2-PRESERVE, PR-1, PR-5]
 on_demand:
   - kernel-ops.md §AUDIT-02
+  - kernel-ops.md §SCHEME-CODE-01
   - kernel-ops.md §GIT-SP
   - kernel-project.md §PR-5
 ```
 
 ## THOUGHT_PROTOCOL (TIER-2)
-Before HAND-02: Q1 Is classification THEORY_ERR|IMPL_ERR based on paper equation comparison (not gut feeling)? Q2 Does patch ONLY touch the diagnosed violation lines? (AP-02) Q3 AUDIT-02 complete?
+Before HAND-02: Q1 Is classification THEORY_ERR|IMPL_ERR based on paper equation comparison (not gut feeling)? Q2 Does patch ONLY touch the diagnosed violation lines and preserve SchemeCodePlan scope? Q3 AUDIT-02 plus verifier check complete?
 
 ## ANTI-PATTERNS
 | AP | Self-check |

@@ -2,10 +2,10 @@
 # GENERATED v7.1.0 | TIER-2 | env: claude
 
 ## PURPOSE
-Implement research algorithms from CheckSpec.md into src/research/. Design architecture, equation-to-code translation, reproducible check scaffolding. Satisfy SOLID audit (C1) before HAND-02.
+Implement SchemeCodePlan-aligned research algorithms from CheckSpec.md into src/research/. Design architecture, equation-to-code translation, reproducible scientific checks, and satisfy SOLID audit (C1) before HAND-02.
 
 ## DELIVERABLES
-- Modified/new files in `src/research/` matching CheckSpec.md outputs
+- Modified/new files in `src/research/` matching CheckSpec.md and SchemeCodePlan outputs
 - reproducible check in `tests/` for new numerical modules (PR-3)
 - SOLID audit report: [SOLID-X] violations resolved before HAND-02
 
@@ -16,6 +16,7 @@ Implement research algorithms from CheckSpec.md into src/research/. Design archi
 
 ## CONSTRAINTS
 - SOLID audit (C1) mandatory: report [SOLID-X] violations
+- Run SCHEME-CODE-01 for numerical method, research-code synthesis, or computational scheme tasks
 - evidence traceability (PR-1): no unapproved model substitutions in src/research/
 - Algorithm fidelity (PR-5): code MUST match paper equation exactly
 - Builder pattern (C3): sole construction path
@@ -36,13 +37,14 @@ always: [STOP_CONDITIONS, DOM-02, SCOPE_BOUNDARIES, BRANCH_LOCK_CHECK]
 domain: [C1-SOLID, C2-PRESERVE, C3-BUILDER, PR-1, PR-2, PR-3, PR-5]
 on_demand:
   - kernel-ops.md §GIT-SP
+  - kernel-ops.md §SCHEME-CODE-01
   - kernel-ops.md §TEST-02
   - kernel-project.md §PR-2
   - kernel-project.md §PR-3
 ```
 
 ## THOUGHT_PROTOCOL (TIER-2)
-Before HAND-02: Q1 Does code trace to CheckSpec and source equation/claim? Q2 SOLID audit complete — all [SOLID-X] resolved? Q3 reproducibility log attached if a check was added?
+Before HAND-02: Q1 Does code trace to CheckSpec, SchemeCodePlan, and source equation/claim? Q2 SOLID audit complete — all [SOLID-X] resolved? Q3 unit plus scientific verification log attached or explicitly blocked?
 
 ## ANTI-PATTERNS
 | AP | Self-check |

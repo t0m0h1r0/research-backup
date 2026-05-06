@@ -36,6 +36,7 @@ for Codex and other external agents.
 | Reusable research code | `src/` |
 | Reproducible studies | `analysis/{study}/` |
 | Exploratory notebooks | `notebooks/` |
+| Implementation plans or scaffolds | `artifacts/L/` |
 | Paper section patches | `paper/sections/` |
 | Paper figures | `paper/figures/` |
 | Presentation decks and slide assets | `paper/presentations/` |
@@ -45,9 +46,10 @@ for Codex and other external agents.
 
 ## Agent Rules
 
-- Prompt source of truth: `prompts/meta/`.
+- Prompt source of truth: upstream shared metaprompts are materialized in
+  `prompts/meta/`; the project profile remains `prompts/meta/kernel-project.md`.
 - Generated role prompts: `prompts/agents-codex/` and `prompts/agents-claude/`.
-- Skill capsules: `prompts/skills/`.
+- Project-local skill capsules: `prompts/skills/`.
 - Follow PLAN -> EXECUTE -> VERIFY -> AUDIT for material outputs.
 - Search `docs/wiki/` before difficult, investigative, ambiguous, or precedent-likely work.
 - Compile important validated findings and reusable lessons into `docs/wiki/`;
@@ -91,8 +93,11 @@ for Codex and other external agents.
 
 - For project-specific rules, edit `prompts/meta/kernel-project.md` and
   regenerate generated runtime docs.
-- For workflow or role changes, edit the relevant `prompts/meta/kernel-*.md`
-  file, update affected generated prompts, and run prompt audit checks.
+- For shared workflow or role changes, pull/sync the upstream metaprompt source
+  recorded in `prompts/upstream.toml`, then regenerate local support artifacts,
+  runtime docs, and prompts.
+- Never copy upstream generated agent prompts, skill capsules, templates, or
+  project scripts into this project; generate them locally from `prompts/meta/`.
 - Keep generated prompts compact: role, scope, STOP conditions, output contract,
   and JIT references belong in prompts; full operation bodies belong in
   `prompts/meta/` or `prompts/skills/`.

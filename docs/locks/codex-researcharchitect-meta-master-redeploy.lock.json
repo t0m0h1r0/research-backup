@@ -1,0 +1,8 @@
+{
+  "branch": "codex/researcharchitect-meta-master-redeploy",
+  "worktree": "/private/tmp/research-backup-meta-master-redeploy",
+  "objective": "Sync upstream metaprompt revision c985b65 and redeploy project-local prompt artifacts.",
+  "owner": "ResearchArchitect",
+  "status": "VALIDATED",
+  "updated_at_utc": "2026-05-06T03:50:35Z"
+}
