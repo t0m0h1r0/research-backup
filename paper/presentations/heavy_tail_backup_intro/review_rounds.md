@@ -1,6 +1,6 @@
 # Review Rounds
 
-status: ROUND2_ADDRESSED
+status: VALIDATED_ROUND3_NO_MAJOR
 review_target: `paper/presentations/heavy_tail_backup_intro/heavy_tail_backup_intro.pptx`
 created_at_utc: 2026-05-06T04:35:17Z
 
@@ -116,4 +116,41 @@ Verification after response:
 
 ## Review Loop Status
 
-Round 2 findings addressed. Round 3 pending.
+Round 2 findings addressed.
+
+## Round 3: Independent Review
+
+Reviewers: Bernoulli, Locke, Carson
+Verdict: NO_MAJOR_OR_HIGHER
+Max severity: MINOR
+CRITICAL findings: NONE
+MAJOR findings: NONE
+
+Findings and response:
+
+| ID | Severity | Slide | Finding | Response |
+|----|----------|-------|---------|----------|
+| R3-m01 | MINOR | 4 | Variable-reading panel was useful but dense at thumbnail size; body text might be hard from the back of a room. | Shortened the bullets to compact symbol-to-meaning mappings and increased their size. |
+| R3-m02 | MINOR | 5 | Four-step flow was clear, but card body text was still small. | Shortened all step bodies and increased body size/boldness so each card reads as a short operational command. |
+| R3-m03 | MINOR | 2 | Bottom legend and red failure note could be missed in thumbnails. | Enlarged legend labels, shortened the red failure note, and increased its emphasis. |
+| R3-m04 | MINOR | Global | Source lines were unreadable at contact-sheet scale unless treated as provenance only. | Changed footers to “Provenance note” and documented that they are traceability footers, not audience-readable body content. |
+
+Reviewer confirmations:
+- Beginner/story reviewer found no remaining CRITICAL, MAJOR, or MINOR findings
+  and confirmed the flow: incident-day restore risk -> clean-recovery horizon
+  -> heavy-tail motivation -> horizon formula -> operational workflow.
+- Source/math reviewer found no remaining CRITICAL, MAJOR, or MINOR findings
+  and confirmed Slide 3 is now bounded to the Pareto dwell-time model
+  assumption without unsupported same-mean claims.
+
+Verification after response:
+- `build_artifact_deck.mjs --slide-count 5`: PASS.
+- `check_layout_quality.mjs --layout ... --min-gap 8`: PASS with
+  0 errors and 0 warnings.
+- `unzip -t heavy_tail_backup_intro.pptx`: PASS.
+- Contact sheet visually inspected.
+
+## Review Loop Status
+
+Round 3 had no MAJOR-or-higher findings. All Round 1-3 findings were addressed,
+so the loop stops before the 10-round cap.

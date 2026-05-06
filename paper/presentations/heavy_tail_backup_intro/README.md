@@ -1,10 +1,11 @@
 # Heavy-Tail Backup Intro Deck
 
-status: ROUND2_ADDRESSED
+status: VALIDATED_ROUND3_NO_MAJOR
 created_by: ResearchArchitect
 created_at_utc: 2026-05-06T04:35:17Z
 round1_addressed_at_utc: 2026-05-06T04:47:07Z
 round2_addressed_at_utc: 2026-05-06T04:52:08Z
+round3_addressed_at_utc: 2026-05-06T04:58:24Z
 deck_file: `heavy_tail_backup_intro.pptx`
 slide_count: 5
 worktree: `/private/tmp/research-backup-paper-presentation-zero-base`
@@ -61,6 +62,8 @@ branch: `codex/researcharchitect-paper-presentation-zero-base`
   0 errors and 0 warnings.
 - `unzip -t heavy_tail_backup_intro.pptx`: PASS.
 - Rendered contact sheet was visually inspected after layout QA.
+- Source footers are provenance notes for traceability, not audience-readable
+  slide body text.
 - Independent review Round 1 found no CRITICAL findings and multiple MAJOR /
   MINOR findings across beginner narrative, source fidelity, and visual
   hierarchy.
@@ -70,8 +73,14 @@ branch: `codex/researcharchitect-paper-presentation-zero-base`
   Slide 3 (`平均が同じに見えても`) plus MINOR polish items.
 - All Round 2 findings were addressed by changing the claim to typical-case
   wording, tightening operational wording, and polishing notation.
+- Independent review Round 3 found no CRITICAL or MAJOR findings. Two reviewers
+  found no findings; the visual reviewer raised MINOR readability polish only.
+- All Round 3 MINOR findings were addressed by enlarging Slide 2 labels,
+  shortening Slide 4 variable-reading bullets, simplifying Slide 5 step copy,
+  and marking footers as provenance notes.
 
 ## Review State
 
-Round 2 findings have been addressed. Round 3 review is pending.
+Review loop stopped after Round 3 because no MAJOR-or-higher findings remained.
+All Round 1-3 findings have been addressed and final QA passed.
 See `review_rounds.md`.
