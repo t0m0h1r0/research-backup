@@ -16,11 +16,11 @@ Violation = CONTAMINATION (DOM-02) → STOP immediately.
 **§B Broken Symmetry:** Every task has exactly two roles: Specialist (creates) and Gatekeeper/Auditor
 (falsifies, NEVER reads Specialist reasoning first). Same agent = audit trail destroyed.
 Isolation levels: see §B.1 table below. Phantom Reasoning Guard = HAND-03 C6.
-<see_also>kernel-ops.md §HAND-03, kernel-roles.md §COVE-MANDATE</see_also>
+<see_also>kernel-ops.md §HAND-03, kernel-roles.md §COVE MANDATE</see_also>
 
 **§C Falsification Loop:** TheoryAuditor falsifies equations; ConsistencyAuditor falsifies
 cross-domain consistency. Finding a contradiction = high-value success, not failure.
-<see_also>kernel-ops.md §AUDIT-02, kernel-roles.md §AU2-GATE</see_also>
+<see_also>kernel-ops.md §AUDIT-02, kernel-roles.md §GATEKEEPER APPROVAL</see_also>
 
 ## §B.1: Achievable Isolation Levels
 
@@ -36,13 +36,13 @@ cross-domain consistency. Finding a contradiction = high-value success, not fail
 Default when uncertain: one level higher.
 
 ────────────────────────────────────────────────────────
-# § SYSTEM STRUCTURE (v8.0.0-candidate — 8-file Lean Kernel + derived prompt artifacts)
+# § SYSTEM STRUCTURE (v8.0.0-candidate — 8-file Lean Kernel + project-local derived prompt artifacts)
 
 **3-Layer Architecture (one-way dependency — lower layers MUST NOT reference upper):**
 
 ```
 Layer 1 — Static Foundation (Immutable)
-  kernel-constitution.md — φ1–φ7, A1–A11, LA-1–LA-5, MH-1–3, system targets
+  kernel-constitution.md — φ1–φ7, A1–A11, LA-1–LA-6, MH-1–3, system targets
 
 Layer 2 — Dynamic Execution (Operational)
   kernel-roles.md    — per-agent role contracts, SCHEMA-IN-CODE, CoVe mandate
@@ -51,18 +51,20 @@ Layer 2 — Dynamic Execution (Operational)
 
 Layer 3 — Orchestration (Process)
   kernel-workflow.md    — P-E-V-A loop, STOP-RECOVER MATRIX, v6.0.0 protocols
-  kernel-deploy.md      — EnvMetaBootstrapper, tiered generation, Q3 validation
+  kernel-deploy.md      — EnvMetaBootstrapper, tiered generation, Q3-AUDIT validation
 
 Layer P — Project Profile (swappable per project)
   kernel-project.md     — PR-1..PR-6 project-specific rules
 
 Layer S — Safety
-  kernel-antipatterns.md — AP-01..AP-15 compact catalogue
+  kernel-antipatterns.md — AP-01..AP-16 compact catalogue
 
-Derived Prompt Artifacts
-  prompts/agents-{env}/ — executable role prompts
-  prompts/skills/       — JIT Skill Capsules
-  AGENTS.md             — external coding-agent repo instructions
+Project-Local Derived Prompt-System Artifacts
+  prompts/agents-{env}/ — executable role prompts generated in each receiving project
+  prompts/skills/       — JIT Skill Capsules generated in each receiving project
+  templates/            — optional project-local templates generated from kernel-deploy.md
+  scripts/              — optional project-local deploy/audit helpers generated locally
+  AGENTS.md             — external coding-agent repo instructions generated locally
 ```
 
 **Interface Contract flow (T-L-E-A, mandatory ordering):**
@@ -185,7 +187,7 @@ is applied at the right moments, with full evidence.
 ────────────────────────────────────────────────────────
 
 ## φ6: Single Source, Derived Artifacts
-> **TL;DR:** Change the source in prompts/meta/; never patch a derived artifact directly.
+> **TL;DR:** Change the source in prompts/meta/ or upstream kernel/; never patch a derived artifact directly.
 
 Every rule has exactly one canonical home. Derived files are outputs, not inputs.
 Change the source; regenerate the derivative. Never patch a derivative directly.
@@ -196,7 +198,9 @@ overwrite the patch, destroying the fix without notice.
 
 **Expresses:** A10 (Meta-Governance).
 **Authority order:** prompts/meta/ > docs/00_GLOBAL_RULES.md > prompts/agents-{env}/.
-**Corollary:** If a rule needs to change, find its home in prompts/meta/ and change it there.
+**Corollary:** If a rule needs to change, find its home in the pulled metaprompt
+source (`prompts/meta/` in a project, `kernel/` in this upstream repo) and
+change it there. Then regenerate local derived artifacts.
 
 ────────────────────────────────────────────────────────
 
@@ -269,10 +273,10 @@ theory / discretization / implementation / verification.
 - Never discard meaning without explicit deprecation.
 
 ## A8: Git Governance  ← φ4 + φ5
-- Branches: `main` (protected); `code`, `paper`, `prompt` (domain integration staging); direct main edits forbidden.
-- `dev/{agent_role}`: individual workspaces — sovereign per agent; no cross-agent access.
+- Branches: `main` (protected); domain integration branches are named in `kernel-domains.md §DOMAIN REGISTRY`; direct main edits forbidden.
+- `dev/{domain}/{agent_id}/{task_id}`: individual workspaces — sovereign per agent/task; no cross-agent access.
 - `docs/interface/`: shared inter-domain agreements (schemas, API definitions) — writable only by Gatekeepers.
-- Merge path: dev/{agent_role} → {domain} (Gatekeeper PR) → main (Root Admin PR) after VALIDATED phase.
+- Merge path: `dev/{domain}/{agent_id}/{task_id}` → `{domain}` integration branch (Gatekeeper PR) → `main` (Root Admin PR) after VALIDATED phase.
 - Commits at coherent milestones; recorded in docs/02_ACTIVE_LEDGER.md.
 
 ### A8.1: Worktree-First Parallelism (v5.1)
@@ -284,7 +288,7 @@ When `_base.yaml :: concurrency_profile == "worktree"`, git branch isolation alo
 - Branch-level ownership: one session at a time per branch, enforced by `docs/locks/{branch_slug}.lock.json` (O_EXCL atomic create) + canonical audit row in `docs/02_ACTIVE_LEDGER.md §4 BRANCH_LOCK_REGISTRY`.
 - Filesystem-level isolation: writes happen inside `../wt/{session_id}/{branch_slug}` (repo-external sibling), never at the primary checkout.
 - Remote safety: `git push` is replaced by `GIT-ATOMIC-PUSH` (fetch + rebase + push); rebase conflicts = STOP-SOFT, not panic.
-- New STOP codes: **STOP-09** (base-directory destruction), **STOP-10** (foreign branch-lock force / ledger-file divergence), **STOP-11** (atomic-push rebase conflict). See `kernel-ops.md § STOP CONDITIONS`.
+- STOP code authority remains `kernel-ops.md §STOP CONDITIONS`. Worktree failures map to STOP-03 (missing lock), STOP-10 (schema/lock-state invalid), or STOP-11 (lock conflict). New STOP numbers MUST NOT be introduced outside `kernel-ops.md`.
 - Backward compatibility: when `concurrency_profile == "legacy"`, A8.1 is dormant and classic A8 applies verbatim.
 
 A8.1 is gated; A8 is unconditional.
@@ -295,14 +299,15 @@ A8.1 is gated; A8 is unconditional.
 - Infrastructure may import research implementation; research implementation must never import infrastructure.
 - Direct access to research implementation internals from infrastructure = CRITICAL_VIOLATION — escalate immediately.
 
-Note: "research implementation" and "infrastructure" here refer to code-layer architecture within the Code domain,
-NOT to the meta-system's project domains (Code/Paper/Prompt/Audit). See kernel-domains.md for domains.
+Note: "research implementation" and "infrastructure" here refer to code-layer architecture within the L-domain implementation layer,
+NOT to the meta-system domain registry (T/L/E/A/M/P/Q/K). See kernel-domains.md for domains.
 
 ## A10: Meta-Governance  ← φ6 (Single Source, Derived Artifacts)
-- `prompts/meta/` is the SINGLE SOURCE OF TRUTH for all system rules and axioms.
-- `docs/` files are DERIVED outputs — never edit docs/ directly to change a rule.
-- Reconstruction of docs/ from prompts/meta/ alone must always be possible.
-- Rule change → edit prompts/meta/ first → regenerate docs/ via EnvMetaBootstrapper (kernel-deploy.md).
+- Upstream repository SSoT: `kernel/` contains shared metaprompt rules and axioms.
+- Receiving-project SSoT: `prompts/meta/` is the local materialization of pulled `kernel/` plus project-local `kernel-project.md`.
+- `docs/`, `prompts/agents-*`, `prompts/skills/`, project templates, and project scripts are DERIVED outputs — never edit them directly to change a rule.
+- Reconstruction of derived prompt-system artifacts from metaprompt sources must always be possible.
+- Rule change → edit upstream `kernel/` or project-local `prompts/meta/kernel-project.md` first → regenerate derived docs/prompts/skills/templates/scripts via EnvMetaBootstrapper (kernel-deploy.md).
 
 **Expresses:** φ6 (Single Source, Derived Artifacts).
 
@@ -320,7 +325,7 @@ Wiki entries are compiled from VALIDATED artifacts; internal reasoning is unveri
 
 | Level | When to use | Agent action |
 |-------|------------|--------------|
-| **STOP-HARD** | Security/integrity violation; contamination; broken symmetry; main-branch commit by non-Root-Admin; missing upstream contract (FULL-PIPELINE only) | Halt immediately. Issue RETURN STOPPED. Do NOT proceed. Require explicit user resolution. |
+| **STOP-HARD** | Security/integrity violation; contamination; broken symmetry; main-branch commit by non-Root-Admin; missing upstream contract (FULL-PIPELINE only), or required verification failure | Halt current action immediately. Issue HAND-02 with the status prescribed by `kernel-ops.md §STOP CONDITIONS` Action and include `stop_code`. Do NOT proceed past the failed gate without Coordinator/User resolution. |
 | **STOP-SOFT** | Protocol advisory violation; non-blocking quality issue; token budget exceeded; minor scope ambiguity | Log to ACTIVE_LEDGER §PROTOCOL-VIOLATION. Proceed. Report to coordinator in RETURN token. |
 | **WARN** | Style inconsistency; suboptimal but correct; FAST-TRACK missing optional gate | Annotate in RETURN token `warnings` field. Do not log to LEDGER. Proceed. |
 
@@ -370,7 +375,7 @@ RULE_MANIFEST:
     code:   [C1-SOLID, C2-PRESERVE, A9-SOVEREIGNTY, reproducibility-STANDARD]
     paper:  [P1-LATEX, P4-SKEPTICISM, KL-12]
     theory: [A3-TRACEABILITY, AU1-AUTHORITY]
-    prompt: [Q1-TEMPLATE, Q3-AUDIT, Q4-COMPRESSION]
+    prompt: [Q1-TEMPLATE, Q2-SOURCE-TRACE, Q3-AUDIT, Q4-COMPRESSION]
     audit:  [AU2-GATE, PROCEDURES-A-E]
   on_demand:   # JIT pointers — read ONLY when that operation is needed; NEVER preload all
     HAND-01: "kernel-ops.md §HAND-01"
@@ -379,6 +384,10 @@ RULE_MANIFEST:
     GIT-SP:  "kernel-ops.md §GIT-SP"
     AUDIT-01: "kernel-ops.md §AUDIT-01"
     AUDIT-02: "kernel-ops.md §AUDIT-02"
+    SCHEME-CODE-01: "kernel-ops.md §SCHEME-CODE-01"
+    PAPER-WRITE-01: "kernel-ops.md §PAPER-WRITE-01"
+    PRESENTATION-GEN-01: "kernel-ops.md §PRESENTATION-GEN-01"
+    VISUAL-CONCEPT-01: "kernel-ops.md §VISUAL-CONCEPT-01"
 ```
 
 Token savings: ~30-40% vs static embedding. Trade-off (one extra file read at execution) is acceptable.
