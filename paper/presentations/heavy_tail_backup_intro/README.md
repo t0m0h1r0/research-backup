@@ -1,8 +1,9 @@
 # Heavy-Tail Backup Intro Deck
 
-status: ZERO_BASE_SELF_QA
+status: ROUND1_ADDRESSED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-06T04:35:17Z
+round1_addressed_at_utc: 2026-05-06T04:47:07Z
 deck_file: `heavy_tail_backup_intro.pptx`
 slide_count: 5
 worktree: `/private/tmp/research-backup-paper-presentation-zero-base`
@@ -59,8 +60,13 @@ branch: `codex/researcharchitect-paper-presentation-zero-base`
   0 errors and 0 warnings.
 - `unzip -t heavy_tail_backup_intro.pptx`: PASS.
 - Rendered contact sheet was visually inspected after layout QA.
+- Independent review Round 1 found no CRITICAL findings and multiple MAJOR /
+  MINOR findings across beginner narrative, source fidelity, and visual
+  hierarchy.
+- All Round 1 findings were addressed by rebuilding the slide visuals and
+  tightening language, conditions, notation, and operational caveats.
 
 ## Review State
 
-Independent review has not yet been completed for this zero-base version.
+Round 1 findings have been addressed. Round 2 review is pending.
 See `review_rounds.md`.

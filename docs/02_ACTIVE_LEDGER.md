@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_ZERO_BASE_SELF_QA |
+| phase | PRESENTATION_ZERO_BASE_ROUND1_ADDRESSED |
 | branch | `codex/researcharchitect-paper-presentation-zero-base` |
 | current_objective | Recreate the heavy-tail backup presentation from zero and run review/fix loops until no MAJOR-or-higher findings remain |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | presentation task: `paper/sections/tex/*.tex`, `docs/wiki/ransomware_heavy_tail_backup_design.md`, and `docs/evidence/heavy_tail_backup_source_note.md`; anomaly-detection research source still not selected |
 | next_action | Run independent presentation review rounds, address every finding, and stop when no MAJOR-or-higher findings remain or after more than 10 rounds |
-| updated_at_utc | 2026-05-06T04:35:17Z |
+| updated_at_utc | 2026-05-06T04:47:07Z |
 
 ## §CHECKLIST
 
@@ -43,7 +43,7 @@
 | CHK-RESEARCH-017 | DONE | A/Q | `paper/presentations/heavy_tail_backup_intro/` | created a 5-slide paper-grounded research presentation and completed 3 review rounds with no remaining CRITICAL, MAJOR, or MINOR findings | 2026-05-05 |
 | CHK-RESEARCH-018 | DONE | P/M/Q | `prompts/meta/kernel-roles.md`, `prompts/agents-codex/PromptAuditor.md`, `prompts/agents-claude/PromptAuditor.md`, `artifacts/P/researcharchitect_agent_refresh_audit.md` | pulled latest main, verified no pending remote meta delta, and refreshed PromptAuditor main-merge guardrail wording plus validation reports | 2026-05-05 |
 | CHK-RESEARCH-019 | DONE | P/M/Q | `prompts/meta/`, `prompts/skills/`, `prompts/agents-codex/`, `prompts/agents-claude/`, `prompts/upstream.toml`, `artifacts/P/researcharchitect_metaprompt_redeploy_audit.md` | synced upstream metaprompt revision `c985b65`, preserved `kernel-project.md`, regenerated local support artifacts and prompts, and ran prompt audit checks | 2026-05-06 |
-| CHK-RESEARCH-020 | READY | A/Q | `paper/presentations/heavy_tail_backup_intro/` | zero-base recreated the 5-slide heavy-tail backup presentation and prepared it for independent review loops | 2026-05-06 |
+| CHK-RESEARCH-020 | READY | A/Q | `paper/presentations/heavy_tail_backup_intro/` | zero-base recreated the 5-slide heavy-tail backup presentation, completed Round 1 review, and addressed all Round 1 findings; Round 2 review pending | 2026-05-06 |
 
 ## §ASSUMPTIONS
 
