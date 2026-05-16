@@ -1,7 +1,7 @@
 status: closed
 created_by: ResearchArchitect
 created_at_utc: "2026-05-16T22:00:58Z"
-updated_at_utc: "2026-05-16T22:55:04Z"
+updated_at_utc: "2026-05-16T23:04:58Z"
 issues:
   - id: R1-M01
     severity: MAJOR
@@ -62,4 +62,10 @@ issues:
     slide: 5
     finding: "The deck still did not explain how to read the formula as a decision object; the viewer could identify parts but not interpret the expression."
     response: "Expanded the theatrical deck to seven slides, added a dedicated formula-reading slide, and made the reading order explicit: a* first, numerator as avoided full-loss value, denominator as load of restoring further back, then n as the conversion to Δ*."
+    status: closed
+  - id: R6-M01
+    severity: MAJOR
+    slide: global
+    finding: "The black full-slide background was visually heavy and made the deck harder to read."
+    response: "Rebuilt the theatrical deck on a light editorial background with white panels and restrained red/green accent rails, while keeping dark fields only for local formula and conclusion emphasis."
     status: closed

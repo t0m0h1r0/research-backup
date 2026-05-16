@@ -1,9 +1,9 @@
 # Heavy-Tail Backup Refined Deck
 
-status: THEATRICAL_FORMULA_READING_VALIDATED
+status: THEATRICAL_LIGHT_READABLE_VALIDATED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:14:20Z
-updated_at_utc: 2026-05-16T22:55:04Z
+updated_at_utc: 2026-05-16T23:04:58Z
 deck_file: `heavy_tail_backup_refined_theatrical.pptx`
 alternate_deck_file: `heavy_tail_backup_refined.pptx`
 slide_count: 7
@@ -19,9 +19,10 @@ branch: `codex/researcharchitect-presentation-refine`
 改訂の主眼は，直感的な復旧リスクから設計式へ飛ばず，検知失敗・保持超過・
 復旧不能の分解を経由してから清浄復旧ホライズンの式へ進めること。
 
-追加の外連味版 `heavy_tail_backup_refined_theatrical.pptx` では，暗い
-インシデント対応室トーン，大きい一文，赤/緑の強い警告色，英字アクセント
-を使い，初見の引っかかりを強めた。根拠境界と数式条件は維持している。
+追加の外連味版 `heavy_tail_backup_refined_theatrical.pptx` では，明るい
+エディトリアル調の背景，大きい一文，赤/緑の警告レール，薄い英字アクセント
+を使い，読みやすさと初見の引っかかりを両立させた。根拠境界と数式条件は
+維持している。
 
 ユーザーレビュー後に，専門用語を平易な日本語に置き換え，グラフ図の軸と
 方向を明示し，数式スライドでは分子・分母・世代数の3点に視線誘導を
@@ -30,6 +31,9 @@ branch: `codex/researcharchitect-presentation-refine`
 さらに数式の読み解き方が不足していたため，外連味版を7枚構成に更新し，
 数式を「全損を避ける価値」「古く戻る負荷」「世代数で間隔に割る」の
 順に読む専用スライドを追加した。
+
+黒背景が重く見づらいというユーザーレビューを受け，外連味版の背景を
+ライトグレー/白地へ変更した。濃色面は式や結論のアクセントに限定している。
 
 ## Evidence Boundary
 
@@ -87,7 +91,8 @@ CRITICAL, MAJOR, HIGH, or MINOR findings remained. Round 3 added the theatrical
 visual pass requested after validation and re-ran mechanical QA. Round 4
 addressed user clarity feedback on specialist terms, graph axes, and formula
 focus. Round 5 split the formula explanation into a dedicated reading slide and
-a separate design-target slide.
+a separate design-target slide. Round 6 replaced the black-background system
+with a light, high-contrast editorial system.
 
 - Round 1 found presentation-polish and layout issues; all were addressed.
 - Round 2 story/source/visual review found no remaining issues.
@@ -95,6 +100,8 @@ a separate design-target slide.
 - Round 4 clarified audience language, graph axes, and formula attention points.
 - Round 5 added explicit formula reading order and expanded the theatrical deck
   to seven slides.
+- Round 6 removed the black full-slide background and validated a lighter,
+  more readable visual system.
 - Final theatrical scorecard: 44 / 45, PASS.
 
 See `review_reports/`, `issue_register.yaml`, `convergence_dashboard.md`, and

@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_THEATRICAL_FORMULA_READING_VALIDATED |
+| phase | PRESENTATION_THEATRICAL_LIGHT_READABLE_VALIDATED |
 | branch | `codex/researcharchitect-presentation-refine` |
 | current_objective | Refine the heavy-tail backup research presentation, regenerate polished and theatrical editable decks, iterate review/fix loops to convergence, and preserve traceable presentation artifacts |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | prompt task: `prompts/research-agent` at `ed388737ed01c479df4905925f1ec6791ff0f47d`; `prompts/meta/kernel-project.md` preserved at SHA-256 `38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d`; anomaly-detection research source still not selected |
-| next_action | Await user review or explicit merge instruction for the formula-readable theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
-| updated_at_utc | 2026-05-16T22:55:04Z |
+| next_action | Await user review or explicit merge instruction for the light-readable theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
+| updated_at_utc | 2026-05-16T23:04:58Z |
 
 ## §CHECKLIST
 
@@ -50,6 +50,7 @@
 | CHK-RESEARCH-PRESENTATION-REFINE-002 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round3.md` | created a more theatrical dark-room version with stronger contrast and larger visual claims while preserving source boundaries; layout and package QA passed | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-003 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round4.md` | clarified the theatrical deck after user review by replacing unclear terminology, labeling chart axes, and adding formula-focus guidance; layout and package QA passed | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-004 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round5.md` | expanded the theatrical deck to seven slides with a dedicated formula-reading page that explains a*, numerator, denominator, and n as a design judgment; layout and package QA passed | 2026-05-17 |
+| CHK-RESEARCH-PRESENTATION-REFINE-005 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round6.md` | rebuilt the theatrical deck with a light readable visual system instead of black full-slide backgrounds; layout and package QA passed | 2026-05-17 |
 
 ## §ASSUMPTIONS
 

@@ -1,11 +1,11 @@
-status: theatrical_formula_reading_validated
+status: theatrical_light_readable_validated
 created_by: ResearchArchitect
 created_at_utc: "2026-05-16T22:00:58Z"
-updated_at_utc: "2026-05-16T22:55:04Z"
+updated_at_utc: "2026-05-16T23:04:58Z"
 slide_count: 7
 slide_size: "1280x720"
 design_system:
-  background: "dark incident-room theatrical system"
+  background: "light high-contrast editorial system"
   typography: "Hiragino Sans / Aptos fallback, with large claim titles"
   palette:
     ink: "#172026"
@@ -21,6 +21,7 @@ design_system:
     - "Kicker marker and label share a named centerline."
     - "Footers are provenance notes, not audience body copy."
     - "Use diagrams and authored editable chart primitives."
+    - "Avoid black full-slide backgrounds; reserve dark fields only for local formula or conclusion emphasis."
 slides:
   - number: 1
     claim: "最新バックアップだけを見ると，復旧先を間違える"

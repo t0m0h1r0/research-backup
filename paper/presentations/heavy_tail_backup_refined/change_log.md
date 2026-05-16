@@ -1,9 +1,9 @@
 # Change Log
 
-status: THEATRICAL_FORMULA_READING_VALIDATED
+status: THEATRICAL_LIGHT_READABLE_VALIDATED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:00:58Z
-updated_at_utc: 2026-05-16T22:55:04Z
+updated_at_utc: 2026-05-16T23:04:58Z
 
 ## 2026-05-17 Planning Pass
 
@@ -61,3 +61,15 @@ updated_at_utc: 2026-05-16T22:55:04Z
   consequence.
 - Reran artifact-tool build, layout QA, rendered preview inspection, package
   integrity, and slide-count checks after the edits.
+
+## 2026-05-17 Light Readability Pass
+
+- Replaced the full-slide black background in the theatrical deck with a light
+  editorial system using white panels, light gray page background, and thin
+  red/green rails.
+- Kept the dramatic hierarchy through large titles, pale oversized accent words,
+  colored branch panels, and localized dark fields only for the formula and
+  concluding decision strips.
+- Preserved the 7-slide formula-reading narrative and all source-boundary notes.
+- Reran artifact-tool build, layout QA, rendered contact-sheet inspection,
+  package integrity, and slide-count checks after the edits.
