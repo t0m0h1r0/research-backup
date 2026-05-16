@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-16T09:24:29Z",
+  "timestamp": "2026-05-16T16:40:17Z",
   "status": "PASS_WITH_DEFERRED_PACKETS",
   "source_index": "docs/wiki/00_index.md",
   "kernel_stage": "prompts/meta/kernel-deploy.md \u00a7Stage 1b",
@@ -24,5 +24,7 @@
     }
   ],
   "packets_rejected": [],
-  "waiver": "No ACTIVE prompt-policy wiki cards exist. The compiled WIKI-HTB page is domain reference knowledge, so Codex prompts use existing wiki retrieval gates instead of embedding full wiki prose."
+  "waiver": "No ACTIVE prompt-policy wiki cards exist. The compiled WIKI-HTB page is domain reference knowledge, so Codex prompts use existing wiki retrieval gates instead of embedding full wiki prose.",
+  "deployment_version": "8.7.0-candidate",
+  "submodule_path": "prompts/research-agent"
 }

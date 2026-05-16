@@ -1,9 +1,9 @@
-# _base.yaml — Universal Agent Foundation v8.0.0-candidate (Claude)
+# _base.yaml — Universal Agent Foundation v8.7.0-candidate (Claude)
 # All agent prompts implicitly inherit this file.
 # Agents declare ONLY overrides and domain-specific content (primitive-diff inheritance).
 # To understand an agent: read _base.yaml FIRST, then the agent file.
 
-meta_version: "8.0.0-candidate"
+meta_version: "8.7.0-candidate"
 concurrency_profile: "worktree"
 handoff_mode: "text"
 
@@ -23,6 +23,7 @@ token_telemetry: true
 adaptive_condensation: true
 agent_effort_policy: true
 tool_trust_boundary: true
+artifact_convergence: true
 
 wiki_memory:
   retrieval_gate: "Hard/investigative/precedent-likely? Search docs/wiki/ or ask Librarian; record hit/no-hit."
@@ -78,6 +79,7 @@ on_demand_common:
   HAND_SCHEMA_V800:  "kernel-roles.md §SCHEMA EXTENSIONS v8.0.0-candidate"
   METRIC-01:         "kernel-ops.md §METRIC-01"
   TOOL-TRUST-01:     "kernel-ops.md §TOOL-TRUST-01"
+  ARTIFACT-CONVERGENCE: "kernel-ops.md §ARTIFACT-CONVERGENCE-01"
   K-RETRIEVE:        "kernel-ops.md §K-RETRIEVE"
   K-COMPILE:         "kernel-ops.md §K-COMPILE"
   K-LINT:            "kernel-ops.md §K-LINT"

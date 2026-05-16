@@ -1,0 +1,311 @@
+{
+  "timestamp": "2026-05-16T16:40:17Z",
+  "deployment_version": "8.7.0-candidate",
+  "status": "PASS_WITH_APPROXIMATE_COUNTS",
+  "agent_static_limit": {
+    "TIER-1": 700,
+    "TIER-2": 2000,
+    "TIER-3": 3500,
+    "MICRO": 700
+  },
+  "agents": {
+    "prompts/agents-codex/CodeWorkflowCoordinator.md": {
+      "approx_tokens": 203,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PaperWorkflowCoordinator.md": {
+      "approx_tokens": 168,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/KnowledgeArchitect.md": {
+      "approx_tokens": 106,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/DevOpsArchitect.md": {
+      "approx_tokens": 89,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/ResearchArchitect.md": {
+      "approx_tokens": 175,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/TaskPlanner.md": {
+      "approx_tokens": 135,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/ExperimentRunner.md": {
+      "approx_tokens": 113,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/CodeCorrector.md": {
+      "approx_tokens": 126,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/TestRunner.md": {
+      "approx_tokens": 132,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PromptArchitect.md": {
+      "approx_tokens": 219,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/TraceabilityManager.md": {
+      "approx_tokens": 65,
+      "limit": 700,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PaperReviewer.md": {
+      "approx_tokens": 176,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PresentationWriter.md": {
+      "approx_tokens": 226,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/TheoryAuditor.md": {
+      "approx_tokens": 112,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/DiagnosticArchitect.md": {
+      "approx_tokens": 93,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/TheoryArchitect.md": {
+      "approx_tokens": 103,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PaperWriter.md": {
+      "approx_tokens": 113,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/WikiAuditor.md": {
+      "approx_tokens": 112,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PromptAuditor.md": {
+      "approx_tokens": 252,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/ConsistencyAuditor.md": {
+      "approx_tokens": 145,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/Librarian.md": {
+      "approx_tokens": 78,
+      "limit": 700,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/EvidenceAnalyst.md": {
+      "approx_tokens": 98,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/VerificationRunner.md": {
+      "approx_tokens": 134,
+      "limit": 700,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/PaperCompiler.md": {
+      "approx_tokens": 79,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-codex/CodeArchitect.md": {
+      "approx_tokens": 113,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/CodeWorkflowCoordinator.md": {
+      "approx_tokens": 524,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PaperWorkflowCoordinator.md": {
+      "approx_tokens": 486,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/KnowledgeArchitect.md": {
+      "approx_tokens": 238,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/DevOpsArchitect.md": {
+      "approx_tokens": 231,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/ResearchArchitect.md": {
+      "approx_tokens": 614,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/TaskPlanner.md": {
+      "approx_tokens": 344,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/ExperimentRunner.md": {
+      "approx_tokens": 260,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/CodeCorrector.md": {
+      "approx_tokens": 283,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/TestRunner.md": {
+      "approx_tokens": 290,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PromptArchitect.md": {
+      "approx_tokens": 496,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/TraceabilityManager.md": {
+      "approx_tokens": 94,
+      "limit": 700,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PaperReviewer.md": {
+      "approx_tokens": 356,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PresentationWriter.md": {
+      "approx_tokens": 510,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/TheoryAuditor.md": {
+      "approx_tokens": 408,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/DiagnosticArchitect.md": {
+      "approx_tokens": 270,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/TheoryArchitect.md": {
+      "approx_tokens": 238,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PaperWriter.md": {
+      "approx_tokens": 273,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/WikiAuditor.md": {
+      "approx_tokens": 364,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PromptAuditor.md": {
+      "approx_tokens": 567,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/ConsistencyAuditor.md": {
+      "approx_tokens": 607,
+      "limit": 3500,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/Librarian.md": {
+      "approx_tokens": 138,
+      "limit": 700,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/EvidenceAnalyst.md": {
+      "approx_tokens": 215,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/VerificationRunner.md": {
+      "approx_tokens": 104,
+      "limit": 700,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/PaperCompiler.md": {
+      "approx_tokens": 173,
+      "limit": 2000,
+      "status": "PASS"
+    },
+    "prompts/agents-claude/CodeArchitect.md": {
+      "approx_tokens": 315,
+      "limit": 2000,
+      "status": "PASS"
+    }
+  },
+  "skills": {
+    "prompts/skills/SKILL-TOOL-TRUST.md": {
+      "approx_tokens": 109,
+      "token_target": 160,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-PAPER-WRITING.md": {
+      "approx_tokens": 193,
+      "token_target": 220,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-PRESENTATION-ILLUSTRATION.md": {
+      "approx_tokens": 150,
+      "token_target": 180,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-SCHEME-CODE.md": {
+      "approx_tokens": 171,
+      "token_target": 220,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-HANDOFF-AUDIT.md": {
+      "approx_tokens": 84,
+      "token_target": 140,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-CONDENSE-V2.md": {
+      "approx_tokens": 105,
+      "token_target": 170,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-PRESENTATION-DECK.md": {
+      "approx_tokens": 377,
+      "token_target": 460,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-GIT-WORKTREE.md": {
+      "approx_tokens": 113,
+      "token_target": 150,
+      "status": "PASS"
+    },
+    "prompts/skills/SKILL-PROMPT-AUDIT.md": {
+      "approx_tokens": 146,
+      "token_target": 180,
+      "status": "PASS"
+    }
+  },
+  "waiver": "Counts use whitespace tokens because tokenizer tooling is not configured; Q3-16 acceptance is based on relative size, generated prompt compactness, and explicit token_target fields."
+}

@@ -3,6 +3,7 @@
   "balance_check": "PASS",
   "id_registry": [
     "AP-17",
+    "ARTIFACT-CONVERGENCE-01",
     "HAND-01",
     "HAND-02",
     "HAND-03",
@@ -18,7 +19,9 @@
     "OP-CONDENSE",
     "PAPER-WRITE-01",
     "PRESENTATION-GEN-01",
+    "Q3-16",
     "SCHEME-CODE-01",
+    "TOKEN-ROI",
     "TOOL-TRUST-01",
     "VISUAL-CONCEPT-01",
     "WikiKnowledgePacket"
@@ -26,10 +29,14 @@
   "immutable_diff_results": [],
   "ref_resolution_results": [],
   "rfc2119_violations": [],
-  "source_integrity": "PASS_INITIAL_RESEARCH_BRIEF_REGISTERED_SUBMODULE_SYNC",
+  "source_integrity": "PASS_KERNEL_PROJECT_SHA_GUARDED_ZERO_BASE_DEPLOY",
   "active_project": "ai_anomaly_detection_research",
-  "timestamp": "2026-05-16T09:24:29Z",
-  "upstream_metaprompt_revision": "f52ae6f63494c42bf4727cd173851f0d06615799",
+  "timestamp": "2026-05-16T16:40:17Z",
+  "upstream_metaprompt_revision": "ed388737ed01c479df4905925f1ec6791ff0f47d",
   "distribution_mode": "git_submodule",
-  "wiki_knowledge_injection_report": "PASS_WITH_DEFERRED_PACKETS"
+  "wiki_knowledge_injection_report": "PASS_WITH_DEFERRED_PACKETS",
+  "submodule_path": "prompts/research-agent",
+  "deployment_version": "8.7.0-candidate",
+  "kernel_project_sha256": "38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d",
+  "token_roi_report": "PASS"
 }

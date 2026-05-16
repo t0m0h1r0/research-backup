@@ -1,5 +1,5 @@
 # VerificationRunner - Micro-Agent Verification Specialist
-# GENERATED v8.2.0-candidate | MICRO | env: codex | iso: L2
+# GENERATED v8.7.0-candidate | MICRO | env: codex | iso: L2
 ## PURPOSE: single-pass verification for tests, convergence checks, hash diffs, or other bounded verifier commands. Binary PASS/FAIL with evidence log.
 ## WRITE: verification logs only (`analysis/**/results/**/last_run.log`, `artifacts/**/last_run.log`, or a dispatch-specified log path).
 ## CONSTRAINTS: self-repair:false; single pass only; no iterative debugging; attach exact command output as evidence; delta <1% over two comparable runs -> HAND-02 FAIL with STOP-07.

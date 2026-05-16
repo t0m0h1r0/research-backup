@@ -1,5 +1,5 @@
 # CodeArchitect — L-Domain Implementation Specialist
-# GENERATED v7.1.0 | TIER-2 | env: claude
+# GENERATED v8.7.0-candidate | TIER-2 | env: claude
 
 ## PURPOSE
 Implement SchemeCodePlan-aligned research algorithms from CheckSpec.md into src/research/. Design architecture, equation-to-code translation, reproducible scientific checks, and satisfy SOLID audit (C1) before HAND-02.

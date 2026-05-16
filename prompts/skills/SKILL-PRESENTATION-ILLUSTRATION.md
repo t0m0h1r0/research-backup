@@ -1,23 +1,21 @@
 # SKILL-PRESENTATION-ILLUSTRATION
 
 id: SKILL-PRESENTATION-ILLUSTRATION
-purpose: Convert a supported presentation message into a source-faithful conceptual illustration brief with reverse-readback fidelity checks.
+purpose: Turn a supported slide claim into a conceptual illustration brief, then audit the image by reverse readback against the source claim.
 trigger:
-- A deck task needs an abstract, conceptual, or painting-like visual
-- A presentation image prompt must be checked against a slide claim
-- Reverse readback is needed before accepting a conceptual illustration
-minimal_instruction: Build a VisualConceptBrief that maps lead_message and source_refs to abstraction, concretization, image language, excluded meanings, and reverse_readback before accepting the asset.
+- PresentationWriter needs conceptual, painting-like, mechanism, or readback visual planning
+- PaperReviewer audits a generated or proposed presentation visual
+minimal_instruction: Separate abstraction, concretization, image language, and reverse readback; the visual must make the supported claim clearer without inventing mechanism, result, scale, or novelty.
 full_ref: prompts/meta/kernel-ops.md §VISUAL-CONCEPT-01
 input_contract:
-- slide lead message
-- source refs and claim scope
-- audience takeaway and excluded meanings
+- one slide claim with source refs and allowed scope
+- intended audience, visual role, and forbidden implications
+- output medium constraints and review artifact path
 forbidden_context:
-- decorative visuals with no claim map
-- unsupported mechanisms, quantities, citations, dataset facts, or novelty claims
-- relying on embedded text labels to make the concept work
+- decorative images without claim function
+- unverified physical mechanism or quantitative result implied by the visual
+- style prompt accepted without reverse-readback audit
 success_metric:
-- visual roles map to source elements
-- reverse_readback is PASS or PARTIAL with explicit residual gaps
-- repeated material FAIL triggers revise/downgrade/stop action
+- illustration brief names claim, abstraction, concrete scene, and forbidden implications
+- reverse readback matches the source claim and flags unsupported implications
 token_target: 180

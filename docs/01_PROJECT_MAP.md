@@ -51,11 +51,11 @@ experiments, ablation/error analysis, figures, and manuscript drafting.
 | `artifacts/M/` | M | workflow lessons and prompt-improvement notes |
 | `artifacts/L/` | L | implementation plans, scaffolds, and verification notes |
 | `artifacts/K/` | K | wiki candidates, K-domain audits, and compilation logs |
-| `prompts/meta/` | P/M | local materialization of upstream metaprompts plus project profile |
-| `prompts/upstream/research-agent` | P/M | pinned upstream metaprompt submodule used as the shared-kernel source |
+| `prompts/meta/` | P/M | local materialization of shared metaprompts plus project profile |
+| `prompts/research-agent` | P/M | pinned research-agent metaprompt submodule used as the shared-kernel source |
 | `prompts/agents-*` | P | project-local generated agent prompts |
 | `prompts/skills/` | P | project-local generated JIT skill capsules |
-| `prompts/upstream.toml` | P/M | upstream metaprompt revision record |
+| `prompts/upstream.toml` | P/M | metaprompt source revision record |
 
 ## §5 Implementation Constraints
 
