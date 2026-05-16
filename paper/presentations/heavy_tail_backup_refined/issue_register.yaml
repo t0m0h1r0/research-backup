@@ -1,7 +1,7 @@
 status: closed
 created_by: ResearchArchitect
 created_at_utc: "2026-05-16T22:00:58Z"
-updated_at_utc: "2026-05-16T22:14:20Z"
+updated_at_utc: "2026-05-16T22:24:51Z"
 issues:
   - id: R1-M01
     severity: MAJOR
@@ -26,4 +26,16 @@ issues:
     slide: global
     finding: "Round 2 story/source/visual review found no unresolved CRITICAL, MAJOR, HIGH, or MINOR issues after the fixes."
     response: "Deck accepted for final verification."
+    status: closed
+  - id: R3-M01
+    severity: MAJOR
+    slide: global
+    finding: "User requested more theatrical flair after the validated refined deck; the calm deck under-used tension, dark contrast, and large message moments."
+    response: "Created a theatrical dark-room variant with larger claim typography, red/green incident semantics, English accent words, and stronger contact-sheet contrast while preserving the same source-grounded six-slide arc."
+    status: closed
+  - id: R3-QA
+    severity: NONE
+    slide: global
+    finding: "The first theatrical render had large accent-word overlaps in layout QA."
+    response: "Moved and resized accent words, rerendered, and passed layout QA with 0 errors / 0 warnings."
     status: closed

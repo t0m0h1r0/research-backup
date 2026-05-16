@@ -1,9 +1,10 @@
 # Heavy-Tail Backup Refined Deck
 
-status: VALIDATED
+status: THEATRICAL_VALIDATED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:14:20Z
-deck_file: `heavy_tail_backup_refined.pptx`
+deck_file: `heavy_tail_backup_refined_theatrical.pptx`
+alternate_deck_file: `heavy_tail_backup_refined.pptx`
 slide_count: 6
 worktree: `/private/tmp/research-backup-presentation-refine`
 branch: `codex/researcharchitect-presentation-refine`
@@ -16,6 +17,10 @@ branch: `codex/researcharchitect-presentation-refine`
 
 改訂の主眼は，直感的な復旧リスクから設計式へ飛ばず，検知失敗・保持超過・
 復旧不能の分解を経由してから清浄復旧ホライズンの式へ進めること。
+
+追加の外連味版 `heavy_tail_backup_refined_theatrical.pptx` では，暗い
+インシデント対応室トーン，大きい一文，赤/緑の強い警告色，英字アクセント
+を使い，初見の引っかかりを強めた。根拠境界と数式条件は維持している。
 
 ## Evidence Boundary
 
@@ -52,22 +57,25 @@ branch: `codex/researcharchitect-presentation-refine`
 
 - Build command used artifact-tool presentation modules in a temporary
   thread-scoped workspace.
-- `build_artifact_deck.mjs --slide-count 6`: PASS.
+- `build_artifact_deck.mjs --slide-count 6`: PASS for both refined and theatrical decks.
 - `check_layout_quality.mjs --layout ... --min-gap 8`: PASS with
   0 errors and 0 warnings.
 - `unzip -t heavy_tail_backup_refined.pptx`: PASS.
+- `unzip -t heavy_tail_backup_refined_theatrical.pptx`: PASS.
 - Rendered contact sheet and full-size slides 4 and 6 were visually inspected.
-- Package contains six `ppt/slides/slide*.xml` files.
+- Each PPTX package contains six `ppt/slides/slide*.xml` files.
 - No embedded media assets are used.
 
 ## Review State
 
-Review loop stopped after Round 2 because no unresolved CRITICAL, MAJOR, HIGH,
-or MINOR findings remained.
+The calm refined deck review loop stopped after Round 2 because no unresolved
+CRITICAL, MAJOR, HIGH, or MINOR findings remained. Round 3 added the theatrical
+visual pass requested after validation and re-ran mechanical QA.
 
 - Round 1 found presentation-polish and layout issues; all were addressed.
 - Round 2 story/source/visual review found no remaining issues.
-- Final scorecard: 41 / 45, PASS.
+- Round 3 created the theatrical dark-room variant and passed layout/package QA.
+- Final theatrical scorecard: 43 / 45, PASS.
 
 See `review_reports/`, `issue_register.yaml`, `convergence_dashboard.md`, and
 `comeback_scorecard.md`.

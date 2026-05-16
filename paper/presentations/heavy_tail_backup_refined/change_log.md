@@ -23,3 +23,14 @@ created_at_utc: 2026-05-16T22:00:58Z
   slide subtitles.
 - Reworded slide 6 from "同じ表で更新する" to "一緒に更新する" and replaced the
   tiny dynamic-retention equation with a readable operational sentence.
+
+## 2026-05-17 Theatrical Pass
+
+- Added `heavy_tail_backup_refined_theatrical.pptx` as a more theatrical variant.
+- Shifted the visual system from warm-paper research style to a dark incident-room
+  style with large claim typography, red/green hazard semantics, and English
+  accent words such as `LATEST ≠ SAFE`, `ALERT`, `a* FIRST`, and `RUNBOOK`.
+- Preserved the same six-slide source-grounded narrative and did not add
+  empirical ransomware statistics, benchmark claims, SOTA claims, or new numeric
+  recommendations.
+- Fixed first-pass accent-word layout overlaps and reran QA to 0 errors / 0 warnings.

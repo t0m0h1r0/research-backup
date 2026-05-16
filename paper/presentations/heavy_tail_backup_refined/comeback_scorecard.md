@@ -1,9 +1,10 @@
 # Comeback Scorecard
 
-status: PASS
+status: PASS_THEATRICAL
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:14:20Z
-deck: `heavy_tail_backup_refined.pptx`
+deck: `heavy_tail_backup_refined_theatrical.pptx`
+alternate_deck: `heavy_tail_backup_refined.pptx`
 primary_deck_profile: engineering-platform
 reference_delta: n/a
 
@@ -13,15 +14,15 @@ reference_delta: n/a
 |-----------|-------|------|
 | story | 5 | Clear arc from restore risk to clean-recovery horizon and operating loop. |
 | specificity | 5 | Claims depend on ransomware backup contamination, Pareto dwell modeling, and the manuscript formula. |
-| rhythm | 4 | Six slides use timeline, horizon bar, paired tail visual, branch diagram, formula anchor, and operating loop. |
-| whitespace | 4 | Spacious enough for presentation use; formula slide is the densest by design. |
+| rhythm | 5 | The theatrical deck has a stronger dark-room contact-sheet rhythm with timeline, horizon beam, tail wall, branch map, formula stage, and runbook loop. |
+| whitespace | 4 | Dark composition keeps large claims readable; formula and runbook slides remain information-dense by design. |
 | chart clarity | 4 | Authored editable proof visuals directly support the claims; no native chart parts required. |
-| typography | 4 | Large claims and consistent labels; footers intentionally remain provenance-only. |
+| typography | 5 | Larger claim typography and English accent words create the requested stronger theatrical hook. |
 | restraint | 5 | No decorative icons, logos, filler boxes, or unsupported metrics. |
 | precision | 5 | Formula conditions and source boundaries are explicitly stated. |
-| coherence | 5 | Warm paper system, teal/amber/red semantics, and consistent footers/kickers across slides. |
+| coherence | 5 | Dark incident-room system, red/green hazard semantics, and consistent footers/kickers across slides. |
 
-Total: 41 / 45. Required minimum without reference: 40 / 45. No dimension below 4.
+Total: 43 / 45. Required minimum without reference: 40 / 45. No dimension below 4.
 
 ## Mechanical QA
 
