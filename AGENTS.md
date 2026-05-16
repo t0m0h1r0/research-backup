@@ -46,7 +46,8 @@ for Codex and other external agents.
 
 ## Agent Rules
 
-- Prompt source of truth: upstream shared metaprompts are materialized in
+- Prompt source of truth: upstream shared metaprompts are pinned as the
+  `prompts/upstream/research-agent` submodule and materialized into
   `prompts/meta/`; the project profile remains `prompts/meta/kernel-project.md`.
 - Generated role prompts: `prompts/agents-codex/` and `prompts/agents-claude/`.
 - Project-local skill capsules: `prompts/skills/`.
@@ -93,11 +94,13 @@ for Codex and other external agents.
 
 - For project-specific rules, edit `prompts/meta/kernel-project.md` and
   regenerate generated runtime docs.
-- For shared workflow or role changes, pull/sync the upstream metaprompt source
-  recorded in `prompts/upstream.toml`, then regenerate local support artifacts,
+- For shared workflow or role changes, update the upstream submodule recorded in
+  `prompts/upstream.toml`, sync shared kernel files into `prompts/meta/` while
+  preserving `kernel-project.md`, then regenerate local support artifacts,
   runtime docs, and prompts.
 - Never copy upstream generated agent prompts, skill capsules, templates, or
-  project scripts into this project; generate them locally from `prompts/meta/`.
+  project scripts into this project; generate them locally from `prompts/meta/`
+  and the pinned submodule revision.
 - Keep generated prompts compact: role, scope, STOP conditions, output contract,
   and JIT references belong in prompts; full operation bodies belong in
   `prompts/meta/` or `prompts/skills/`.

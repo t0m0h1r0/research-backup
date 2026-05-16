@@ -2,6 +2,7 @@
   "vocab_check": "PASS",
   "balance_check": "PASS",
   "id_registry": [
+    "AP-17",
     "HAND-01",
     "HAND-02",
     "HAND-03",
@@ -19,12 +20,16 @@
     "PRESENTATION-GEN-01",
     "SCHEME-CODE-01",
     "TOOL-TRUST-01",
-    "VISUAL-CONCEPT-01"
+    "VISUAL-CONCEPT-01",
+    "WikiKnowledgePacket"
   ],
   "immutable_diff_results": [],
   "ref_resolution_results": [],
   "rfc2119_violations": [],
-  "source_integrity": "PASS_INITIAL_RESEARCH_BRIEF_REGISTERED",
+  "source_integrity": "PASS_INITIAL_RESEARCH_BRIEF_REGISTERED_SUBMODULE_SYNC",
   "active_project": "ai_anomaly_detection_research",
-  "timestamp": "2026-05-06T03:50:35Z"
+  "timestamp": "2026-05-16T09:24:29Z",
+  "upstream_metaprompt_revision": "f52ae6f63494c42bf4727cd173851f0d06615799",
+  "distribution_mode": "git_submodule",
+  "wiki_knowledge_injection_report": "PASS_WITH_DEFERRED_PACKETS"
 }

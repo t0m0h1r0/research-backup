@@ -10,7 +10,8 @@ revision, and prompt/workflow evolution.
 
 | Layer | Files | Purpose |
 |-------|-------|---------|
-| Shared metaprompts | `prompts/meta/kernel-*.md` except `kernel-project.md` | local materialization of upstream `kernel/` |
+| Pinned upstream kernel | `prompts/upstream/research-agent` | Git submodule for the shared `research-agent` metaprompt source |
+| Shared metaprompts | `prompts/meta/kernel-*.md` except `kernel-project.md` | local materialization of the pinned upstream kernel files |
 | Project profile | `prompts/meta/kernel-project.md` | project-specific source of truth |
 | Generated agents | `prompts/agents-claude/`, `prompts/agents-codex/` | project-local executable role prompts |
 | Skill capsules | `prompts/skills/` | project-local JIT operation details |
@@ -42,11 +43,12 @@ important validated findings for K-COMPILE before HAND-02 SUCCESS.
 
 ## Agent Roster
 
-The deployed roster contains 24 roles per environment, including ResearchArchitect,
-TaskPlanner, TheoryArchitect, TheoryAuditor, CodeArchitect, TestRunner,
-ExperimentRunner, EvidenceAnalyst, PaperWriter, PaperReviewer, ConsistencyAuditor,
-PresentationWriter, PromptArchitect, PromptAuditor, KnowledgeArchitect, WikiAuditor,
-Librarian, and TraceabilityManager.
+The Codex target contains 25 prompt files, including the `VerificationRunner`
+micro-agent. Core roles include ResearchArchitect, TaskPlanner,
+TheoryArchitect, TheoryAuditor, CodeArchitect, TestRunner, ExperimentRunner,
+EvidenceAnalyst, PaperWriter, PaperReviewer, ConsistencyAuditor,
+PresentationWriter, PromptArchitect, PromptAuditor, KnowledgeArchitect,
+WikiAuditor, Librarian, and TraceabilityManager.
 
 ## Regeneration
 
@@ -54,7 +56,8 @@ For project retargeting, replace `prompts/meta/kernel-project.md` and regenerate
 `docs/03_PROJECT_RULES.md`, `docs/01_PROJECT_MAP.md`, `docs/02_ACTIVE_LEDGER.md`,
 `AGENTS.md`, local skills, agent prompts, and validation reports.
 
-For upstream metaprompt updates, sync only shared `kernel/*.md` into
+For upstream metaprompt updates, update the pinned submodule at
+`prompts/upstream/research-agent`, sync only shared `kernel*.md` files into
 `prompts/meta/` while preserving `kernel-project.md`, then regenerate local
 support artifacts and prompts. Do not import upstream generated
 `prompts/agents-*`, `prompts/skills/`, templates, or project scripts.

@@ -1,0 +1,10 @@
+{
+  "branch": "codex/researcharchitect-metaprompt-submodule-redeploy",
+  "worktree": "/private/tmp/research-backup-metaprompt-submodule-redeploy",
+  "objective": "Add research-agent as the metaprompt submodule source, sync latest upstream metaprompts, and redeploy Codex agent prompts.",
+  "owner": "ResearchArchitect",
+  "session_id": "B1E9BE83-0B3E-4FCD-B417-18FA6719912F",
+  "id_prefix": "RESEARCH-PROMPT",
+  "status": "VALIDATED",
+  "updated_at_utc": "2026-05-16T09:36:35Z"
+}

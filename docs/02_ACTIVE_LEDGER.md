@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_ZERO_BASE_VALIDATED |
-| branch | `codex/researcharchitect-paper-presentation-zero-base` |
-| current_objective | Recreate the heavy-tail backup presentation from zero and run review/fix loops until no MAJOR-or-higher findings remain |
+| phase | PROMPT_SUBMODULE_REDEPLOY_VALIDATED |
+| branch | `codex/researcharchitect-metaprompt-submodule-redeploy` |
+| current_objective | Add `research-agent` as the pinned metaprompt submodule, sync latest upstream metaprompts, and redeploy Codex agent prompts |
 | active_brief | `docs/interface/ResearchBrief.md` |
-| source_artifact | presentation task: `paper/sections/tex/*.tex`, `docs/wiki/ransomware_heavy_tail_backup_design.md`, and `docs/evidence/heavy_tail_backup_source_note.md`; anomaly-detection research source still not selected |
+| source_artifact | prompt task: `prompts/upstream/research-agent` at `f52ae6f63494c42bf4727cd173851f0d06615799`; anomaly-detection research source still not selected |
 | next_action | Await user review or explicit merge instruction; do not merge to main in this worktree without user instruction |
-| updated_at_utc | 2026-05-06T04:58:24Z |
+| updated_at_utc | 2026-05-16T09:36:35Z |
 
 ## §CHECKLIST
 
@@ -44,6 +44,7 @@
 | CHK-RESEARCH-018 | DONE | P/M/Q | `prompts/meta/kernel-roles.md`, `prompts/agents-codex/PromptAuditor.md`, `prompts/agents-claude/PromptAuditor.md`, `artifacts/P/researcharchitect_agent_refresh_audit.md` | pulled latest main, verified no pending remote meta delta, and refreshed PromptAuditor main-merge guardrail wording plus validation reports | 2026-05-05 |
 | CHK-RESEARCH-019 | DONE | P/M/Q | `prompts/meta/`, `prompts/skills/`, `prompts/agents-codex/`, `prompts/agents-claude/`, `prompts/upstream.toml`, `artifacts/P/researcharchitect_metaprompt_redeploy_audit.md` | synced upstream metaprompt revision `c985b65`, preserved `kernel-project.md`, regenerated local support artifacts and prompts, and ran prompt audit checks | 2026-05-06 |
 | CHK-RESEARCH-020 | DONE | A/Q | `paper/presentations/heavy_tail_backup_intro/` | zero-base recreated the 5-slide heavy-tail backup presentation, completed 3 review rounds, addressed all findings, and stopped after Round 3 because no MAJOR-or-higher findings remained | 2026-05-06 |
+| CHK-RESEARCH-PROMPT-003 | DONE | P/M/Q | `.gitmodules`, `prompts/upstream/research-agent`, `prompts/meta/`, `prompts/agents-codex/`, `wiki_knowledge_injection_report.json`, `artifacts/P/researcharchitect_metaprompt_submodule_redeploy_audit.md` | added `research-agent` as pinned metaprompt submodule at `f52ae6f`, preserved `kernel-project.md`, redeployed Codex prompts to 25 files including `VerificationRunner`, and validated Q3/AP-17/wiki-packet checks | 2026-05-16 |
 
 ## §ASSUMPTIONS
 
@@ -70,6 +71,7 @@
 | LES-RESEARCH-PROMPT-ROI-001 | ACTIVE | Prompt evolution should reject broad preloading and low-ROI text by default; details belong in JIT skills or kernel references unless they change agent behavior enough to justify token cost. | `prompts/skills/SKILL-PROMPT-AUDIT.md` |
 | LES-RESEARCH-PROMPT-MERGE-001 | ACTIVE | PromptAuditor main-merge checks should name the required explicit-user and no-ff guardrails directly so safety scans do not mistake a fail condition for an unsafe permission. | `prompts/meta/kernel-roles.md` |
 | LES-RESEARCH-PROMPT-UPSTREAM-001 | ACTIVE | Upstream metaprompt sync must copy only shared kernel sources, preserve project-local `kernel-project.md`, and regenerate local skills/prompts before removing `REDEPLOY_REQUIRED`. | `prompts/upstream.toml` |
+| LES-RESEARCH-PROMPT-SUBMODULE-001 | ACTIVE | Pinning `research-agent` as a submodule makes upstream metaprompt provenance reviewable while `prompts/meta/kernel-project.md` remains the project-local profile overlay. | `prompts/upstream.toml` |
 
 ## §REPLAN_LOG
 
@@ -91,4 +93,5 @@
 | RESEARCH-PRESENTATION-DECK-001 | `codex/researcharchitect-paper-presentation` | `/private/tmp/research-backup-paper-presentation` | Create and review a 5-slide paper-grounded research presentation for the heavy-tail backup manuscript; id_prefix `RESEARCH-PRESENTATION-DECK` | VALIDATED | 2026-05-05 |
 | RESEARCH-PROMPT-001 | `codex/researcharchitect-agent-update` | `/private/tmp/research-backup-agent-update` | Refresh generated agents after prompt-system update check; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-05 |
 | RESEARCH-PROMPT-002 | `codex/researcharchitect-meta-master-redeploy` | `/private/tmp/research-backup-meta-master-redeploy` | Sync and redeploy upstream metaprompt revision `c985b65`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-06 |
+| RESEARCH-PROMPT-003 | `codex/researcharchitect-metaprompt-submodule-redeploy` | `/private/tmp/research-backup-metaprompt-submodule-redeploy` | Add pinned `research-agent` metaprompt submodule, sync revision `f52ae6f`, and redeploy Codex prompts; session `B1E9BE83-0B3E-4FCD-B417-18FA6719912F`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-16 |
 | RESEARCH-PRESENTATION-ZERO-001 | `codex/researcharchitect-paper-presentation-zero-base` | `/private/tmp/research-backup-paper-presentation-zero-base` | Recreate the heavy-tail backup presentation from zero and complete review/fix loops; id_prefix `RESEARCH-PRESENTATION-ZERO` | VALIDATED | 2026-05-06 |
