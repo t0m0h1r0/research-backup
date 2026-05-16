@@ -1,0 +1,47 @@
+status: planned
+created_by: ResearchArchitect
+created_at_utc: "2026-05-16T22:00:58Z"
+slide_count: 6
+slide_size: "1280x720"
+design_system:
+  background: "warm off-white research paper"
+  typography: "Hiragino Sans / Aptos fallback, with large claim titles"
+  palette:
+    ink: "#172026"
+    muted: "#62707a"
+    teal: "#087d72"
+    amber: "#d58a00"
+    red: "#c53a32"
+    blue: "#3f6fb5"
+    mint: "#dff4ea"
+    sand: "#f2ebe0"
+  visual_rules:
+    - "No decorative logo or mascot assets."
+    - "Kicker marker and label share a named centerline."
+    - "Footers are provenance notes, not audience body copy."
+    - "Use diagrams and authored editable chart primitives."
+slides:
+  - number: 1
+    claim: "最新バックアップだけを見ると，復旧先を間違える"
+    proof_object: "timeline with estimated intrusion, recent contaminated backups, and clean candidate"
+    source: "paper/sections/tex/01_introduction.tex; paper/sections/tex/02_model_formulation.tex"
+  - number: 2
+    claim: "良いアラートは，清浄復旧ホライズン内で鳴る"
+    proof_object: "clean recovery horizon bar with alert position"
+    source: "paper/sections/tex/02_model_formulation.tex; paper/sections/tex/08_conclusion.tex"
+  - number: 3
+    claim: "重尾潜伏では，少数の長期感染が保持窓を破る"
+    proof_object: "short typical cases plus rare long-tail dwell samples crossing boundary"
+    source: "paper/sections/tex/01_introduction.tex; paper/sections/tex/04_tauber_transition.tex"
+  - number: 4
+    claim: "モデルは復旧失敗を，検知失敗と保持超過に分けて数える"
+    proof_object: "branch diagram for early detection, retained recovery, and full-loss branch"
+    source: "paper/sections/tex/02_model_formulation.tex; paper/sections/tex/05_backup_optimization.tex"
+  - number: 5
+    claim: "まず決めるのは，間隔ではなく清浄履歴の長さ"
+    proof_object: "formula and variable-reading panel"
+    source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/08_conclusion.tex"
+  - number: 6
+    claim: "運用では，検知遅れ・復旧時間・追加保持を同じ表で更新する"
+    proof_object: "operating loop and dynamic-retention mini decision"
+    source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/06_dynamic_retention.tex; paper/sections/tex/07_numerical_examples.tex"
