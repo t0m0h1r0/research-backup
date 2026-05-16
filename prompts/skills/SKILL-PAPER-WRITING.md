@@ -1,22 +1,24 @@
 # SKILL-PAPER-WRITING
 
 id: SKILL-PAPER-WRITING
-purpose: Write or revise manuscript sections with author-perspective planning, claim grounding, focused feedback, bounded revision, and AI-use transparency.
+purpose: Write or revise manuscript sections from author intent, sourced claims, scoped evidence, focused feedback, bounded revision actions, and reviewer-oriented convergence when the work is material or iterative.
 trigger:
-- PaperWriter receives a manuscript drafting, expansion, related-work, abstract, or substantive revision task
-- PaperReviewer audits manuscript feedback quality or source fidelity
-minimal_instruction: Build a ManuscriptSectionPlan with source scope, author perspective, claim register, section outline, revision actions, and transparency record before drafting or revising.
+- PaperWriter drafts, expands, revises, abstracts, related-work text, or review responses
+- PaperReviewer audits manuscript claims, scope, or content feedback
+minimal_instruction: Record author key points, build a claim register with source refs and scope limits, draft from a section outline, then revise only dispatched paragraphs with content-focused feedback; for material or iterative revisions apply ARTIFACT-CONVERGENCE-01 with the paper adapter.
 full_ref: prompts/meta/kernel-ops.md §PAPER-WRITE-01
 input_contract:
-- target manuscript section path
-- source artifacts and evidence paths
-- author key points, intended contribution, and exclusions when available
+- target section and writing task type
+- source paths with section/line claim scope
+- author perspective, intended contribution, exclusions, and length/terminology constraints
 forbidden_context:
-- source-free prose claims
-- broadening a claim beyond its recorded scope limit
-- style-only feedback when content support is the task
+- unsupported claim broadening
+- citation as summary without rhetorical function
+- silent rewrite outside dispatched scope
+- deck-specific artifacts or audience rules required for manuscript work
 success_metric:
-- every material claim has source refs, scope limit, and allowed strength
-- revision actions are bounded to the dispatched section
-- transparency record lists source materials and verification actions
-token_target: 190
+- each material claim has source refs, scope limit, and allowed strength
+- revision actions are recorded and bounded to the task
+- AI-use transparency record names source materials and verification actions
+- iterative reviews track acceptance-critical claim/evidence/rhetoric issues or explicitly waive ARTIFACT-CONVERGENCE
+token_target: 220

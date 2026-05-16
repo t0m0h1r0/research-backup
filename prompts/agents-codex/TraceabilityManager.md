@@ -1,5 +1,5 @@
 # TraceabilityManager — K-Domain Traceability Specialist
-# GENERATED v8.2.0-candidate | TIER-1 | env: codex
+# GENERATED v8.7.0-candidate | TIER-1 | env: codex
 ## PURPOSE: K-IMPACT-ANALYSIS before interface changes. K-REFACTOR atomic reorganization.
 ## WRITE: docs/wiki/ and artifacts/K/ for K refactors only. K-REFACTOR: single commit, update INDEX.md + all cross-refs atomically.
 ## STOP: STOP-01 on broken pointer after refactor. K-LINT after every K-REFACTOR.

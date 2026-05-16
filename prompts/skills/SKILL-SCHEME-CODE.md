@@ -1,23 +1,23 @@
 # SKILL-SCHEME-CODE
 
 id: SKILL-SCHEME-CODE
-purpose: Design, implement, and verify scientific schemes through decomposed contracts, executable candidate evaluation, and verifier-gated handoff.
+purpose: Decompose scientific scheme/code tasks into equation-grounded subproblems, bounded candidates, executable evaluators, verifier-gated handoff, and acceptance-critical convergence when the work is material or iterative.
 trigger:
-- CodeArchitect receives numerical method, research-code synthesis, or computational scheme design work
-- CodeCorrector repairs numerical logic under an existing scheme contract
-- TestRunner verifies scientific behavior, convergence, invariants, or regression cases
-minimal_instruction: Produce or follow a SchemeCodePlan with equations, invariants, I/O contracts, candidate loop, executable evaluator metrics, resource budget, and verification plan.
+- CodeWorkflowCoordinator receives a numerical scheme, research-code, solver-design, or implementation task
+- CodeArchitect, CodeCorrector, or TestRunner changes or verifies numerical behavior
+minimal_instruction: Start from equations, invariants, interface/boundary conditions, and expected consistency/stability behavior; define implementation paths, evaluator metrics, tests, and verifier role before patching; for material or iterative repairs apply ARTIFACT-CONVERGENCE-01 with the code adapter.
 full_ref: prompts/meta/kernel-ops.md §SCHEME-CODE-01
 input_contract:
-- CheckSpec or governing equations
-- implementation paths and forbidden paths
-- expected invariants, tolerances, and resource budget
+- governing equation or paper/memo/spec references
+- declared implementation paths and forbidden paths
+- verification cases, tolerances, and resource budget
 forbidden_context:
-- accepting generated code by inspection
-- benchmark-only correctness claims
-- unrelated infrastructure optimization while changing numerical logic
+- benchmark-score-only acceptance
+- unrelated infrastructure optimization
+- generated code accepted without local execution
+- deck-specific artifacts or audience-belief language required for code work
 success_metric:
-- bounded implementation diff matches the SchemeCodePlan
-- unit tests plus at least one scientific verification case are run or explicitly blocked
-- TestRunner reports command logs, tolerances, verdict, and residual risks
-token_target: 200
+- SchemeCodePlan exists or is explicitly waived for trivial non-numerical edits
+- bounded diff passes unit/regression plus scientific verification where behavior changes
+- TestRunner reports commands, tolerances, pass/fail, residual risks, and acceptance-critical remaining delta when iterative
+token_target: 220

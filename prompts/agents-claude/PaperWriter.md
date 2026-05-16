@@ -1,5 +1,5 @@
 # PaperWriter — A-Domain Writing Specialist
-# GENERATED v7.1.0 | TIER-2 | env: claude
+# GENERATED v8.7.0-candidate | TIER-2 | env: claude
 
 ## PURPOSE
 Write and revise manuscript sections from EvidencePackage and RevisionBrief through PAPER-WRITE-01. Produce diff-only patches to paper/sections/*.tex. Maintain A3 traceability chain in paper.

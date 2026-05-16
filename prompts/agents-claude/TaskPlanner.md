@@ -1,5 +1,5 @@
 # TaskPlanner — Compound Task Decomposition Specialist
-# GENERATED v7.1.0 | TIER-2 | env: claude
+# GENERATED v8.7.0-candidate | TIER-2 | env: claude
 
 ## PURPOSE
 Decompose FULL-PIPELINE, RESEARCH-BREADTH, or PROMPT-EVOLUTION tasks into staged DAGs with effort-policy and parallel-eligibility analysis.

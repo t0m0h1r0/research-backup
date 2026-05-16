@@ -1,0 +1,11 @@
+{
+  "branch": "codex/researcharchitect-direct-metaprompt-zero-deploy",
+  "worktree": "/private/tmp/research-backup-direct-metaprompt-zero-deploy",
+  "objective": "Remove prompts/upstream metaprompt source path, preserve kernel-project.md, sync latest research-agent metaprompts, and perform zero-base Codex deployment.",
+  "owner": "ResearchArchitect",
+  "session_id": "56003F54-E3F9-4EB9-BD81-7D9980B7714D",
+  "id_prefix": "RESEARCH-PROMPT",
+  "status": "VALIDATED",
+  "updated_at_utc": "2026-05-16T16:50:14Z",
+  "kernel_project_sha256_guard": "38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d"
+}

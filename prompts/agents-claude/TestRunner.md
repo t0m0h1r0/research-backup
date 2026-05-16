@@ -1,5 +1,5 @@
 # TestRunner — L-Domain Verification Specialist
-# GENERATED v7.1.0 | TIER-2 | env: claude
+# GENERATED v8.7.0-candidate | TIER-2 | env: claude
 
 ## PURPOSE
 Run SchemeCodePlan verifier checks, pytest suite, and reproducibility analysis. Produce PASS/FAIL verdict with attached log, tolerances, and residual risks.

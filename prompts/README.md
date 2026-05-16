@@ -10,12 +10,12 @@ revision, and prompt/workflow evolution.
 
 | Layer | Files | Purpose |
 |-------|-------|---------|
-| Pinned upstream kernel | `prompts/upstream/research-agent` | Git submodule for the shared `research-agent` metaprompt source |
-| Shared metaprompts | `prompts/meta/kernel-*.md` except `kernel-project.md` | local materialization of the pinned upstream kernel files |
+| Pinned research-agent kernel | `prompts/research-agent` | Git submodule for the shared `research-agent` metaprompt source |
+| Shared metaprompts | `prompts/meta/kernel-*.md` except `kernel-project.md` | local materialization of the pinned research-agent kernel files |
 | Project profile | `prompts/meta/kernel-project.md` | project-specific source of truth |
 | Generated agents | `prompts/agents-claude/`, `prompts/agents-codex/` | project-local executable role prompts |
 | Skill capsules | `prompts/skills/` | project-local JIT operation details |
-| Upstream record | `prompts/upstream.toml` | current metaprompt source revision |
+| Source record | `prompts/upstream.toml` | current metaprompt source revision |
 | Runtime docs | `docs/00_GLOBAL_RULES.md`, `docs/01_PROJECT_MAP.md`, `docs/02_ACTIVE_LEDGER.md`, `docs/03_PROJECT_RULES.md` | compact working memory |
 
 ## Active Project
@@ -56,10 +56,10 @@ For project retargeting, replace `prompts/meta/kernel-project.md` and regenerate
 `docs/03_PROJECT_RULES.md`, `docs/01_PROJECT_MAP.md`, `docs/02_ACTIVE_LEDGER.md`,
 `AGENTS.md`, local skills, agent prompts, and validation reports.
 
-For upstream metaprompt updates, update the pinned submodule at
-`prompts/upstream/research-agent`, sync only shared `kernel*.md` files into
+For shared metaprompt updates, update the pinned submodule at
+`prompts/research-agent`, sync only shared `kernel*.md` files into
 `prompts/meta/` while preserving `kernel-project.md`, then regenerate local
-support artifacts and prompts. Do not import upstream generated
+support artifacts and prompts. Do not import research-agent generated
 `prompts/agents-*`, `prompts/skills/`, templates, or project scripts.
 
 The local skill capsule manifest currently contains 9 skills:

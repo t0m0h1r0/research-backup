@@ -8,12 +8,12 @@
     "prompts/meta/kernel-ops.md",
     "prompts/meta/kernel-roles.md",
     "prompts/meta/kernel-workflow.md",
-    "prompts/upstream/research-agent",
+    "prompts/research-agent",
     "prompts/upstream-managed.json",
     "prompts/upstream.toml"
   ],
   "name": "research-agent-metaprompt",
   "distribution_mode": "git_submodule",
-  "submodule_path": "prompts/upstream/research-agent",
-  "revision": "f52ae6f63494c42bf4727cd173851f0d06615799"
+  "submodule_path": "prompts/research-agent",
+  "revision": "ed388737ed01c479df4905925f1ec6791ff0f47d"
 }
