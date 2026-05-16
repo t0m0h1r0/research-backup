@@ -1,0 +1,27 @@
+status: planned
+created_by: ResearchArchitect
+created_at_utc: "2026-05-16T22:00:58Z"
+max_rounds: 6
+stop_condition: "No unresolved CRITICAL, MAJOR, or HIGH findings; all accepted MINOR fixes either addressed or documented as do-not-fix."
+review_roles:
+  - id: story_reviewer
+    focus: "Audience arc, slide-role uniqueness, beginner comprehension, memory after one pass."
+  - id: source_math_reviewer
+    focus: "No unsupported empirical claims, formula conditions, notation fidelity, source boundary."
+  - id: visual_reviewer
+    focus: "Contact-sheet rhythm, hierarchy, alignment, label attachment, readability, export/render defects."
+severity_scale:
+  CRITICAL: "Unsupported material claim, mathematically false statement, unreadable core slide, or broken export."
+  MAJOR: "Narrative gap, source ambiguity, confusing formula bridge, or visual issue that changes meaning."
+  MINOR: "Polish issue, small readability concern, or copy tightening."
+artifacts:
+  issue_register: "issue_register.yaml"
+  review_reports: "review_reports/"
+  convergence_dashboard: "convergence_dashboard.md"
+  change_log: "change_log.md"
+verification:
+  - "artifact-tool PPTX export"
+  - "artifact-tool PNG render and contact-sheet inspection"
+  - "layout quality check"
+  - "PPTX package integrity check"
+  - "expected slide count check"

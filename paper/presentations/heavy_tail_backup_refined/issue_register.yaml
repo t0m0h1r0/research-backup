@@ -1,0 +1,71 @@
+status: closed
+created_by: ResearchArchitect
+created_at_utc: "2026-05-16T22:00:58Z"
+updated_at_utc: "2026-05-16T23:04:58Z"
+issues:
+  - id: R1-M01
+    severity: MAJOR
+    slide: global
+    finding: "Initial render used inline-code backticks in audience-facing subtitles, making the deck feel like source notes rather than a finished talk."
+    response: "Removed backticks from slide subtitles and kept formulas as plain presentation text."
+    status: closed
+  - id: R1-M02
+    severity: MAJOR
+    slide: 6
+    finding: "The title promised a table, while the visual was an operating loop; the small dynamic-retention formula was too low-value for room readability."
+    response: "Reworded the slide claim to '一緒に更新する' and replaced the tiny equation with a readable operational sentence."
+    status: closed
+  - id: R1-M03
+    severity: MAJOR
+    slide: global
+    finding: "First layout QA found title/subtitle box overlap and a small slide 3 panel-padding defect."
+    response: "Adjusted title/subtitle bounding boxes, moved labels, expanded slide 3 panel padding, and reran layout QA to 0 errors / 0 warnings."
+    status: closed
+  - id: R2-CHECK
+    severity: NONE
+    slide: global
+    finding: "Round 2 story/source/visual review found no unresolved CRITICAL, MAJOR, HIGH, or MINOR issues after the fixes."
+    response: "Deck accepted for final verification."
+    status: closed
+  - id: R3-M01
+    severity: MAJOR
+    slide: global
+    finding: "User requested more theatrical flair after the validated refined deck; the calm deck under-used tension, dark contrast, and large message moments."
+    response: "Created a theatrical dark-room variant with larger claim typography, red/green incident semantics, English accent words, and stronger contact-sheet contrast while preserving the same source-grounded six-slide arc."
+    status: closed
+  - id: R3-QA
+    severity: NONE
+    slide: global
+    finding: "The first theatrical render had large accent-word overlaps in layout QA."
+    response: "Moved and resized accent words, rerendered, and passed layout QA with 0 errors / 0 warnings."
+    status: closed
+  - id: R4-M01
+    severity: MAJOR
+    slide: 6
+    finding: "The theatrical deck still used specialist incident-response terminology that was not self-explanatory for the target listener."
+    response: "Replaced specialist wording with plain Japanese audience language, especially the final-slide framing around 判断手順."
+    status: closed
+  - id: R4-M02
+    severity: MAJOR
+    slide: 1-3
+    finding: "The graph-like visuals did not make their axes and reading direction explicit enough."
+    response: "Added Japanese axis labels and direction cues to the backup timeline, clean-recovery horizon, and dwell-time distribution visuals."
+    status: closed
+  - id: R4-M03
+    severity: MAJOR
+    slide: 5
+    finding: "The formula slide did not tell the audience which parts of the expression mattered most."
+    response: "Rebuilt the formula slide around three visible attention points: numerator, denominator, and division by generation count, then restated that a* is the first design target."
+    status: closed
+  - id: R5-M01
+    severity: MAJOR
+    slide: 5
+    finding: "The deck still did not explain how to read the formula as a decision object; the viewer could identify parts but not interpret the expression."
+    response: "Expanded the theatrical deck to seven slides, added a dedicated formula-reading slide, and made the reading order explicit: a* first, numerator as avoided full-loss value, denominator as load of restoring further back, then n as the conversion to Δ*."
+    status: closed
+  - id: R6-M01
+    severity: MAJOR
+    slide: global
+    finding: "The black full-slide background was visually heavy and made the deck harder to read."
+    response: "Rebuilt the theatrical deck on a light editorial background with white panels and restrained red/green accent rails, while keeping dark fields only for local formula and conclusion emphasis."
+    status: closed

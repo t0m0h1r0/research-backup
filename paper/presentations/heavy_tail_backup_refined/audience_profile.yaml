@@ -1,0 +1,25 @@
+status: planned
+created_by: ResearchArchitect
+created_at_utc: "2026-05-16T22:00:58Z"
+audience:
+  primary: "AI anomaly detection / cyber resilience research audience"
+  secondary: "security operations and backup/recovery practitioners"
+venue_language: "Japanese research presentation"
+time_budget: "8-10 minutes"
+decision_or_action: "Adopt clean-recovery horizon as an evaluation and design lens before treating detection metrics and backup policy separately."
+current_belief:
+  - "Detection performance and backup retention are often discussed as separate controls."
+  - "Latest backup freshness can be mistaken for recoverability."
+desired_belief:
+  - "A useful alert is one that arrives while a clean recovery point still exists."
+  - "The operational design target is the clean recovery horizon before the backup interval."
+  - "The formula is conditional model guidance, not an empirical recommendation."
+likely_objections:
+  - "The heavy-tail assumption may sound empirical; keep it explicitly model-bound."
+  - "The formula may look too abstract; pair every symbol with an operations reading."
+  - "Backup retention decisions also involve service constraints; include admissible-domain and endpoint caveats."
+constraints:
+  - "No invented empirical statistics."
+  - "No SOTA, benchmark, or deployment-readiness claim."
+  - "Keep the deck compact and editable."
+take_home_message: "Detection, backup, and recovery should be judged by whether the organization still has a clean recovery horizon when the alert arrives."
