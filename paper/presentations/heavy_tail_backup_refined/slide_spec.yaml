@@ -42,6 +42,6 @@ slides:
     proof_object: "formula and variable-reading panel"
     source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/08_conclusion.tex"
   - number: 6
-    claim: "運用では，検知遅れ・復旧時間・追加保持を同じ表で更新する"
+    claim: "運用では，検知遅れ・復旧時間・追加保持を一緒に更新する"
     proof_object: "operating loop and dynamic-retention mini decision"
     source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/06_dynamic_retention.tex; paper/sections/tex/07_numerical_examples.tex"

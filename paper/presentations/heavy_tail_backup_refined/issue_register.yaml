@@ -1,4 +1,29 @@
-status: open
+status: closed
 created_by: ResearchArchitect
 created_at_utc: "2026-05-16T22:00:58Z"
-issues: []
+updated_at_utc: "2026-05-16T22:14:20Z"
+issues:
+  - id: R1-M01
+    severity: MAJOR
+    slide: global
+    finding: "Initial render used inline-code backticks in audience-facing subtitles, making the deck feel like source notes rather than a finished talk."
+    response: "Removed backticks from slide subtitles and kept formulas as plain presentation text."
+    status: closed
+  - id: R1-M02
+    severity: MAJOR
+    slide: 6
+    finding: "The title promised a table, while the visual was an operating loop; the small dynamic-retention formula was too low-value for room readability."
+    response: "Reworded the slide claim to '一緒に更新する' and replaced the tiny equation with a readable operational sentence."
+    status: closed
+  - id: R1-M03
+    severity: MAJOR
+    slide: global
+    finding: "First layout QA found title/subtitle box overlap and a small slide 3 panel-padding defect."
+    response: "Adjusted title/subtitle bounding boxes, moved labels, expanded slide 3 panel padding, and reran layout QA to 0 errors / 0 warnings."
+    status: closed
+  - id: R2-CHECK
+    severity: NONE
+    slide: global
+    finding: "Round 2 story/source/visual review found no unresolved CRITICAL, MAJOR, HIGH, or MINOR issues after the fixes."
+    response: "Deck accepted for final verification."
+    status: closed

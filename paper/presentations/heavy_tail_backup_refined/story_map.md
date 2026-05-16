@@ -24,7 +24,7 @@ created_at_utc: 2026-05-16T22:00:58Z
 | 3 | Tail risk | 重尾潜伏では，少数の長期感染が保持窓を破る | Typical-versus-tail dwell-time visual | `01_introduction.tex`, `04_tauber_transition.tex` |
 | 4 | Loss accounting | モデルは復旧失敗を，検知失敗と保持超過に分けて数える | Branch/loss decomposition diagram | `02_model_formulation.tex`, `05_backup_optimization.tex` |
 | 5 | Design target | まず決めるのは，間隔ではなく清浄履歴の長さ | Formula anchor for `Delta*` and `a*` | `05_backup_optimization.tex`, `08_conclusion.tex` |
-| 6 | Operating loop | 運用では，検知遅れ・復旧時間・追加保持を同じ表で更新する | Four-step operating loop plus retention extension cue | `05_backup_optimization.tex`, `06_dynamic_retention.tex`, `07_numerical_examples.tex` |
+| 6 | Operating loop | 運用では，検知遅れ・復旧時間・追加保持を一緒に更新する | Four-step operating loop plus retention extension cue | `05_backup_optimization.tex`, `06_dynamic_retention.tex`, `07_numerical_examples.tex` |
 
 ## Omission Notes
 

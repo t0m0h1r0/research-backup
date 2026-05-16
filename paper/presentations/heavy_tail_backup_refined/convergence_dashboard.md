@@ -1,17 +1,18 @@
 # Convergence Dashboard
 
-status: IN_PROGRESS
+status: VALIDATED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:00:58Z
+updated_at_utc: 2026-05-16T22:14:20Z
 
 | Gate | Status | Notes |
 |------|--------|-------|
 | Audience/story/spec defined | PASS | `audience_profile.yaml`, `story_map.md`, and `slide_spec.yaml` created. |
-| Deck generated | PENDING | Awaiting PPTX export. |
-| Mechanical QA | PENDING | Awaiting render, layout, package, and slide-count checks. |
-| Review loop | PENDING | Awaiting first rendered deck. |
-| Final acceptance | PENDING | Stop only when no unresolved CRITICAL/MAJOR/HIGH findings remain. |
+| Deck generated | PASS | `heavy_tail_backup_refined.pptx` exported as a 6-slide editable PPTX. |
+| Mechanical QA | PASS | Artifact-tool render succeeded; layout QA passed with 0 errors and 0 warnings; PPTX package check passed. |
+| Review loop | PASS | Round 1 findings were fixed; Round 2 found no unresolved issues. |
+| Final acceptance | PASS | No unresolved CRITICAL, MAJOR, HIGH, or MINOR findings remain. |
 
 ## Current Decision
 
-CONTINUE: build the 6-slide refined deck and run the planned review loop.
+STOP: final deck is validated and ready for user review.

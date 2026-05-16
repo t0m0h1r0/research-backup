@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_REFINE_ACTIVE |
+| phase | PRESENTATION_REFINE_VALIDATED |
 | branch | `codex/researcharchitect-presentation-refine` |
 | current_objective | Refine the heavy-tail backup research presentation, regenerate a polished editable deck, iterate review/fix loops to convergence, and preserve traceable presentation artifacts |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | prompt task: `prompts/research-agent` at `ed388737ed01c479df4905925f1ec6791ff0f47d`; `prompts/meta/kernel-project.md` preserved at SHA-256 `38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d`; anomaly-detection research source still not selected |
-| next_action | Build the refined heavy-tail backup presentation deck, run review/fix loops, verify exports, then await user review; do not merge to main without explicit user instruction |
-| updated_at_utc | 2026-05-16T22:00:58Z |
+| next_action | Await user review or explicit merge instruction for the refined heavy-tail backup deck; do not merge to main without explicit user instruction |
+| updated_at_utc | 2026-05-16T22:14:20Z |
 
 ## §CHECKLIST
 
@@ -46,7 +46,7 @@
 | CHK-RESEARCH-020 | DONE | A/Q | `paper/presentations/heavy_tail_backup_intro/` | zero-base recreated the 5-slide heavy-tail backup presentation, completed 3 review rounds, addressed all findings, and stopped after Round 3 because no MAJOR-or-higher findings remained | 2026-05-06 |
 | CHK-RESEARCH-PROMPT-003 | DONE | P/M/Q | `.gitmodules`, `prompts/upstream/research-agent`, `prompts/meta/`, `prompts/agents-codex/`, `wiki_knowledge_injection_report.json`, `artifacts/P/researcharchitect_metaprompt_submodule_redeploy_audit.md` | added `research-agent` as pinned metaprompt submodule at `f52ae6f`, preserved `kernel-project.md`, redeployed Codex prompts to 25 files including `VerificationRunner`, and validated Q3/AP-17/wiki-packet checks | 2026-05-16 |
 | CHK-RESEARCH-PROMPT-004 | DONE | P/M/Q | `.gitmodules`, `prompts/research-agent`, `prompts/meta/`, `prompts/agents-codex/`, `prompts/agents-claude/`, `prompts/skills/`, `token_roi_report.json`, `artifacts/P/researcharchitect_direct_metaprompt_zero_deploy_audit.md` | removed the `prompts/upstream/` directory, pinned direct research-agent revision `ed388737`, preserved `kernel-project.md` by SHA guard, and zero-base redeployed generated prompts, skills, telemetry, token ROI, and schema reports to `v8.7.0-candidate` | 2026-05-17 |
-| CHK-RESEARCH-PRESENTATION-REFINE-001 | IN_PROGRESS | A/M/Q | `paper/presentations/heavy_tail_backup_refined/`, `docs/02_ACTIVE_LEDGER.md` | refine the heavy-tail backup presentation into a stronger 6-slide research talk with audience/story/spec/review artifacts and iterative deck QA | 2026-05-17 |
+| CHK-RESEARCH-PRESENTATION-REFINE-001 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/`, `docs/02_ACTIVE_LEDGER.md` | refined the heavy-tail backup presentation into a stronger 6-slide research talk, completed 2 review rounds, passed artifact-tool render/layout/package QA, and stopped with no unresolved findings | 2026-05-17 |
 
 ## §ASSUMPTIONS
 
@@ -99,4 +99,4 @@
 | RESEARCH-PROMPT-003 | `codex/researcharchitect-metaprompt-submodule-redeploy` | `/private/tmp/research-backup-metaprompt-submodule-redeploy` | Add pinned `research-agent` metaprompt submodule, sync revision `f52ae6f`, and redeploy Codex prompts; session `B1E9BE83-0B3E-4FCD-B417-18FA6719912F`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-16 |
 | RESEARCH-PROMPT-004 | `codex/researcharchitect-direct-metaprompt-zero-deploy` | `/private/tmp/research-backup-direct-metaprompt-zero-deploy` | Remove `prompts/upstream/`, pin direct `prompts/research-agent` revision `ed388737`, preserve `kernel-project.md`, and zero-base redeploy generated prompt artifacts; session `56003F54-E3F9-4EB9-BD81-7D9980B7714D`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-17 |
 | RESEARCH-PRESENTATION-ZERO-001 | `codex/researcharchitect-paper-presentation-zero-base` | `/private/tmp/research-backup-paper-presentation-zero-base` | Recreate the heavy-tail backup presentation from zero and complete review/fix loops; id_prefix `RESEARCH-PRESENTATION-ZERO` | VALIDATED | 2026-05-06 |
-| RESEARCH-PRESENTATION-REFINE-001 | `codex/researcharchitect-presentation-refine` | `/private/tmp/research-backup-presentation-refine` | Refine and regenerate the heavy-tail backup presentation with a stronger 6-slide research narrative and convergence review; id_prefix `RESEARCH-PRESENTATION-REFINE` | ACTIVE | 2026-05-17 |
+| RESEARCH-PRESENTATION-REFINE-001 | `codex/researcharchitect-presentation-refine` | `/private/tmp/research-backup-presentation-refine` | Refine and regenerate the heavy-tail backup presentation with a stronger 6-slide research narrative and convergence review; id_prefix `RESEARCH-PRESENTATION-REFINE` | VALIDATED | 2026-05-17 |

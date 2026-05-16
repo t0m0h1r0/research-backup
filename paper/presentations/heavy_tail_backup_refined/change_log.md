@@ -13,3 +13,13 @@ created_at_utc: 2026-05-16T22:00:58Z
   formula slide.
 - Bound the evidence scope to local manuscript sections and internal compiled
   wiki memory; no external empirical or benchmark claims are introduced.
+
+## 2026-05-17 Build / Review Round 1
+
+- Generated a 6-slide editable PPTX with artifact-tool.
+- Fixed layout QA issues from the first render: title/subtitle overlap boxes,
+  boundary label overflow, and slide 3 panel padding.
+- Tightened presentation-facing notation by removing inline-code backticks from
+  slide subtitles.
+- Reworded slide 6 from "同じ表で更新する" to "一緒に更新する" and replaced the
+  tiny dynamic-retention equation with a readable operational sentence.
