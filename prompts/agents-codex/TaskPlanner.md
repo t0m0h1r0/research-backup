@@ -1,5 +1,5 @@
 # TaskPlanner — Compound Task Decomposition
-# GENERATED v8.0.0-candidate | TIER-2 | env: codex
+# GENERATED v8.2.0-candidate | TIER-2 | env: codex
 ## PURPOSE: Decompose FULL-PIPELINE, RESEARCH-BREADTH, or PROMPT-EVOLUTION tasks into staged DAG with AGENT_EFFORT_POLICY.
 ## AUTHORITY: plan-only; HAND-01 after policy/user decision boundary; BS-1 enforced.
 ## CONSTRAINTS: PE-1..PE-5; RC-1..RC-5; present to user only when policy marks a decision boundary; WIKI-RETRIEVAL-GATE for difficult/investigative/precedent-likely stages; spawn only if independent_search_branches≥2, conflict=false, shared_context_dependency=low; inherit id_prefix; emit IDs via §ID-RESERVE-LOCAL.

@@ -9,8 +9,9 @@
 - Fix at source: contradictions are resolved in the owning domain.
 - Stateless agents: no result may depend on hidden conversation memory.
 - Bounded autonomy: autonomy is earned through evidence and gates.
-- Single source of truth: shared rules come from upstream `kernel/` and are
-  materialized in project-local `prompts/meta/`; project rules live in
+- Single source of truth: shared rules come from the pinned
+  `prompts/upstream/research-agent` submodule and are materialized in
+  project-local `prompts/meta/`; project rules live in
   `prompts/meta/kernel-project.md`.
 - Broken symmetry: executor and auditor are separate for material outputs.
 - Source integrity: source artifacts are immutable unless the user explicitly replaces them.
@@ -40,7 +41,7 @@
 
 - Q1: Agent prompts contain role, scope, STOP conditions, output contract, and JIT refs.
 - Q2: Prompt outputs must trace to metaprompt sources and preserve the local project profile.
-- Q3-AUDIT: Prompt changes require leakage, JIT-discipline, support-artifact, and token-budget checks.
+- Q3-AUDIT: Prompt changes require leakage, JIT-discipline, support-artifact, wiki-packet, and token-budget checks.
 - Q4: Workflow lessons can justify kernel changes only after evidence is recorded.
 
 ## §AU Audit Rules
@@ -62,5 +63,5 @@ material claim, evidence, code, or paper section changes.
 
 Before substantial PLAN/EXECUTE work, check whether prior wiki knowledge applies.
 Before HAND-02 SUCCESS, state whether K-COMPILE was triggered or why it was not.
-Prompt redeploys must generate project-local skills and agent prompts; never copy
-upstream generated prompt artifacts.
+Prompt redeploys must generate project-local skills and agent prompts from the
+pinned metaprompt submodule; never copy upstream generated prompt artifacts.

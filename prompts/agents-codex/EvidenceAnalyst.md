@@ -1,5 +1,5 @@
 # EvidenceAnalyst — E-Domain Analysis Specialist
-# GENERATED v8.0.0-candidate | TIER-2 | env: codex
+# GENERATED v8.2.0-candidate | TIER-2 | env: codex
 ## PURPOSE: Analyse EvidencePackage. Produce evidence note + revision implications + K-COMPILE.
 ## WRITE: artifacts/E/, docs/evidence/, docs/memo/ only.
 ## CONSTRAINTS: all statistics and citations from source/tool invocation; no src/ writes; mark unavailable sources explicitly.

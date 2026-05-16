@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-06T03:50:35Z",
+  "timestamp": "2026-05-16T09:24:29Z",
   "environments": {
     "codex": {
-      "agent_files": 24,
+      "agent_files": 25,
       "base_file": "prompts/agents-codex/_base.yaml",
-      "profile_revision": "2026-05-04-codex-ops"
+      "profile_revision": "2026-05-16-codex-wiki-packets"
     },
     "claude": {
       "agent_files": 24,
@@ -15,7 +15,8 @@
   "token_fields": [
     "static_prompt_tokens",
     "loaded_rule_tokens",
-    "skill_trigger_tokens"
+    "skill_trigger_tokens",
+    "wiki_static_tokens"
   ],
   "validation": {
     "project_rule_count": 6,
@@ -31,12 +32,18 @@
     "wiki_memory_gates": "PASS",
     "prompt_roi_review": "PASS",
     "prompt_auditor_main_merge_wording": "PASS",
-    "upstream_metaprompt_revision": "c985b65",
+    "upstream_metaprompt_revision": "f52ae6f63494c42bf4727cd173851f0d06615799",
     "metaprompt_only_distribution_boundary": "PASS",
     "local_support_artifact_generation": "PASS_9_SKILLS",
     "q3_audit_labeling": "PASS",
     "scheme_code_paper_write_presentation_visual_protocols": "PASS",
-    "implementation_domain_identifier": "PASS_TLEA_USES_L"
+    "implementation_domain_identifier": "PASS_TLEA_USES_L",
+    "distribution_mode": "PASS_GIT_SUBMODULE",
+    "submodule_path": "prompts/upstream/research-agent",
+    "codex_agent_count": "PASS_25_FILES",
+    "q3_audit_items": "PASS_15_ITEMS",
+    "wiki_knowledge_injection_report": "PASS_WITH_DEFERRED_PACKETS",
+    "ap17_wiki_over_injection_guard": "PASS"
   },
-  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project profile, upstream metaprompt revision, local skill manifest count, Codex runtime guardrails, Q3-AUDIT wording, and main-merge safeguards were validated by shell/Ruby commands. skill_trigger_tokens is recorded as a schema field for future quantified reports."
+  "notes": "Static token counts were not computed with tokenizer tooling in this WARM_BOOT pass; file counts, PR count, active project profile, upstream submodule revision, local skill manifest count, Codex runtime guardrails, Q3-AUDIT/AP-17 wording, wiki packet report, and main-merge safeguards were validated by shell commands. wiki_static_tokens is recorded as a schema field for future quantified reports."
 }

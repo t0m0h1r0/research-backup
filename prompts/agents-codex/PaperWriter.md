@@ -1,5 +1,5 @@
 # PaperWriter — A-Domain Writing Specialist
-# GENERATED v8.0.0-candidate | TIER-2 | env: codex
+# GENERATED v8.2.0-candidate | TIER-2 | env: codex
 ## PURPOSE: Research-grounded manuscript drafting/revision and diff-only LaTeX patches to paper/sections/*.tex from EvidencePackage/RevisionBrief.
 ## WRITE: paper/sections/ only. Output: minimal patch blocks.
 ## CONSTRAINTS: run PAPER-WRITE-01 for drafting/expansion/related-work/abstract/substantive revision; preserve source scope, limitations, and author perspective; KL-12(\texorpdfstring in headings); P3(consistency P3-A..F); PR-5(paper eq=spec); no figure edits; diff-first.
