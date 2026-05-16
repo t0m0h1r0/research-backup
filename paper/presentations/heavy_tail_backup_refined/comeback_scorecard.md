@@ -1,9 +1,9 @@
 # Comeback Scorecard
 
-status: PASS_THEATRICAL_CLARITY
+status: PASS_THEATRICAL_FORMULA_READING
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:14:20Z
-updated_at_utc: 2026-05-16T22:40:06Z
+updated_at_utc: 2026-05-16T22:55:04Z
 deck: `heavy_tail_backup_refined_theatrical.pptx`
 alternate_deck: `heavy_tail_backup_refined.pptx`
 primary_deck_profile: engineering-platform
@@ -15,8 +15,8 @@ reference_delta: n/a
 |-----------|-------|------|
 | story | 5 | Clear arc from restore risk to clean-recovery horizon and operating loop. |
 | specificity | 5 | Claims depend on ransomware backup contamination, Pareto dwell modeling, and the manuscript formula. |
-| rhythm | 5 | The theatrical deck has a stronger dark-room contact-sheet rhythm with timeline, horizon beam, tail wall, branch map, formula stage, and decision loop. |
-| whitespace | 4 | Dark composition keeps large claims readable; formula and decision slides remain information-dense by design. |
+| rhythm | 5 | The theatrical deck has a stronger dark-room contact-sheet rhythm with timeline, horizon beam, tail wall, branch map, formula-reading stage, design target, and decision loop. |
+| whitespace | 4 | Dark composition keeps large claims readable; formula-reading and decision slides remain information-dense by design. |
 | chart clarity | 5 | Axis labels, direction cues, and formula focus markers make the authored proof visuals readable without presenter repair. |
 | typography | 5 | Larger claim typography and English accent words create the requested stronger theatrical hook. |
 | restraint | 5 | No decorative icons, logos, filler boxes, or unsupported metrics. |
@@ -28,7 +28,7 @@ Total: 44 / 45. Required minimum without reference: 40 / 45. No dimension below 
 ## Mechanical QA
 
 - PPTX exists and is non-empty: PASS.
-- Expected slide count: PASS, 6 slides.
+- Expected slide count: PASS, 7 slides for the theatrical deck.
 - Artifact-tool render to PNG: PASS.
 - Contact sheet inspection: PASS.
 - Layout quality: PASS, 0 errors and 0 warnings.

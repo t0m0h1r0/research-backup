@@ -1,10 +1,11 @@
-status: planned
+status: theatrical_formula_reading_validated
 created_by: ResearchArchitect
 created_at_utc: "2026-05-16T22:00:58Z"
-slide_count: 6
+updated_at_utc: "2026-05-16T22:55:04Z"
+slide_count: 7
 slide_size: "1280x720"
 design_system:
-  background: "warm off-white research paper"
+  background: "dark incident-room theatrical system"
   typography: "Hiragino Sans / Aptos fallback, with large claim titles"
   palette:
     ink: "#172026"
@@ -38,10 +39,14 @@ slides:
     proof_object: "branch diagram for early detection, retained recovery, and full-loss branch"
     source: "paper/sections/tex/02_model_formulation.tex; paper/sections/tex/05_backup_optimization.tex"
   - number: 5
-    claim: "まず決めるのは，間隔ではなく清浄履歴の長さ"
-    proof_object: "formula and variable-reading panel"
-    source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/08_conclusion.tex"
+    claim: "式は，計算ではなく「何を残すべきか」として読む"
+    proof_object: "formula reading panel with numerator, denominator, and generation-count interpretation"
+    source: "paper/sections/tex/05_backup_optimization.tex"
   - number: 6
+    claim: "まず決めるのは，間隔ではなく清浄履歴の長さ"
+    proof_object: "a* to Delta* translation panel with variable effects"
+    source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/08_conclusion.tex"
+  - number: 7
     claim: "運用では，検知遅れ・復旧時間・追加保持を一緒に更新する"
     proof_object: "operating loop and dynamic-retention mini decision"
     source: "paper/sections/tex/05_backup_optimization.tex; paper/sections/tex/06_dynamic_retention.tex; paper/sections/tex/07_numerical_examples.tex"

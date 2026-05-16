@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_THEATRICAL_CLARITY_VALIDATED |
+| phase | PRESENTATION_THEATRICAL_FORMULA_READING_VALIDATED |
 | branch | `codex/researcharchitect-presentation-refine` |
 | current_objective | Refine the heavy-tail backup research presentation, regenerate polished and theatrical editable decks, iterate review/fix loops to convergence, and preserve traceable presentation artifacts |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | prompt task: `prompts/research-agent` at `ed388737ed01c479df4905925f1ec6791ff0f47d`; `prompts/meta/kernel-project.md` preserved at SHA-256 `38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d`; anomaly-detection research source still not selected |
-| next_action | Await user review or explicit merge instruction for the clarified theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
-| updated_at_utc | 2026-05-16T22:40:06Z |
+| next_action | Await user review or explicit merge instruction for the formula-readable theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
+| updated_at_utc | 2026-05-16T22:55:04Z |
 
 ## §CHECKLIST
 
@@ -49,6 +49,7 @@
 | CHK-RESEARCH-PRESENTATION-REFINE-001 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/`, `docs/02_ACTIVE_LEDGER.md` | refined the heavy-tail backup presentation into a stronger 6-slide research talk, completed 2 review rounds, passed artifact-tool render/layout/package QA, and stopped with no unresolved findings | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-002 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round3.md` | created a more theatrical dark-room version with stronger contrast and larger visual claims while preserving source boundaries; layout and package QA passed | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-003 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round4.md` | clarified the theatrical deck after user review by replacing unclear terminology, labeling chart axes, and adding formula-focus guidance; layout and package QA passed | 2026-05-17 |
+| CHK-RESEARCH-PRESENTATION-REFINE-004 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round5.md` | expanded the theatrical deck to seven slides with a dedicated formula-reading page that explains a*, numerator, denominator, and n as a design judgment; layout and package QA passed | 2026-05-17 |
 
 ## §ASSUMPTIONS
 
@@ -101,4 +102,4 @@
 | RESEARCH-PROMPT-003 | `codex/researcharchitect-metaprompt-submodule-redeploy` | `/private/tmp/research-backup-metaprompt-submodule-redeploy` | Add pinned `research-agent` metaprompt submodule, sync revision `f52ae6f`, and redeploy Codex prompts; session `B1E9BE83-0B3E-4FCD-B417-18FA6719912F`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-16 |
 | RESEARCH-PROMPT-004 | `codex/researcharchitect-direct-metaprompt-zero-deploy` | `/private/tmp/research-backup-direct-metaprompt-zero-deploy` | Remove `prompts/upstream/`, pin direct `prompts/research-agent` revision `ed388737`, preserve `kernel-project.md`, and zero-base redeploy generated prompt artifacts; session `56003F54-E3F9-4EB9-BD81-7D9980B7714D`; id_prefix `RESEARCH-PROMPT` | VALIDATED | 2026-05-17 |
 | RESEARCH-PRESENTATION-ZERO-001 | `codex/researcharchitect-paper-presentation-zero-base` | `/private/tmp/research-backup-paper-presentation-zero-base` | Recreate the heavy-tail backup presentation from zero and complete review/fix loops; id_prefix `RESEARCH-PRESENTATION-ZERO` | VALIDATED | 2026-05-06 |
-| RESEARCH-PRESENTATION-REFINE-001 | `codex/researcharchitect-presentation-refine` | `/private/tmp/research-backup-presentation-refine` | Refine and regenerate the heavy-tail backup presentation with a stronger 6-slide research narrative and convergence review; id_prefix `RESEARCH-PRESENTATION-REFINE` | VALIDATED | 2026-05-17 |
+| RESEARCH-PRESENTATION-REFINE-001 | `codex/researcharchitect-presentation-refine` | `/private/tmp/research-backup-presentation-refine` | Refine and regenerate the heavy-tail backup presentation with a stronger research narrative and convergence review; id_prefix `RESEARCH-PRESENTATION-REFINE` | VALIDATED | 2026-05-17 |

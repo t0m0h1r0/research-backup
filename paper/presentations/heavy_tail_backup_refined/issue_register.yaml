@@ -1,7 +1,7 @@
 status: closed
 created_by: ResearchArchitect
 created_at_utc: "2026-05-16T22:00:58Z"
-updated_at_utc: "2026-05-16T22:40:06Z"
+updated_at_utc: "2026-05-16T22:55:04Z"
 issues:
   - id: R1-M01
     severity: MAJOR
@@ -56,4 +56,10 @@ issues:
     slide: 5
     finding: "The formula slide did not tell the audience which parts of the expression mattered most."
     response: "Rebuilt the formula slide around three visible attention points: numerator, denominator, and division by generation count, then restated that a* is the first design target."
+    status: closed
+  - id: R5-M01
+    severity: MAJOR
+    slide: 5
+    finding: "The deck still did not explain how to read the formula as a decision object; the viewer could identify parts but not interpret the expression."
+    response: "Expanded the theatrical deck to seven slides, added a dedicated formula-reading slide, and made the reading order explicit: a* first, numerator as avoided full-loss value, denominator as load of restoring further back, then n as the conversion to Δ*."
     status: closed
