@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_THEATRICAL_LIGHT_READABLE_VALIDATED |
+| phase | PRESENTATION_WIKI_MEMORY_COMPILED |
 | branch | `codex/researcharchitect-presentation-refine` |
-| current_objective | Refine the heavy-tail backup research presentation, regenerate polished and theatrical editable decks, iterate review/fix loops to convergence, and preserve traceable presentation artifacts |
+| current_objective | Preserve the refined heavy-tail backup presentation and compile reusable presentation-refinement lessons into wiki memory |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | prompt task: `prompts/research-agent` at `ed388737ed01c479df4905925f1ec6791ff0f47d`; `prompts/meta/kernel-project.md` preserved at SHA-256 `38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d`; anomaly-detection research source still not selected |
-| next_action | Await user review or explicit merge instruction for the light-readable theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
-| updated_at_utc | 2026-05-16T23:04:58Z |
+| next_action | Await user review or explicit merge instruction for the light-readable theatrical heavy-tail backup deck and compiled presentation-practice wiki; do not merge to main without explicit user instruction |
+| updated_at_utc | 2026-05-16T23:11:07Z |
 
 ## §CHECKLIST
 
@@ -51,6 +51,7 @@
 | CHK-RESEARCH-PRESENTATION-REFINE-003 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round4.md` | clarified the theatrical deck after user review by replacing unclear terminology, labeling chart axes, and adding formula-focus guidance; layout and package QA passed | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-004 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round5.md` | expanded the theatrical deck to seven slides with a dedicated formula-reading page that explains a*, numerator, denominator, and n as a design judgment; layout and package QA passed | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-005 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round6.md` | rebuilt the theatrical deck with a light readable visual system instead of black full-slide backgrounds; layout and package QA passed | 2026-05-17 |
+| CHK-RESEARCH-PRESENTATION-REFINE-006 | DONE | K/M | `docs/wiki/presentation_refinement_practices.md`, `docs/wiki/00_index.md` | compiled session-derived presentation refinement practices into reusable wiki memory, including jargon replacement, axis/read-direction labeling, formula reading sequence, light readability, and rendered-review checks | 2026-05-17 |
 
 ## §ASSUMPTIONS
 
@@ -79,6 +80,7 @@
 | LES-RESEARCH-PROMPT-UPSTREAM-001 | ACTIVE | Upstream metaprompt sync must copy only shared kernel sources, preserve project-local `kernel-project.md`, and regenerate local skills/prompts before removing `REDEPLOY_REQUIRED`. | `prompts/upstream.toml` |
 | LES-RESEARCH-PROMPT-SUBMODULE-001 | ACTIVE | Pinning `research-agent` as a submodule makes upstream metaprompt provenance reviewable while `prompts/meta/kernel-project.md` remains the project-local profile overlay. | `prompts/upstream.toml` |
 | LES-RESEARCH-PROMPT-DIRECT-001 | ACTIVE | The metaprompt submodule should live directly at `prompts/research-agent`; the `prompts/upstream/` directory adds a needless layer and increases profile-preservation risk. | `prompts/research-agent` |
+| LES-RESEARCH-PRESENTATION-003 | ACTIVE | Research decks with formulas need explicit reading sequences, audience-language terms, chart axes and direction cues, readable visual systems, and rendered review; theatricality should not outrun legibility or evidence boundaries. | `docs/wiki/presentation_refinement_practices.md` |
 
 ## §REPLAN_LOG
 
