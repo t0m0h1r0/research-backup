@@ -18,7 +18,7 @@ discarding the clean version.
 - Switched to a dark incident-room visual system with red top rail and green
   recovery rail.
 - Increased title scale and used high-contrast English accent words:
-  `LATEST ≠ SAFE`, `ALERT`, `CLEAN HISTORY EXPIRES`, `a* FIRST`, and `RUNBOOK`.
+  `LATEST ≠ SAFE`, `ALERT`, `CLEAN HISTORY EXPIRES`, and `a* FIRST`.
 - Kept the six-slide source-grounded narrative: restore risk, clean-recovery
   horizon, heavy-tail boundary, loss decomposition, design target, operating loop.
 - Preserved evidence boundaries: no empirical tail claim, no benchmark claim,

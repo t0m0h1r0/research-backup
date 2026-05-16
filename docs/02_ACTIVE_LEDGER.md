@@ -6,13 +6,13 @@
 
 | Field | Value |
 |-------|-------|
-| phase | PRESENTATION_THEATRICAL_VALIDATED |
+| phase | PRESENTATION_THEATRICAL_CLARITY_VALIDATED |
 | branch | `codex/researcharchitect-presentation-refine` |
 | current_objective | Refine the heavy-tail backup research presentation, regenerate polished and theatrical editable decks, iterate review/fix loops to convergence, and preserve traceable presentation artifacts |
 | active_brief | `docs/interface/ResearchBrief.md` |
 | source_artifact | prompt task: `prompts/research-agent` at `ed388737ed01c479df4905925f1ec6791ff0f47d`; `prompts/meta/kernel-project.md` preserved at SHA-256 `38823508fca2e28a5cc884081be8e4b1c954329e5ebc301d60fde2865aa8e61d`; anomaly-detection research source still not selected |
-| next_action | Await user review or explicit merge instruction for the theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
-| updated_at_utc | 2026-05-16T22:24:51Z |
+| next_action | Await user review or explicit merge instruction for the clarified theatrical heavy-tail backup deck; do not merge to main without explicit user instruction |
+| updated_at_utc | 2026-05-16T22:40:06Z |
 
 ## §CHECKLIST
 
@@ -48,6 +48,7 @@
 | CHK-RESEARCH-PROMPT-004 | DONE | P/M/Q | `.gitmodules`, `prompts/research-agent`, `prompts/meta/`, `prompts/agents-codex/`, `prompts/agents-claude/`, `prompts/skills/`, `token_roi_report.json`, `artifacts/P/researcharchitect_direct_metaprompt_zero_deploy_audit.md` | removed the `prompts/upstream/` directory, pinned direct research-agent revision `ed388737`, preserved `kernel-project.md` by SHA guard, and zero-base redeployed generated prompts, skills, telemetry, token ROI, and schema reports to `v8.7.0-candidate` | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-001 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/`, `docs/02_ACTIVE_LEDGER.md` | refined the heavy-tail backup presentation into a stronger 6-slide research talk, completed 2 review rounds, passed artifact-tool render/layout/package QA, and stopped with no unresolved findings | 2026-05-17 |
 | CHK-RESEARCH-PRESENTATION-REFINE-002 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round3.md` | created a more theatrical dark-room version with stronger contrast and larger visual claims while preserving source boundaries; layout and package QA passed | 2026-05-17 |
+| CHK-RESEARCH-PRESENTATION-REFINE-003 | DONE | A/M/Q | `paper/presentations/heavy_tail_backup_refined/heavy_tail_backup_refined_theatrical.pptx`, `paper/presentations/heavy_tail_backup_refined/review_reports/round4.md` | clarified the theatrical deck after user review by replacing unclear terminology, labeling chart axes, and adding formula-focus guidance; layout and package QA passed | 2026-05-17 |
 
 ## §ASSUMPTIONS
 

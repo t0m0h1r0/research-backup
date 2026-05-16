@@ -1,8 +1,9 @@
 # Change Log
 
-status: IN_PROGRESS
+status: THEATRICAL_CLARITY_VALIDATED
 created_by: ResearchArchitect
 created_at_utc: 2026-05-16T22:00:58Z
+updated_at_utc: 2026-05-16T22:40:06Z
 
 ## 2026-05-17 Planning Pass
 
@@ -29,8 +30,20 @@ created_at_utc: 2026-05-16T22:00:58Z
 - Added `heavy_tail_backup_refined_theatrical.pptx` as a more theatrical variant.
 - Shifted the visual system from warm-paper research style to a dark incident-room
   style with large claim typography, red/green hazard semantics, and English
-  accent words such as `LATEST ≠ SAFE`, `ALERT`, `a* FIRST`, and `RUNBOOK`.
+  accent words such as `LATEST ≠ SAFE`, `ALERT`, and `a* FIRST`.
 - Preserved the same six-slide source-grounded narrative and did not add
   empirical ransomware statistics, benchmark claims, SOTA claims, or new numeric
   recommendations.
 - Fixed first-pass accent-word layout overlaps and reran QA to 0 errors / 0 warnings.
+
+## 2026-05-17 Clarity Pass
+
+- Removed unclear incident-response jargon from the theatrical deck and replaced
+  it with audience-facing Japanese wording such as `判断手順`.
+- Added explicit Japanese axis labels to the timeline, clean-horizon, and dwell
+  distribution visuals so viewers know what direction and quantity each graphic
+  encodes.
+- Rebuilt the formula slide around three visible attention points: the numerator,
+  the denominator, and the final division by the number of generations.
+- Reran artifact-tool build, layout QA, package integrity, and slide-count checks
+  after the edits.
